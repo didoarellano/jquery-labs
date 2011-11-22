@@ -8,16 +8,10 @@
   </head>
   <body>
 
-    <div>Make <strong>ALL</strong> the divs go green.</div>
-
-    <div id="sandbox">
-      <h3>H3 Heading 1</h3>
-      <div>Div 1</div>
-      <h3>H3 Heading 2</h3>
-      <div>Div 2</div>
-      <h3>H3 Heading 3</h3>
-      <div>Div 3</div>
-    </div>
+    <section>
+      <h1>Make <strong>ALL</strong> the divs go green.</h1>
+      <iframe name="next" src="next.html" seamless></iframe>
+    </section>
 
     <form>
       <label>
@@ -25,6 +19,19 @@
         <input type="text" name="method">
       </label>
     </form>
+
+    <script id="section-tmpl" type="text/template">
+      <section>
+        <h1>  </h1>
+        <iframe name="" src="" seamless></iframe>
+      </section>
+    </script>
+
+    <script id="markup-tmpl" type="text/template">
+      <div class="markup">
+        <pre><code>  </code></pre>
+      </div>
+    </script>
 
     <script src="../lib/js/jquery.js"></script>
     <script src="traversal.js"></script>

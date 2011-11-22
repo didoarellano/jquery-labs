@@ -1,27 +1,37 @@
 $(function() {
 
-    var $sandbox = $('#sandbox');
-    var $cmdLine = $('form input');
-    var $markup = $('<div id="markup">').insertAfter($sandbox);
+    var config = [
+        {
+            instructions: 'Make <strong>all</strong> the divs go green.',
+            src:          'next',
+            formText:     '$("h3")'
+        }
+    ];
+
+    $('iframe').load(function() {
+        var height = $(this.contentDocument.documentElement).height();
+        $(this).height(height);
+    });
+
+    var $markup = $('<div id="markup">').insertAfter($('iframe'));
 
     function updateMarkupView() {
-        var markup = $sandbox
-                        .html()
-                        .replace(/[<>]/g, function(m) {
-                            return {
-                                '<': '&lt;',
-                                '>': '&gt;'
-                            }[m];
-                        });
-
+        var markup = $('iframe')[0].contentDocument.body.innerHTML
+        .replace(/[<>]/g, function(m) {
+            return {
+                '<': '&lt;',
+                '>': '&gt;'
+            }[m];
+        });
         $markup.empty().append('<pre><code>' +markup+ '</code></pre>');
     }
-
     updateMarkupView();
+
+    var $cmdLine = $('form input');
 
     $('form').on('submit', function(e) {
         e.preventDefault();
-        $('.you-are-here').removeClass('you-are-here');
+        $($('iframe')[0].contentDocument).find('.you-are-here').removeClass('you-are-here');
 
         var input  = $.trim( $cmdLine.val() );
         var method = input.match(/\.(\w+)\(/)[1];
@@ -29,11 +39,14 @@ $(function() {
 
         if (!method in $.fn) return;
 
-        $sandbox.find('h3')[method](param).addClass('you-are-here');
+        var command = config[0].formText + input + '.addClass("you-are-here")';
+
+        var whatisreturned = $('iframe')[0].contentWindow.eval(command);
+        console.log(whatisreturned);
+
         updateMarkupView();
 
     });
-
 
     $.equalizeHeight = function($el1, $el2) {
         var heightiest = 0;
@@ -46,7 +59,7 @@ $(function() {
     };
 
     window.onload = function() {
-        $.equalizeHeight($sandbox, $markup);
+        $.equalizeHeight($('iframe'), $markup);
     };
 
 });
