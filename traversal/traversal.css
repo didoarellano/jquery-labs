@@ -1,0 +1,43 @@
+body {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+#sandbox, #markup {
+  width: 438px;
+  padding: 10px 20px;
+  background: #f6f6f6;
+  float: left;
+  border: 2px solid #ccc;
+}
+#sandbox {
+  border-right: none;
+}
+form {
+  background: #f6f6f6;
+  padding: 20px 0;
+  border: 2px solid #ccc;
+  border-top: none;
+  clear: both;
+}
+label {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+}
+input {
+  border: none;
+  border-bottom: 1px dotted #444;
+  font-family: monospace;
+}
+input:focus {
+  outline: none;
+}
+
+#sandbox > div {
+  background: #ef2929;
+}
+#sandbox > div.you-are-here {
+  background: #8ae234;
+}
