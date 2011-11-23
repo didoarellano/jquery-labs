@@ -11,6 +11,7 @@ $(function() {
     $('iframe').load(function() {
         var height = $(this.contentDocument.documentElement).height();
         $(this).height(height);
+        updateMarkupView();
     });
 
     var $markup = $('<div id="markup">').insertAfter($('iframe'));
@@ -25,7 +26,6 @@ $(function() {
         });
         $markup.empty().append('<pre><code>' +markup+ '</code></pre>');
     }
-    updateMarkupView();
 
     var $cmdLine = $('form input');
 
