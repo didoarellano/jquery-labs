@@ -10,22 +10,51 @@
   </head>
   <body>
 
-    <section>
-      <h1>Make <strong>ALL</strong> the divs go green.</h1>
-      <iframe name="next" src="next.html" seamless scrolling="no"></iframe>
-    </section>
+    <ul class="tabs">
+      <li class="current">Live</li>
+      <li>Code</li>
+    </ul>
+
+    <div class="wrapper">
+      <section>
+        <h1>Make <strong>ALL</strong> the DIVs go green.</h1>
+        <div class="iframe">
+          <span>Live View</span>
+          <iframe name="next" src="next.html" seamless scrolling="no"></iframe>
+        </div>
+        <div class="codeview">
+          <span>Code View</span>
+          <pre><code></code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h1>Make <strong>ALL</strong> the H3s go green.</h1>
+        <div class="iframe">
+          <span>Live View</span>
+          <iframe name="prev" src="next.html" seamless scrolling="no"></iframe>
+        </div>
+        <div class="codeview">
+          <span>Code View</span>
+          <pre><code></code></pre>
+        </div>
+      </section>
+    </div>
 
     <form>
+      <a href="#" class="button">Prev</a>
       <label>
         <code>$("h3")</code>
-        <input type="text" name="method">
+        <input type="text">
       </label>
+      <button type="submit">Run</button>
+      <a href="#" class="button">Next</a>
     </form>
 
     <script id="section-tmpl" type="text/template">
       <section>
         <h1>  </h1>
-        <iframe name="" src="" seamless></iframe>
+        <iframe name="" src="" seamless scrolling="no"></iframe>
       </section>
     </script>
 
