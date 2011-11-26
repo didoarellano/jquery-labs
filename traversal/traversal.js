@@ -170,17 +170,17 @@
         },
 
         render_codeview: function() {
-            var contents = $(this.iframe).contents().find('body').html().trim();
-            contents = $.map(contents.split('\n'),
-                    function(str) {
-                        return str.trim();
-                    })
-                    .join('\n')
+            var contents = $(this.iframe).contents().find('body').html();
+
+            contents = $.map(contents.split('\n'), function(str) {
+                if (str.trim() === '') return null;
+                return str
+                    .replace('    ', '')
                     .replace(/[<>]/g,
-                         function(m) {
-                             return { '<': '&lt;', '>': '&gt;' }[m];
-                         });
-            this.code.innerHTML = contents;
+                             function(m) { return { '<': '&lt;', '>': '&gt;' }[m]; });
+            });
+
+            this.code.innerHTML = contents.join('\n');
         },
 
         equalize_heights: function() {
