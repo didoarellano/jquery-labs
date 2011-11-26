@@ -114,7 +114,7 @@ label {
   width: 180px;
   display: inline-block;
 }
-input {
+input[type=text] {
   width: 100px;
   padding: 0;
   border: none;
@@ -123,18 +123,18 @@ input {
   color: inherit;
   font-family: monospace;
 }
-form button {
+form input[type=submit] {
   width: 40px;
 }
-form .button {
+form button {
   display: block;
   position: absolute;
   top: 20px;
 }
-form .button:nth-of-type(1) {
+form button:nth-of-type(1) {
   left: 10px;
 }
-form .button:nth-of-type(2) {
+form button:nth-of-type(2) {
   right: 10px;
 }
 
@@ -192,7 +192,7 @@ form .button:nth-of-type(2) {
 
 
 /* Button styles {{{ */
-button, .button, .tabs li {
+input[type=submit], button, .button, .tabs li {
 /* button, .button { */
   font-size: 12px;
   text-align: center;
@@ -212,17 +212,17 @@ button, .button, .tabs li {
   transition:         all 400ms;
   text-shadow: 0 1px 0 #eee;
 }
-button:disabled, .button:disabled {
-  opacity: 0.3;
+input[type=submit]:disabled, button:disabled, .button:disabled {
+  opacity: 0.7;
 }
-button:hover, .button:hover, .tabs li:hover {
+input[type=submit]:hover, button:hover, .button:hover, .tabs li:hover {
 /* button:hover, .button:hover { */
   background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
   background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
   background-image: linear-gradient(top, #dddddd, #bbbbbb);
   text-shadow: 0 1px 0 #ddd;
 }
-button:disabled:hover, .button:disabled:hover {
+input[type=submit]:disabled:hover, button:disabled:hover, .button:disabled:hover {
   background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
   background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
   background-image: linear-gradient(top, #eeeeee, #cccccc);
