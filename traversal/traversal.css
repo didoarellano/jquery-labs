@@ -114,13 +114,9 @@ form {
   text-align: center;
   z-index: 1000;
 }
-label {
-  width: 180px;
-  display: inline-block;
-}
 input[type=text] {
-  width: 100px;
-  padding: 0;
+  width: 150px;
+  padding: 5px 0;
   border: none;
   border-bottom: 1px dotted #eee;
   background: transparent;
