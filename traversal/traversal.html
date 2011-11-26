@@ -18,31 +18,7 @@
       <li>Code</li>
     </ul>
 
-    <div class="wrapper">
-      <section>
-        <h1>Make <strong>ALL</strong> the DIVs go green.</h1>
-        <div class="iframe">
-          <span>Live View</span>
-          <iframe name="next" src="next.html" seamless scrolling="no"></iframe>
-        </div>
-        <div class="codeview">
-          <span>Code View</span>
-          <pre><code></code></pre>
-        </div>
-      </section>
-
-      <section>
-        <h1>Make <strong>ALL</strong> the H3s go green.</h1>
-        <div class="iframe">
-          <span>Live View</span>
-          <iframe name="prev" src="next.html" seamless scrolling="no"></iframe>
-        </div>
-        <div class="codeview">
-          <span>Code View</span>
-          <pre><code></code></pre>
-        </div>
-      </section>
-    </div>
+    <div class="wrapper"></div>
 
     <form>
       <a href="#" class="button">Prev</a>
@@ -56,15 +32,16 @@
 
     <script id="section-tmpl" type="text/template">
       <section>
-        <h1>  </h1>
-        <iframe name="" src="" seamless scrolling="no"></iframe>
+        <h1> <%= this.instructions %> </h1>
+        <div class="iframe">
+          <span>Live View</span>
+          <iframe name="<%= this.iframe_name %>" src=" <%= this.iframe_src %> " seamless scrolling="no" tabindex="-1"></iframe>
+        </div>
+        <div class="codeview">
+          <span>Code View</span>
+          <pre><code></code></pre>
+        </div>
       </section>
-    </script>
-
-    <script id="markup-tmpl" type="text/template">
-      <div class="markup">
-        <pre><code>  </code></pre>
-      </div>
     </script>
 
   </body>
