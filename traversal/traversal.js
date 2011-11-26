@@ -89,7 +89,10 @@
                 }
             });
 
-            $(win).on('resize', LABS.setup_viewport);
+            $(win).on('resize', function() {
+                LABS.setup_viewport();
+                LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
+            });
         },
 
         setup_iframes: function() {
@@ -139,14 +142,15 @@
             $(document.body).height($(window).height());
         },
 
-        scroll_to: function(callback) {
+        scroll_to: function() {
+            var arg = arguments[0];
             var posy = $(this.section).position().top;
-            function delay() {
-                setTimeout(callback, 300);
-            }
-            LABS.$wrapper.animate({
-                top: -posy
-            }, delay);
+            var delay_cb = typeof arg === 'function' ?
+                function() { setTimeout(arg, 300); } :
+                $.noop;
+            var duration = arg ? 400 : 0;
+
+            LABS.$wrapper.animate( {top: -posy}, duration, delay_cb );
         },
 
         set_current_exercise: function(set_to) {
