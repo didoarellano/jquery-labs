@@ -9,7 +9,8 @@
         // Constructor function for exercises
         Exercise: function(config) {
             this.iframe_html = '';
-            this.cmd = '';
+            this.cmd         = '';
+            this.cmd_suffix  = ".addClass('selected')";
 
             $.extend(this, config);
         },
