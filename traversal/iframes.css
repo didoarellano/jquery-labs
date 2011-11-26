@@ -1,3 +1,6 @@
+body {
+  color: #444;
+}
 .selected {
   background: #8ae234;
 }
