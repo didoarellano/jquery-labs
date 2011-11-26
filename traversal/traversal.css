@@ -5,6 +5,7 @@ body {
   color: #444;
   font-size: 14px;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 
@@ -44,6 +45,9 @@ ul.tabs li {
 }
 
 
+div.wrapper {
+  position: relative;
+}
 section {
   width: 100%;
   padding-top: 50px;
