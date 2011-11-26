@@ -76,11 +76,11 @@ div.iframe {
 div.codeview {
   display: none;
 }
-.iframe span, .codeview span {
+.iframe > span, .codeview > span {
   display: none;
 }
 
-.iframe span, .codeview span {
+.iframe > span, .codeview > span {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -171,7 +171,7 @@ form button:nth-of-type(2) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .iframe span, .codeview span {
+  .iframe > span, .codeview > span {
     display: block;
   }
 
@@ -231,4 +231,23 @@ input[type=submit]:disabled:hover, button:disabled:hover, .button:disabled:hover
   background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
   background-image: linear-gradient(top, #eeeeee, #cccccc);
 }
+/* }}} */
+/* Prettyprint styles {{{ */
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: #444 }  /* plain text */
+
+.str { color: #080 }  /* string content */
+.kwd { color: #008 }  /* a keyword */
+.com { color: #800 }  /* a comment */
+.typ { color: #606 }  /* a type name */
+.lit { color: #066 }  /* a literal value */
+/* punctuation, lisp open bracket, lisp close bracket */
+.pun, .opn, .clo { color: #660 }
+.tag { color: #204a87; font-weight: bold;}  /* a markup tag name */
+.atn { color: #a40000 }  /* a markup attribute name */
+.atv { color: #080 }  /* a markup attribute value */
+.dec, .var { color: #606 }  /* a declaration; a variable name */
+.fun { color: red }  /* a function name */
+
 /* }}} */

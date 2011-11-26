@@ -181,6 +181,7 @@
             });
 
             this.code.innerHTML = contents.join('\n');
+            prettyPrint();
         },
 
         equalize_heights: function() {
