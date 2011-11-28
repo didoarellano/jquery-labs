@@ -3,7 +3,6 @@
     win.LABS = {
 
         exercises: [],
-        // current_exercise: null,
         current_exercise: 0,
 
         // Constructor function for exercises
@@ -24,7 +23,7 @@
 
         // Kicks off the app by getting config JSON data from the filesystem
         // or from localstorage.
-        // Also registers subscribers & some event handlers
+        // Also registers subscribers.
         init: function() {
             var path = window.location.pathname;
             this.exercises_dir = 'exercises/' +
@@ -48,8 +47,6 @@
             $.subscribe('iframes_loaded', function() {
                 LABS.setup_viewport();
                 LABS.set_form_view.call( LABS.exercises[LABS.current_exercise] );
-                // LABS.set_current_exercise(0);
-                // LABS.scroll_to(LABS.current_exercise);
             });
 
             $.subscribe('command_executed', function() {
@@ -115,7 +112,6 @@
                     height: $this.contents().find('html').height()
                 });
 
-                // TODO explain what this code does.
                 // The index method works but I am a little uneasy having it
                 // tied to the DOM like this.
                 // The each method seems a little more robust but will be
