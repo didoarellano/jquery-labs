@@ -1,6 +1,6 @@
-(function($, win, undefined ){
+(function($, window, undefined ){
 
-    win.LABS = {
+    window.LABS = {
 
         exercises: [],
         current_exercise: 0,
@@ -92,7 +92,7 @@
                 }
             });
 
-            $(win).on('resize', function() {
+            $(window).on('resize', function() {
                 LABS.setup_viewport();
                 LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
             });
@@ -239,6 +239,6 @@
 
     };
 
-    win.LABS.init();
+    window.LABS.init();
 
 }(jQuery,window));
