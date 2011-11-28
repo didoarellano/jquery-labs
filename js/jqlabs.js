@@ -8,6 +8,7 @@
 
         // Constructor function for exercises
         Exercise: function(config) {
+            this.iframe_src  = LABS.exercises_dir + config.iframe_name + '.html';
             this.iframe_html = '';
             this.cmd         = '';
             this.cmd_suffix  = ".addClass('selected')";
@@ -16,7 +17,7 @@
         },
 
         get_config: function() {
-            $.getJSON('exercises/traversal/exercises.json', function(data) {
+            $.getJSON(this.exercises_dir + 'config.json', function(data) {
                 $.publish('config_gotten', data);
             });
         },
@@ -25,6 +26,11 @@
         // or from localstorage.
         // Also registers subscribers & some event handlers
         init: function() {
+            var path = window.location.pathname;
+            this.exercises_dir = 'exercises/' +
+                  path.substr(path.lastIndexOf('/')+1, path.length).replace('.html','') +
+                  '/';
+
             LABS.get_config();
 
             $.subscribe('config_gotten', LABS.create_exercises);
