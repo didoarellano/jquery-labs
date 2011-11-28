@@ -2,8 +2,10 @@
 
     window.LABS = {
 
+        whereami: '',
         exercises: [],
         current_exercise: 0,
+        exercises_dir: '',
 
         // Constructor function for exercises
         Exercise: function(config) {
@@ -26,9 +28,8 @@
         // Also registers subscribers.
         init: function() {
             var path = window.location.pathname;
-            this.exercises_dir = 'exercises/' +
-                  path.substr(path.lastIndexOf('/')+1, path.length).replace('.html','/');
-            console.log(this.exercises_dir);
+            this.whereami = path.substr(path.lastIndexOf('/')+1, path.length).replace('.html','');
+            this.exercises_dir = 'exercises/' + this.whereami + '/';
 
             LABS.get_config();
 
