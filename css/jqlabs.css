@@ -275,6 +275,19 @@ form button:nth-of-type(2) {
 
 }
 
+meter {
+  width: 100%;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  text-align: center;
+  color: #888;
+  font-weight: bold;
+  font-family: monospace;
+}
+meter small {
+  font-weight: normal;
+}
 
 /* Button styles {{{ */
 input[type=submit], button, .button, .tabs li {
@@ -332,3 +345,4 @@ input[type=submit]:disabled:hover, button:disabled:hover, .button:disabled:hover
 .fun { color: red }  /* a function name */
 
 /* }}} */
+

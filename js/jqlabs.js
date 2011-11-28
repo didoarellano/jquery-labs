@@ -190,6 +190,9 @@
         set_form_view: function() {
             LABS.$form.find('code').text("$('" +this.selector+ "')");
             LABS.$form.find('input:text').val(this.cmd).trigger('focus');
+            LABS.$form.find('meter span').text(function(i, txt) {
+                return (i === 0) ? LABS.current_exercise + 1: LABS.exercises.length;
+            });
         },
 
         render_codeview: function() {
