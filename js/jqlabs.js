@@ -54,6 +54,7 @@
                 LABS.set_current_exercise(save_point);
                 LABS.setup_viewport();
                 LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
+                LABS.$wrapper.animate({opacity: 1});
             });
 
             $.subscribe('command_executed', function() {
@@ -67,7 +68,7 @@
 
         on_ready: function() {
             // Cache elements for later use
-            LABS.$wrapper = $('.wrapper');
+            LABS.$wrapper = $('.wrapper').css('opacity', 0);
             LABS.$tabs = $('.tabs');
             LABS.$form = $('form');
 
