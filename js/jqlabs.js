@@ -51,7 +51,7 @@
             });
 
             $.subscribe('iframes_loaded', function() {
-                LABS.set_current_exercise(save_point);
+                LABS.set_current_exercise(save_point, true);
                 LABS.setup_viewport();
                 LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
                 LABS.$wrapper.animate({opacity: 1});
@@ -90,7 +90,7 @@
                 var $this = $(this);
                 var dir = $this.text().toLowerCase();
 
-                if ( LABS.set_current_exercise(dir) ) {
+                if ( LABS.set_current_exercise(dir, true) ) {
                     $this.prop('disabled', true);
                     LABS.scroll_to.call(
                         LABS.exercises[LABS.current_exercise], function() {
@@ -100,10 +100,26 @@
                 }
             });
 
-            $(window).on('resize', function() {
-                LABS.setup_viewport();
-                LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
+            $(window).on({
+                resize: function() {
+                    LABS.setup_viewport();
+                    LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
+                },
+                hashchange: function() {
+                    var hash = window.location.hash.slice(1);
+                    var set_hash = true;
+                    // console.log( arguments );
+                    if (hash === '') {
+                        // window.history.replaceState(null, null, window.location.href + '#1');
+                        window.location.replace(window.location.href + '#1');
+                        // set_hash = false;
+                    }
+                    hash = parseInt(hash, 10) - 1;
+                    LABS.set_current_exercise(hash, set_hash);
+                    LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], true);
+                }
             });
+
         },
 
         setup_iframes: function() {
@@ -172,7 +188,7 @@
             LABS.$wrapper.animate( {top: -posy}, duration, delay_cb );
         },
 
-        set_current_exercise: function(set_to) {
+        set_current_exercise: function(set_to, set_hash) {
             var to = LABS.current_exercise;
 
             if (typeof set_to === 'number') to = set_to;
@@ -183,6 +199,9 @@
 
             LABS.current_exercise = to;
             LABS.store.setItem(this.whereami + ':current_exercise', to);
+
+            if (set_hash) window.location.hash = ++to;
+
             $.publish('current_exercise_changed');
             return true;
 
