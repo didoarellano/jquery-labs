@@ -27,8 +27,8 @@
         init: function() {
             var path = window.location.pathname;
             this.exercises_dir = 'exercises/' +
-                  path.substr(path.lastIndexOf('/')+1, path.length).replace('.html','') +
-                  '/';
+                  path.substr(path.lastIndexOf('/')+1, path.length).replace('.html','/');
+            console.log(this.exercises_dir);
 
             LABS.get_config();
 
