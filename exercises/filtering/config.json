@@ -1,0 +1,10 @@
+[
+    {   "instructions": "Make <em>List item b2</em> go green.",
+        "iframe_name": "eq",
+        "selector": "li" },
+
+    {   "instructions": "Make <em>Paragraphs 2, 3, &amp; 5</em> go green.",
+        "iframe_name": "not",
+        "selector": "p" }
+
+]
