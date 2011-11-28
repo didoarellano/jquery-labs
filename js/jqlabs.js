@@ -34,7 +34,6 @@
 
             LABS.get_config();
 
-            //
             var save_point = +this.store.getItem(this.whereami + ':current_exercise') ||
                              this.current_exercise;
 
@@ -131,8 +130,11 @@
                 LABS.exercises[index].section  = $section[0];
                 LABS.exercises[index].code     = $section.find('code')[0];
                 // $.each(LABS.exercises, function(i, obj) {
-                //     if (obj.iframe_name === $this[0].name.trim()) {
-                //         obj.sandbox = $this[0].contentWindow;
+                //     if (obj.iframe_name === $iframe[0].name.trim()) {
+                //         obj.sandbox  = $iframe[0].contentWindow;
+                //         obj.iframe   = $iframe[0];
+                //         obj.section  = $section[0];
+                //         obj.code     = $section.find('code')[0];
                 //     }
                 // });
 
