@@ -6,6 +6,7 @@
         exercises: [],
         current_exercise: 0,
         exercises_dir: '',
+        store: window.localStorage,
 
         // Constructor function for exercises
         Exercise: function(config) {
@@ -33,7 +34,12 @@
 
             LABS.get_config();
 
+            //
+            var save_point = +this.store.getItem(this.whereami + ':current_exercise') ||
+                             this.current_exercise;
+
             $.subscribe('config_gotten', LABS.create_exercises);
+
             $.subscribe('templates_rendered', LABS.setup_iframes);
 
             $.subscribe('exercises_created', function() {
@@ -46,8 +52,9 @@
             });
 
             $.subscribe('iframes_loaded', function() {
+                LABS.set_current_exercise(save_point);
                 LABS.setup_viewport();
-                LABS.set_form_view.call( LABS.exercises[LABS.current_exercise] );
+                LABS.scroll_to.call(LABS.exercises[LABS.current_exercise], false);
             });
 
             $.subscribe('command_executed', function() {
@@ -100,26 +107,27 @@
         },
 
         setup_iframes: function() {
-            var dfr = $.Deferred();
-
-            dfr.done(function() { $.publish('iframes_loaded'); });
-
-            LABS.$wrapper.find('iframe').load(function() {
-                var $this = $(this);
-                var $section = $this.closest('section');
-
-                $this.css({
-                    width: $this.closest('div').width() - ($this.innerWidth() - $this.width()),
-                    height: $this.contents().find('html').height()
+            function iframe_onload($iframe, index, dfd) {
+                $iframe.css({
+                    width: $iframe.closest('div').width() - ($iframe.innerWidth() - $iframe.width()),
+                    height: $iframe.contents().find('html').height()
                 });
+                $.publish('iframe_loaded', index);
+                dfd.resolve();
+            }
+
+            var deferreds = $.map(LABS.$wrapper.find('iframe'), function(el, i) {
+                var dfd = $.Deferred();
+                var $iframe = $(el);
+                var $section = $iframe.closest('section');
+                var index = $section.index();
 
                 // The index method works but I am a little uneasy having it
                 // tied to the DOM like this.
                 // The each method seems a little more robust but will be
                 // slower (by how much and does it matter?).
-                var index = $section.index();
-                LABS.exercises[index].sandbox  = $this[0].contentWindow;
-                LABS.exercises[index].iframe   = $this[0];
+                LABS.exercises[index].sandbox  = $iframe[0].contentWindow;
+                LABS.exercises[index].iframe   = $iframe[0];
                 LABS.exercises[index].section  = $section[0];
                 LABS.exercises[index].code     = $section.find('code')[0];
                 // $.each(LABS.exercises, function(i, obj) {
@@ -128,8 +136,13 @@
                 //     }
                 // });
 
-                $.publish('iframe_loaded', index);
-                dfr.resolve();
+                $iframe.load(function() { iframe_onload($iframe, index, dfd); });
+
+                return dfd.promise();
+            });
+
+            $.when.apply($, deferreds).then(function() {
+                $.publish('iframes_loaded');
             });
 
         },
@@ -166,6 +179,7 @@
             if (LABS.exercises[to] === undefined) return false;
 
             LABS.current_exercise = to;
+            LABS.store.setItem(this.whereami + ':current_exercise', to);
             $.publish('current_exercise_changed');
             return true;
 
