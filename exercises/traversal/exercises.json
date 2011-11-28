@@ -1,11 +1,11 @@
 [
     {   "instructions": "Make <em>ALL the DIVs</em> go green.",
-        "iframe_src": "next.html",
+        "iframe_src": "exercises/traversal/next.html",
         "iframe_name": "next",
         "selector": "h3" },
 
     {   "instructions": "Make <em>ALL the H1s</em> go green.",
-        "iframe_src": "prev.html",
+        "iframe_src": "exercises/traversal/prev.html",
         "iframe_name": "prev",
         "selector": "p" }
 

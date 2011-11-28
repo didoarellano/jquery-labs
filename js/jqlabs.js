@@ -16,7 +16,7 @@
         },
 
         get_config: function() {
-            $.getJSON('exercises.json', function(data) {
+            $.getJSON('exercises/traversal/exercises.json', function(data) {
                 $.publish('config_gotten', data);
             });
         },
