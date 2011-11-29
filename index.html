@@ -20,5 +20,19 @@
       <p>A Dido Arellano &amp; <b>Semicolon</b><i>Studios</i> shindig. <br> <small>forever beta</small></p>
     </footer>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var anchors = document.querySelectorAll('ul a');
+          var hash = '#1';
+          var i = anchors.length;
+          var key, link_to;
+          while (i--) {
+              key = anchors[i].innerHTML.toLowerCase();
+              link_to = parseInt(window.localStorage.getItem(key + ':current_exercise'),10) + 1;
+              if (!isNaN(link_to)) hash = '#' + link_to;
+              anchors[i].setAttribute('href', anchors[i].getAttribute('href') + hash);
+          }
+      }, false)
+    </script>
   </body>
 </html>
