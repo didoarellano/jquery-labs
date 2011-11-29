@@ -306,9 +306,6 @@ input[type=submit], button, .button, .tabs li {
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
   border-radius: 4px;
-  -webkit-transition: all 400ms;
-  -moz-transition:    all 400ms;
-  transition:         all 400ms;
   text-shadow: 0 1px 0 #eee;
 }
 input[type=submit]:disabled, button:disabled, .button:disabled {
