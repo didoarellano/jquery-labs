@@ -276,7 +276,7 @@ form button:nth-of-type(2) {
 
 }
 
-meter {
+form div {
   width: 100%;
   position: absolute;
   top: -25px;
@@ -286,7 +286,7 @@ meter {
   font-weight: bold;
   font-family: monospace;
 }
-meter small {
+form div small {
   font-weight: normal;
 }
 
