@@ -181,7 +181,7 @@
             var arg = arguments[0];
             var posy = $(this.section).position().top;
             var delay_cb = typeof arg === 'function' ?
-                function() { setTimeout(arg, 300); } :
+                function() { setTimeout(arg, 200); } :
                 $.noop;
             var duration = arg ? 400 : 0;
 
