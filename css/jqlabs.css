@@ -20,14 +20,15 @@ ul {
   border-left: 10px solid #ccc;
   position: relative;
 }
-.index:before, .index:after {
+.index body:before, .index body:after {
   content: '';
   width: 100%;
   height: 10px;
+  left: 0;
   position: fixed;
   background: #ccc;
 }
-.index:after {
+.index body:after {
   bottom: 0;
 }
 .index body {
