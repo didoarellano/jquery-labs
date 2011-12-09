@@ -10,6 +10,8 @@
 
         // Constructor function for exercises
         Exercise: function(config) {
+            var default_suffix = ".addClass('selected')";
+
             this.iframe_src  = LABS.exercises_dir + config.iframe_name + '.html';
             this.iframe_html = '';
             this.cmd         = '';
@@ -208,7 +210,9 @@
         },
 
         set_form_view: function() {
-            LABS.$form.find('code').text("$('" +this.selector+ "')");
+            if (LABS.whereami !== 'selecting') {
+                LABS.$form.find('code').text("$('" +this.selector+ "')");
+            }
             LABS.$form.find('input:text').val(this.cmd).trigger('focus');
             LABS.$form.find('span').text(function(i, txt) {
                 return (i === 0) ? LABS.current_exercise + 1: LABS.exercises.length;
@@ -250,8 +254,10 @@
         },
 
         exec_cmd: function(cmd) {
+            var selecting = LABS.whereami === 'selecting';
+
             var command = '';
-            command += "$('" +this.selector+ "')";
+            command += selecting ? '' : "$('" +this.selector+ "')";
             command += this.cmd_prefix || '';
             command += cmd;
             command += this.cmd_suffix || '';
