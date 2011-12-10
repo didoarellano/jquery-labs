@@ -2,24 +2,32 @@
 <html>
   <meta charset="utf-8">
   <head>
-    <title>Siblings</title>
+    <title>Parents</title>
     <link rel="stylesheet" href="../../vendor/css/normalize.css">
     <link rel="stylesheet" href="../../css/iframes.css">
     <script src="../../vendor/js/jquery.js"></script>
     <style>
-      h3.selected {
+      .selected {
         background: #f84445;
+      }
+      .target.selected {
+        background: #8ae234;
       }
     </style>
   </head>
   <body>
 
-    <h3>H3 Heading 1</h3>
-    <div>Div 1</div>
-    <h3>H3 Heading 2</h3>
-    <div class="current">Div 2</div>
-    <h3>H3 Heading 3</h3>
-    <div>Div 3</div>
+    <div> Div 1
+      <section>
+        <div class="target"> Div 2
+          <div> Div 3
+            <div>
+              <p>Inception</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
   </body>
 </html>

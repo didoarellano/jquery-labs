@@ -1,21 +1,50 @@
 [
-    {   "instructions": "Make <em>ALL the divs</em> go green.",
+    {   "instructions": "Make the <em>h3</em> go green",
+        "iframe_name": "next2",
+        "selector": "li a" },
+
+    {   "instructions": "Make all h2s and ps that are children of a div go green",
+        "iframe_name": "children1",
+        "selector": "div" },
+
+    {   "instructions": "Make <em>ALL the divs</em> go green",
         "iframe_name": "next",
         "selector": "h3" },
 
-    {   "instructions": "Make <em>ALL the h1s</em> go green.",
+    {   "instructions": "Make <em>ALL the h1s</em> go green",
         "iframe_name": "prev",
         "selector": "p" },
 
-    {   "instructions": "Make <em>List items 1, 3, &amp; 4</em> go green.",
+    {   "instructions": "Make <em>List items 1, 3, &amp; 4</em> go green",
         "iframe_name": "siblings0",
         "selector": "li.current" },
 
-    {   "instructions": "Make <em>divs 1 &amp; 3</em> go green.",
+    {   "instructions": "Make <em>ALL list items</em> go green",
+        "iframe_name": "parent",
+        "selector": "a" },
+
+    {   "instructions": "Make <em>divs 1 &amp; 3</em> go green",
         "iframe_name": "siblings1",
         "selector": "div.current" },
 
-    {   "instructions": "Make <em>ALL list items</em> go green.",
-        "iframe_name": "parent",
-        "selector": "a" }
+    {   "instructions": "Make the ul that is a <em>child</em> of li.current go green",
+        "iframe_name": "children2",
+        "selector": "li.current" },
+
+    {   "instructions": "Make the uls that are <em>descendants</em> of li.current go green",
+        "iframe_name": "find1",
+        "selector": "li.current" },
+
+    {   "instructions": "Make <em>ALL the anchor elements</em> go green",
+        "iframe_name": "find2",
+        "selector": ".gallery" },
+
+    {   "instructions": "Make <em>ALL the divs</em> go green",
+        "iframe_name": "parents1",
+        "selector": "p" },
+
+    {   "instructions": "Make the div with a class of \"target\" go green",
+        "iframe_name": "parents2",
+        "selector": "p" }
+
 ]
