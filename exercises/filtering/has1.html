@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <meta charset="utf-8">
+  <head>
+    <title>Has</title>
+    <link rel="stylesheet" href="../../vendor/css/normalize.css">
+    <link rel="stylesheet" href="../../css/iframes.css">
+    <script src="../../vendor/js/jquery.js"></script>
+    <style>
+      .selected, .nav > .selected > ul > li:nth-child(2) {
+        background: #f84445;
+      }
+      /* WTF dude? It's the Inception selector. */
+      .nav > li:first-child.selected, .nav > .selected > ul > li:nth-child(2).selected {
+        background: #8ae234;
+      }
+    </style>
+  </head>
+  <body>
+
+    <ul class="nav">
+
+      <li><a href="#">Section 1</a>
+        <ul>
+          <li><a href="#">Section 1a</a></li>
+          <li><a href="#">Section 1b</a>
+            <ul>
+              <li><a href="#">Section 1b1</a></li>
+              <li><a href="#">Section 1b2</a></li>
+              <li><a href="#">Section 1b3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Section 1c</a></li>
+          <li><a href="#">Section 1d</a></li>
+          <li><a href="#">Section 1e</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Section 2</a></li>
+
+    </ul>
+
+  </body>
+</html>
