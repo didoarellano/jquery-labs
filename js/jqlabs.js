@@ -82,7 +82,7 @@
 
             LABS.$form.on('submit', function(e) {
                 e.preventDefault();
-                var cmd = LABS.$form.find('input').val().trim();
+                var cmd = LABS.$form.find('input').val().trim().replace(';', '');
                 if (cmd === '') return;
 
                 LABS.exec_cmd.call( LABS.exercises[LABS.current_exercise], cmd );
