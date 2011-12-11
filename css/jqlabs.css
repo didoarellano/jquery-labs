@@ -201,7 +201,7 @@ form {
   z-index: 1000;
 }
 input[type=text] {
-  width: 150px;
+  width: 180px;
   padding: 5px 0;
   border: none;
   border-bottom: 1px dotted #eee;
@@ -212,16 +212,44 @@ input[type=text] {
 form input[type=submit] {
   width: 40px;
 }
-form button {
-  display: block;
+form > div {
+  width: 100%;
   position: absolute;
-  top: 20px;
+  top: -30px;
+  left: 0;
+  text-align: center;
+  color: #888;
+  font-weight: bold;
+  font-family: monospace;
+}
+form select {
+  position: absolute;
+  left: 0;
+  padding: 0 5px;
+  display: none;
+}
+form div div {
+  display: inline-block;
+  position: relative;
+}
+form div div:hover select {
+  display: inline-block;
+}
+form span {
+  display: inline-block;
+}
+form div small {
+  font-weight: normal;
+}
+form button {
+  display: inline-block;
+  position: relative;
 }
 form button:nth-of-type(1) {
-  left: 10px;
+  left: -20px;
 }
 form button:nth-of-type(2) {
-  right: 10px;
+  right: -20px;
 }
 
 
@@ -274,20 +302,6 @@ form button:nth-of-type(2) {
     margin: 0 auto;
   }
 
-}
-
-form div {
-  width: 100%;
-  position: absolute;
-  top: -25px;
-  left: 0;
-  text-align: center;
-  color: #888;
-  font-weight: bold;
-  font-family: monospace;
-}
-form div small {
-  font-weight: normal;
 }
 
 /* Button styles {{{ */

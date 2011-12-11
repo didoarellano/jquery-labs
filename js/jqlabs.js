@@ -79,6 +79,18 @@
             LABS.$wrapper.html(sections);
             $.publish('templates_rendered');
 
+            var opts = '';
+            var ex_num = LABS.exercises.length;
+            var i;
+            for (var i = 1; i <= ex_num; i++) {
+                opts += '<option>' +i+ '</option>';
+            }
+
+            LABS.$form.find('select').html(opts).on('change', function() {
+                if (LABS.set_current_exercise($(this).val() - 1, true)) {
+                    LABS.scroll_to.call(LABS.exercises[LABS.current_exercise]);
+                }
+            });
 
             LABS.$form.on('submit', function(e) {
                 e.preventDefault();
@@ -217,6 +229,7 @@
             LABS.$form.find('span').text(function(i, txt) {
                 return (i === 0) ? LABS.current_exercise + 1: LABS.exercises.length;
             });
+            LABS.$form.find('select').val(LABS.current_exercise + 1);
         },
 
         render_codeview: function() {
