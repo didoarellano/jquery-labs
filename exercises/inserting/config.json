@@ -1,0 +1,26 @@
+[
+    {   "instructions": "Move $me to the beginning of the section",
+        "iframe_name": "prepend",
+        "selector": "section" },
+
+    {   "instructions": "Move $me to the end of the ul",
+        "iframe_name": "append",
+        "selector": "ul" },
+
+    {   "instructions": "Move #i1 to the beginning of div.wrap",
+        "iframe_name": "prependto",
+        "selector": "#i1" },
+
+    {   "instructions": "<em>Insert</em> #i4 so that it appears <em>before</em> #i5",
+        "iframe_name": "insertbefore",
+        "selector": "#i4" },
+
+    {   "instructions": "Move #i6 to the end of div.wrap",
+        "iframe_name": "appendto",
+        "selector": "#i6" },
+
+    {   "instructions": "<em>Insert</em> #i2 so that it appears <em>after</em> #i1",
+        "iframe_name": "insertafter",
+        "selector": "#i2" }
+
+]

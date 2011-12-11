@@ -8,9 +8,13 @@ body {
   transition:         background 0.6s;
 }
 
-.selected {
+.selected, .selected.me {
   background: #8ae234;
 }
+.me {
+  background: #f84445;
+}
+
 label {
   display: block;
   margin-bottom: 20px;
