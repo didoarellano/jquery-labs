@@ -209,6 +209,13 @@ input[type=text] {
   color: inherit;
   font-family: monospace;
 }
+.selecting input[type=text] {
+  width: 80%;
+  text-align:center;
+}
+.selecting input[type=submit] {
+  position: absolute;
+}
 form input[type=submit] {
   width: 40px;
 }
