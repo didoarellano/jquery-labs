@@ -26,6 +26,15 @@
     {   "instructions": "Select the div that is a child of div.profile",
         "iframe_name": "child2" },
 
+    {   "instructions": "Select all tr elements with an even numbered index",
+        "iframe_name": "evenfilter" },
+
+    {   "instructions": "Select all tr elements with an odd numbered index",
+        "iframe_name": "oddfilter" },
+
+    {   "instructions": "Select the first and last div",
+        "iframe_name": "firstlastfilter" },
+
     {   "instructions": "Select the input element with a type of \"radio\"",
         "iframe_name": "formfilters" },
 
@@ -36,15 +45,6 @@
         "iframe_name": "formfilters" },
 
     {   "instructions": "Select the input element with a type of \"text\"",
-        "iframe_name": "formfilters" },
-
-    {   "instructions": "Select all tr elements with an even numbered index",
-        "iframe_name": "evenfilter" },
-
-    {   "instructions": "Select all tr elements with an odd numbered index",
-        "iframe_name": "oddfilter" },
-
-    {   "instructions": "Select the first and last div",
-        "iframe_name": "firstlastfilter" }
+        "iframe_name": "formfilters" }
 
 ]
