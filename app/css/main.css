@@ -176,4 +176,12 @@ body.index {
 #cmd button:active {
   top: 61px;
 }
+
+.selecting #cmd input {
+  width: 100%;
+  text-align: center;
+}
+.selecting #cmd-context {
+  display: none;
+}
 /*-^-*/
