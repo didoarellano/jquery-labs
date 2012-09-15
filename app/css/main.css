@@ -121,13 +121,16 @@ body.index {
 /* #cmd line *//*-v-*/
 #cmd {
   max-width: 520px;
+  margin: -60px auto 60px;
+}
+#cmd label {
+  display: block;
   padding: 10px;
   border: 1px solid #ccc;
-  margin: -60px auto 90px;
+  border-radius: 2px;
   background: #f6f6f6;
   box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   font-size: 14px;
-  position: relative;
 }
 #cmd input, #cmd-context {
   font-family: monospace;
@@ -145,16 +148,10 @@ body.index {
   outline: none;
 }
 #cmd button {
-  width: 100px;
   padding: 8px 25px;
   font-size: 14px;
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  margin-left: -50px;
-}
-#cmd button:active {
-  top: 61px;
+  margin: 15px auto;
+  display: block;
 }
 
 .selecting #cmd input {
