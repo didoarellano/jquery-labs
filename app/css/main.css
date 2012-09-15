@@ -121,7 +121,7 @@ body.index {
 /* #cmd line *//*-v-*/
 #cmd {
   max-width: 520px;
-  margin: -60px auto 60px;
+  margin: -60px auto 30px;
 }
 #cmd label {
   display: block;
