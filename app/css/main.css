@@ -127,6 +127,18 @@ body.index {
   padding: 5px;
 }
 
+.controls {
+  text-align: center;
+}
+.controls div, .controls button {
+  display: inline-block;
+}
+.controls select {
+  font-size: 10px;
+  margin: 0 20px;
+}
+/*-^-*/
+/* #cmd line *//*-v-*/
 #cmd {
   max-width: 520px;
   padding: 10px;
@@ -163,16 +175,5 @@ body.index {
 }
 #cmd button:active {
   top: 61px;
-}
-
-.controls {
-  text-align: center;
-}
-.controls div, .controls button {
-  display: inline-block;
-}
-.controls select {
-  font-size: 10px;
-  margin: 0 20px;
 }
 /*-^-*/
