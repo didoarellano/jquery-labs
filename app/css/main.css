@@ -107,10 +107,8 @@ body.index {
 #exercise {
   height: 400px;
   border: 1px solid #ccc;
-  border-top: none;
   position: relative;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-radius: 2px;
   box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 }
 .iframe, .codeview {

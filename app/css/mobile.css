@@ -9,6 +9,11 @@ nav.back {
 .tabs {
   display: block;
 }
+#exercise {
+  border-top: none;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 .iframe, .codeview {
   width: 100%;
   position: absolute;
