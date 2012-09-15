@@ -118,4 +118,61 @@ body.index {
   float: left;
   background: #f6f6f6;
 }
+
+.progress {
+  text-align: right;
+  font-size: 12px;
+  font-family: monospace;
+  font-style: italic;
+  padding: 5px;
+}
+
+#cmd {
+  max-width: 520px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: -60px auto 90px;
+  background: #f6f6f6;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  font-size: 14px;
+  position: relative;
+}
+#cmd input, #cmd-context {
+  font-family: monospace;
+}
+#cmd input {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+
+  /* Setting width per exercise will need to be done in JS. */
+  width: 130px;
+}
+#cmd input:focus {
+  outline: none;
+}
+#cmd button {
+  width: 100px;
+  padding: 8px 25px;
+  font-size: 14px;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -50px;
+}
+#cmd button:active {
+  top: 61px;
+}
+
+.controls {
+  text-align: center;
+}
+.controls div, .controls button {
+  display: inline-block;
+}
+.controls select {
+  font-size: 10px;
+  margin: 0 20px;
+}
 /*-^-*/

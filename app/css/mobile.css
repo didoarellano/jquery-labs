@@ -13,3 +13,7 @@ nav.back {
   width: 100%;
   position: absolute;
 }
+
+#cmd input, #cmd-context {
+  font-size: 12px;
+}
