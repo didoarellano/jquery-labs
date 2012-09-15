@@ -148,6 +148,7 @@ body.index {
   outline: none;
 }
 #cmd button {
+  width: 90px;
   padding: 8px 25px;
   font-size: 14px;
   margin: 15px auto;
