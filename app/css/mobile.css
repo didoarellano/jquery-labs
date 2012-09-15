@@ -1,3 +1,6 @@
 .index h1 {
   font-size: 60px;
 }
+nav.back {
+  position: static;
+}
