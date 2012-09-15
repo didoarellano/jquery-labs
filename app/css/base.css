@@ -24,6 +24,10 @@ a:hover {
 h1, h2 {
   text-shadow: -1px 1px 1px #fff;
 }
+footer {
+  font-size: 75%;
+}
+
 
 .row {
   width: 90%;
