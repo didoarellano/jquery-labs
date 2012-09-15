@@ -52,6 +52,44 @@ nav.back {
   text-decoration: none;
 }
 /*-^-*/
+/* Tabs *//*-v-*/
+.tabs {
+  margin: 0;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  display: none;
+}
+.tabs li {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.tabs a {
+  height: 25px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: block;
+  position: relative;
+  color: #444;
+  background: #ddd;
+  text-shadow: -1px 1px 1px #fff;
+  z-index: 10;
+}
+.tabs a:hover {
+  text-decoration: none;
+}
+.tabs li:first-child a {
+  border-top-left-radius: 2px;
+}
+.tabs li:last-child a {
+  border-top-right-radius: 2px;
+}
+.tabs a.current {
+  height: 26px;
+  border-bottom: none;
+  background: #f6f6f6;
+  text-shadow: -1px 1px 1px #eee;
+}
+/*-^-*/
 /* Index page *//*-v-*/
 body.index {
   box-shadow: inset 0 0 0 10px rgba(0,0,0,0.2);

@@ -4,3 +4,12 @@
 nav.back {
   position: static;
 }
+
+/* TODO: Move this to a wider breakpoint */
+.tabs {
+  display: block;
+}
+.iframe, .codeview {
+  width: 100%;
+  position: absolute;
+}
