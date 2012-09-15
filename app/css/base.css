@@ -29,6 +29,33 @@ footer {
   font-size: 75%;
 }
 
+/* Buttons *//*-v-*/
+button {
+  padding: 5px 25px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background: #ddd;
+  background: -webkit-linear-gradient(top, #eee, #ccc);
+  background: -moz-linear-gradient(top, #eee, #ccc);
+  background: linear-gradient(top, #eee, #ccc);
+  box-shadow: inset 0px 1px 0px 0px #f6f6f6;
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  text-shadow: -1px 1px 1px #ffffff;
+  position: relative;
+}
+button:hover, button:focus {
+  background: #ccc;
+  background: -webkit-linear-gradient(top, #ccc, #eee);
+  background: -moz-linear-gradient(top, #ccc, #eee);
+  background: linear-gradient(top, #ccc, #eee);
+  box-shadow: inset 0px 1px 0px 0px #eee;
+}
+button:active {
+  top: 1px;
+}
+/*-^-*/
 
 .row {
   width: 90%;
