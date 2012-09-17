@@ -1,4 +1,4 @@
-define(['/app/js/exercise.js'], function(Exercise) {
+define(['/app/assets/js/exercise.js'], function(Exercise) {
 
     describe('Exercise constructor', function() {
 
