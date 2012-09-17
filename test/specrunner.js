@@ -24,7 +24,7 @@
     ];
 
     mocha.setup('bdd');
-    window.should = chai.should();
+    window.expect = chai.expect;
     require(specs, mocha.run);
 
 })(require, mocha, chai);

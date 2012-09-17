@@ -1,17 +1,20 @@
 define(['exercise'], function(Exercise) {
+    /*global describe, beforeEach, it, expect*/
+
+    "use strict";
 
     describe('Exercise constructor', function() {
 
         // Set up the Exercise instance //-v-
-        var exercise, exerciseConfig;
-        exerciseConfig = {
+        var exercise, conf;
+        conf = {
             instructions: 'This is what you should do.',
             selector: '#context',
             iframePath: 'fake/path',
             iframeName: 'next'
         };
         beforeEach(function() {
-            exercise = new Exercise(exerciseConfig);
+            exercise = new Exercise(conf);
         });
         //-^-
 
@@ -19,22 +22,23 @@ define(['exercise'], function(Exercise) {
 
             var props = ['instructions', 'selector', 'iframePath', 'iframeName'];
 
-            exercise.should.include.keys(props);
+            expect(exercise).to.include.keys(props);
 
-            exercise.instructions.should.equal('This is what you should do.');
-            exercise.selector.should.equal('#context');
-            exercise.iframePath.should.equal('fake/path');
-            exercise.iframeName.should.equal('next');
+            expect(exercise.instructions).to.equal( conf.instructions );
+            expect(exercise.selector).to.equal( conf.selector );
+            expect(exercise.iframePath).to.equal( conf.iframePath );
+            expect(exercise.iframeName).to.equal( conf.iframeName );
 
         });
 
         it('should set iframeHTML & cmd as empty string properties', function() {
-            exercise.iframeHTML.should.equal('');
-            exercise.cmd.should.equal('');
+            expect(exercise.iframeHTML).to.equal('');
+            expect(exercise.cmd).to.equal('');
         });
 
         it('should create iframeSrc property', function() {
-            exercise.iframeSrc.should.equal('fake/path/next.html');
+            var path = conf.iframePath + '/' + conf.iframeName + '.html';
+            expect(exercise.iframeSrc).to.equal(path);
         });
 
 
@@ -49,8 +53,8 @@ define(['exercise'], function(Exercise) {
             });
 
             it('should default to an iframePath property of assets/exercises', function() {
-                defVal.iframePath.should.equal('assets/exercises');
-                defVal.iframeSrc.should.equal('assets/exercises/prev.html');
+                expect(defVal.iframePath).to.equal('assets/exercises');
+                expect(defVal.iframeSrc).to.equal('assets/exercises/prev.html');
             });
         });
 
