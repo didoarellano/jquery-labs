@@ -17,17 +17,14 @@ define(['/app/assets/js/exercise.js'], function(Exercise) {
 
         it('should expose config properties as instance properties', function() {
 
-            exercise.should.have.property('instructions')
-                .and.equal('This is what you should do.');
+            var props = ['instructions', 'selector', 'iframePath', 'iframeName'];
 
-            exercise.should.have.property('selector')
-                .and.equal('#context');
+            exercise.should.include.keys(props);
 
-            exercise.should.have.property('iframePath')
-                .and.equal('fake/path');
-
-            exercise.should.have.property('iframeName')
-                .and.equal('next');
+            exercise.instructions.should.equal('This is what you should do.');
+            exercise.selector.should.equal('#context');
+            exercise.iframePath.should.equal('fake/path');
+            exercise.iframeName.should.equal('next');
 
         });
 
@@ -48,7 +45,7 @@ define(['/app/assets/js/exercise.js'], function(Exercise) {
             beforeEach(function() {
                 defVal = new Exercise({
                     iframeName: 'prev'
-                })
+                });
             });
 
             it('should default to an iframePath property of assets/exercises', function() {
