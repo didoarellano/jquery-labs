@@ -6,7 +6,10 @@
     // aggressive even with "Disable cache" checked. Could it also be python's
     // SimpleHTTPServer?
     require.config({
-        urlArgs: "v="+(new Date()).getTime()
+        urlArgs: "v="+(new Date()).getTime(),
+        paths: {
+            jquery: '../app/assets/js/vendor/jquery-1.8.1'
+        }
     });
 
     var specs = [
