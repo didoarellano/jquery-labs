@@ -2,8 +2,6 @@ define(['jquery'], function($) {
 
     "use strict";
 
-    return Exercise;
-
     function Exercise(config) {
         /*
          *  Properties:
@@ -26,5 +24,17 @@ define(['jquery'], function($) {
 
         $.extend(this, config);
     }
+
+    Exercise.prototype = {
+        buildCommand: function(input) {
+            var sel = this.selector;
+            var command = sel ? '$("' + sel + '")' : '';
+            command = command + input;
+            this.command = command;
+            return command;
+        }
+    };
+
+    return Exercise;
 
 });

@@ -41,13 +41,31 @@ define(['exercise'], function(Exercise) {
             expect(noSelector.selector).to.be.null;
         });
 
+        describe('#buildCommand method', function() {
 
+            var command;
 
             beforeEach(function() {
-                });
+                command = exercise.buildCommand('.prev()');
             });
 
+            it('should return string concatenated from input & the selector property', function() {
+                expect(command).to.be.equal('$("#context").prev()');
             });
+
+            it('should return just the input when selector is null', function() {
+                var noSelector = new Exercise({
+                    instructions: 'd',
+                    iframeHTML: 'a'
+                });
+                noSelector.buildCommand('$("p.eanut")');
+                expect(noSelector.command).to.be.equal('$("p.eanut")');
+            });
+
+            it('should update the exercise\'s command property', function() {
+                expect(exercise.command).to.be.equal('$("#context").prev()');
+            });
+
         });
 
     });
