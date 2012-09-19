@@ -10,28 +10,19 @@ define(['jquery'], function($) {
          *      instructions
          *          - Required in config.
          *          - Will appear as heading in the view.
-         *      selector
+         *      iframeHTML
          *          - Required in config.
+         *          - This will be inserted into the iframeView's iframe.
+         *      selector
+         *          - Optional in config.
          *          - The context which the student's command will be run with.
          *            "Command prefix".
-         *      iframeName
-         *          - Required in config.
-         *      iframePath
-         *          - Optional in config.
-         *          - Defaults to "assets/exercises"
-         *      iframeSrc
-         *          - Concatenated from iframePath and iframeName
-         *          - The iframe's src attribute.
-         *      iframeHTML
-         *          - iframe's innerHTML will be saved here, if needed.
-         *      cmd
+         *      command
          *          - The student's input ("command").
          */
 
-        this.iframePath = config.iframePath || 'assets/exercises';
-        this.iframeSrc = this.iframePath + '/' + config.iframeName + '.html';
-        this.iframeHTML = '';
-        this.cmd = '';
+        this.selector = null;
+        this.command = '';
 
         $.extend(this, config);
     }
