@@ -20,7 +20,8 @@
     // with ../../.. otherwise. We serve the test runner through
     // SimpleHTTPServer anyway.
     var specs = [
-        '/test/spec/test-exercise.js'
+        '/test/spec/test-exercise.js',
+        '/test/spec/test-exercises.js'
     ];
 
     mocha.setup('bdd');
