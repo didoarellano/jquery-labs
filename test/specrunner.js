@@ -21,7 +21,8 @@
     // SimpleHTTPServer anyway.
     var specs = [
         '/test/spec/test-exercise.js',
-        '/test/spec/test-exercises.js'
+        '/test/spec/test-exercises.js',
+        '/test/spec/test-labs.js'
     ];
 
     mocha.setup('bdd');
