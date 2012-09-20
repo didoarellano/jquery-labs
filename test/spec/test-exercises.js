@@ -21,18 +21,19 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
             it('should take a category name and an array of objects as its arguments', function() {
                 expect(collection).to.contain.key('traversing');
-                expect(collection.traversing).to.be.an('array');
+                expect(collection.traversing).to.contain.key('exercises');
+                expect(collection.traversing.exercises).to.be.an('array');
             });
 
             it('should create an array of Exercise instances from the array param', function() {
-                collection.traversing.forEach(function(el, i) {
+                collection.traversing.exercises.forEach(function(el, i) {
                     expect(el).to.be.an.instanceof(Exercise);
                 });
             });
 
             it('should default to an empty array if none is passed in', function() {
                 collection.add('noarray');
-                expect(collection.noarray).to.be.an('array').and.to.be.empty;
+                expect(collection.noarray.exercises).to.be.an('array').and.to.be.empty;
             });
 
         });//-^-
@@ -77,11 +78,11 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
             it('should create a category with Exercise objects instatiated from the xml config', function(done) {
                 collection.fetch('filtering', 'fixtures/test-exercises-fetch.xml', function() {
-                    var first = collection.filtering[0];
-                    var second = collection.filtering[1];
+                    var first = collection.filtering.exercises[0];
+                    var second = collection.filtering.exercises[1];
 
                     expect(collection).to.contain.key('filtering');
-                    expect(collection.filtering).to.be.an('array').and.have.length(2);
+                    expect(collection.filtering.exercises).to.be.an('array').and.have.length(2);
 
                     expect(first).to.be.an.instanceof(Exercise);
                     expect(second).to.be.an.instanceof(Exercise);
@@ -129,9 +130,10 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
             describe('exercise', function() {//-v-
 
                 it('should set current exercise to the object matching the index param', function() {
+                    collection.setCurrent('category', 'traversing');
                     collection.setCurrent('exercise', 1);
                     var current = collection.current.exercise;
-                    expect(current).to.be.equal(collection.traversing[1]);
+                    expect(current).to.be.equal(collection.traversing.exercises[1]);
                 });
 
                 it('should return the new current exercise object', function() {
@@ -151,7 +153,7 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
                     collection.setCurrent('exercise', 1);
                     collection.setCurrent('exercise', 9);
                     var current = collection.current.exercise;
-                    expect(current).to.be.equal(collection.traversing[1]);
+                    expect(current).to.be.equal(collection.traversing.exercises[1]);
                 });
 
             });//-^-

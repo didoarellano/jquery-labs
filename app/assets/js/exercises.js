@@ -15,7 +15,9 @@ define(['jquery', 'exercise'], function($, Exercise) {
             for (i = 0; i < len; i++) {
                 instances.push( new Exercise(exercises[i]) );
             }
-            this[category] = instances;
+            this[category] = {
+                exercises: instances
+            };
         },
 
         fetch: function(category, configPath, cb) {
@@ -83,7 +85,7 @@ define(['jquery', 'exercise'], function($, Exercise) {
 
                 ret = what === 'category' ?
                       this[setTo] :
-                      this.current.category[setTo];
+                      this.current.category.exercises[setTo];
 
                 if (ret) {
                     this.current[what] = ret;
