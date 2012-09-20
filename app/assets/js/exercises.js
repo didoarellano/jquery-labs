@@ -20,8 +20,6 @@ define(['jquery', 'exercise'], function($, Exercise) {
 
         fetch: function(category, configPath, cb) {
 
-            var tempDiv;
-
             $.ajax({
                 context: this,
                 url: configPath,
@@ -34,39 +32,41 @@ define(['jquery', 'exercise'], function($, Exercise) {
                 var configs = [];
                 var exercises = data.getElementsByTagName('exercise');
                 var i = exercises.length;
-                tempDiv = document.createElement('div');
 
                 while (i--) {
-                    configs.push(massageToObject(exercises[i]));
+                    configs.push(this._massageToObject(exercises[i]));
                 }
 
                 this.add(category, configs);
                 cb();
             }
 
-            function massageToObject(el) {
-                var obj = {};
-                var nodes = el.childNodes;
-                var i = nodes.length;
-                var node, val, name;
+        },
 
-                while (i--) {
-                    node = nodes[i];
-                    name = node.nodeName.toLowerCase();
-                    if (node.nodeType !== 1) { continue; }
-                    if (name !== 'iframehtml') {
-                        val = node.innerText || node.textContent;
-                    } else {
-                        tempDiv.appendChild(node);
-                        val = tempDiv.innerHTML.replace(/<\/*iframehtml>/gi, '');
-                        tempDiv.innerHTML = '';
-                    }
-                    obj[name] = val;
+        // This needs to be tested in isolation from #fetch so we expose it.
+        _massageToObject: function(el) {
+            var obj = {};
+            var nodes = el.childNodes;
+            var i = nodes.length;
+            var node, val, name;
+
+            this._tempDiv = this._tempDiv || document.createElement('div');
+
+            while (i--) {
+                node = nodes[i];
+                name = node.nodeName.toLowerCase();
+                if (node.nodeType !== 1) { continue; }
+                if (name !== 'iframehtml') {
+                    val = node.innerText || node.textContent;
+                } else {
+                    this._tempDiv.appendChild(node);
+                    val = this._tempDiv.innerHTML.replace(/<\/*iframehtml>/gi, '');
+                    this._tempDiv.innerHTML = '';
                 }
-
-                return obj;
+                obj[name] = val;
             }
 
+            return obj;
         },
 
         setCurrent: function(what, setTo) {

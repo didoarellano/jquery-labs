@@ -37,6 +37,36 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
         });//-^-
 
+        describe('#_massageToObject method', function() {//-v-
+            var _instructions = 'This is what you should do.';
+            var _iframehtml = '<div><p>Haych-tee-em-el</p></div>';
+            var _selector = '#element';
+            var exercise = document.createElement('exercise');
+            var instructions = document.createElement('instructions');
+            var iframehtml = document.createElement('iframehtml');
+            var selector = document.createElement('selector');
+
+            instructions.innerHTML = _instructions;
+            iframehtml.innerHTML = _iframehtml;
+            selector.innerHTML = _selector;
+
+            exercise.appendChild(instructions);
+            exercise.appendChild(iframehtml);
+            exercise.appendChild(selector);
+
+            var res = (new Exercises())._massageToObject(exercise);
+
+            it('should convert a DOM element tree to a JS object', function() {
+                expect(res).to.be.an('object')
+                    .and.include.keys(['instructions', 'iframehtml', 'selector']);
+
+                expect(res.instructions).to.be.equal(_instructions);
+                expect(res.iframehtml).to.be.equal(_iframehtml);
+                expect(res.selector).to.be.equal(_selector);
+            });
+
+        });//-^-
+
         describe('#fetch method', function() {//-v-
 
             var exercises;
