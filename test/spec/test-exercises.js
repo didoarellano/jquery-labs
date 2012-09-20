@@ -37,6 +37,31 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
         });//-^-
 
+        describe('#fetch method', function() {//-v-
+
+            var exercises;
+
+            beforeEach(function() {
+                exercises = new Exercises();
+            });
+
+            it('should create a category with Exercise objects instatiated from the xml config', function(done) {
+                exercises.fetch('filtering', 'fixtures/test-exercises-fetch.xml', function() {
+                    var first = exercises.filtering[0];
+                    var second = exercises.filtering[1];
+
+                    expect(exercises).to.contain.key('filtering');
+                    expect(exercises.filtering).to.be.an('array').and.have.length(2);
+
+                    expect(first).to.be.an.instanceof(Exercise);
+                    expect(second).to.be.an.instanceof(Exercise);
+
+                    done();
+                });
+            });
+
+        });//-^-
+
         describe('#setCurrent method', function() {//-v-
 
             var exercises = new Exercises();
