@@ -6,10 +6,10 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
     var exers = [
         { instructions: 'Instruction 1',
         selector: '#1',
-        iframeName: 'next' },
+        iframehtml: '<p>next</p>' },
         { instructions: 'Instruction 2',
         selector: '#2',
-        iframeName: 'prev' }
+        iframehtml: '<p>prev</p>' }
     ];
 
     describe('Exercises collection', function() {

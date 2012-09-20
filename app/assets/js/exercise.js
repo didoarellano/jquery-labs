@@ -8,7 +8,7 @@ define(['jquery'], function($) {
          *      instructions
          *          - Required in config.
          *          - Will appear as heading in the view.
-         *      iframeHTML
+         *      iframehtml
          *          - Required in config.
          *          - This will be inserted into the iframeView's iframe.
          *      selector
@@ -18,6 +18,14 @@ define(['jquery'], function($) {
          *      command
          *          - The student's input ("command").
          */
+
+        var requiredProps = ['instructions', 'iframehtml'];
+        var i = requiredProps.length;
+        while (i--) {
+            if (config[requiredProps[i]] === undefined) {
+                throw new Error('config object needs a(n) ' + requiredProps[i] + ' property.');
+            }
+        }
 
         this.selector = null;
         this.command = '';

@@ -10,7 +10,7 @@ define(['exercise'], function(Exercise) {
         conf = {
             instructions: 'This is what you should do.',
             selector: '#context',
-            iframeHTML: '<h1>Insert me into the iframe.</h1>'
+            iframehtml: '<h1>Insert me into the iframe.</h1>'
         };
         beforeEach(function() {
             exercise = new Exercise(conf);
@@ -19,14 +19,32 @@ define(['exercise'], function(Exercise) {
 
         it('should expose config properties as instance properties', function() {
 
-            var props = ['instructions', 'selector', 'iframeHTML'];
+            var props = ['instructions', 'selector', 'iframehtml'];
 
             expect(exercise).to.include.keys(props);
 
             expect(exercise.instructions).to.equal( conf.instructions );
             expect(exercise.selector).to.equal( conf.selector );
-            expect(exercise.iframeHTML).to.equal( conf.iframeHTML );
+            expect(exercise.iframehtml).to.equal( conf.iframehtml );
 
+        });
+
+        it('should throw an error if config object is missing required properties', function() {
+            var msg = /config object needs a\(n\) (instructions|iframehtml) property/;
+
+            expect(missingInstructions).to.throw(msg);
+            expect(missingIframeHTML).to.throw(msg);
+            expect(missingBoth).to.throw(msg);
+
+            function missingInstructions() {
+                new Exercise({iframehtml: ''});
+            }
+            function missingIframeHTML() {
+                new Exercise({instructions: ''});
+            }
+            function missingBoth() {
+                new Exercise({});
+            }
         });
 
         it('should set a command property to an empty string', function() {
@@ -36,7 +54,7 @@ define(['exercise'], function(Exercise) {
         it('the optional selector property should default to null', function() {
             var noSelector = new Exercise({
                 instructions: 'd',
-                iframeHTML: 'a'
+                iframehtml: 'a'
             });
             expect(noSelector.selector).to.be.null;
         });
@@ -56,7 +74,7 @@ define(['exercise'], function(Exercise) {
             it('should return just the input when selector is null', function() {
                 var noSelector = new Exercise({
                     instructions: 'd',
-                    iframeHTML: 'a'
+                    iframehtml: 'a'
                 });
                 noSelector.buildCommand('$("p.eanut")');
                 expect(noSelector.command).to.be.equal('$("p.eanut")');
