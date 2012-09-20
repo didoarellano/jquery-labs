@@ -16,23 +16,23 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
         describe('#add method', function() {//-v-
 
-            var exercises = new Exercises();
-            exercises.add('traversing', exers);
+            var collection = new Exercises();
+            collection.add('traversing', exers);
 
             it('should take a category name and an array of objects as its arguments', function() {
-                expect(exercises).to.contain.key('traversing');
-                expect(exercises.traversing).to.be.an('array');
+                expect(collection).to.contain.key('traversing');
+                expect(collection.traversing).to.be.an('array');
             });
 
             it('should create an array of Exercise instances from the array param', function() {
-                exercises.traversing.forEach(function(el, i) {
+                collection.traversing.forEach(function(el, i) {
                     expect(el).to.be.an.instanceof(Exercise);
                 });
             });
 
             it('should default to an empty array if none is passed in', function() {
-                exercises.add('noarray');
-                expect(exercises.noarray).to.be.an('array').and.to.be.empty;
+                collection.add('noarray');
+                expect(collection.noarray).to.be.an('array').and.to.be.empty;
             });
 
         });//-^-
@@ -69,19 +69,19 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
         describe('#fetch method', function() {//-v-
 
-            var exercises;
+            var collection;
 
             beforeEach(function() {
-                exercises = new Exercises();
+                collection = new Exercises();
             });
 
             it('should create a category with Exercise objects instatiated from the xml config', function(done) {
-                exercises.fetch('filtering', 'fixtures/test-exercises-fetch.xml', function() {
-                    var first = exercises.filtering[0];
-                    var second = exercises.filtering[1];
+                collection.fetch('filtering', 'fixtures/test-exercises-fetch.xml', function() {
+                    var first = collection.filtering[0];
+                    var second = collection.filtering[1];
 
-                    expect(exercises).to.contain.key('filtering');
-                    expect(exercises.filtering).to.be.an('array').and.have.length(2);
+                    expect(collection).to.contain.key('filtering');
+                    expect(collection.filtering).to.be.an('array').and.have.length(2);
 
                     expect(first).to.be.an.instanceof(Exercise);
                     expect(second).to.be.an.instanceof(Exercise);
@@ -94,34 +94,34 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
 
         describe('#setCurrent method', function() {//-v-
 
-            var exercises = new Exercises();
-            exercises.add('traversing', exers);
-            exercises.add('selecting', exers);
+            var collection = new Exercises();
+            collection.add('traversing', exers);
+            collection.add('selecting', exers);
 
             describe('category', function() {//-v-
 
                 it('should set current category to the object matching the string param', function() {
-                    exercises.setCurrent('category', 'traversing');
-                    var current = exercises.current.category;
-                    expect(current).to.be.equal(exercises.traversing);
+                    collection.setCurrent('category', 'traversing');
+                    var current = collection.current.category;
+                    expect(current).to.be.equal(collection.traversing);
                 });
 
                 it('should return the new current category array', function() {
-                    var selecting = exercises.setCurrent('category', 'selecting');
-                    var current = exercises.current.category;
+                    var selecting = collection.setCurrent('category', 'selecting');
+                    var current = collection.current.category;
                     expect(current).to.be.equal(selecting);
                 });
 
                 it('should return undefined if the category doesn\'t exist', function() {
-                    var unknown = exercises.setCurrent('category', 'unkowncategory');
+                    var unknown = collection.setCurrent('category', 'unkowncategory');
                     expect(unknown).to.be.undefined;
                 });
 
                 it('should not set current category when specified category doesn\'t exist', function() {
-                    exercises.setCurrent('category', 'traversing');
-                    exercises.setCurrent('category', 'unkowncategory');
-                    var current = exercises.current.category;
-                    expect(current).to.be.equal(exercises.traversing);
+                    collection.setCurrent('category', 'traversing');
+                    collection.setCurrent('category', 'unkowncategory');
+                    var current = collection.current.category;
+                    expect(current).to.be.equal(collection.traversing);
                 });
 
             });//-^-
@@ -129,49 +129,49 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
             describe('exercise', function() {//-v-
 
                 it('should set current exercise to the object matching the index param', function() {
-                    exercises.setCurrent('exercise', 1);
-                    var current = exercises.current.exercise;
-                    expect(current).to.be.equal(exercises.traversing[1]);
+                    collection.setCurrent('exercise', 1);
+                    var current = collection.current.exercise;
+                    expect(current).to.be.equal(collection.traversing[1]);
                 });
 
                 it('should return the new current exercise object', function() {
-                    exercises.setCurrent('category', 'traversing');
-                    var index1 = exercises.setCurrent('exercise', 1);
-                    var current = exercises.current.exercise;
+                    collection.setCurrent('category', 'traversing');
+                    var index1 = collection.setCurrent('exercise', 1);
+                    var current = collection.current.exercise;
                     expect(current).to.be.equal(index1);
                 });
 
                 it('should return undefined if the exercise doesn\'t exist', function() {
-                    var unknown = exercises.setCurrent('exercise', 9);
+                    var unknown = collection.setCurrent('exercise', 9);
                     expect(unknown).to.be.undefined;
                 });
 
                 it('should not set current exercise when specified index doesn\'t exist', function() {
-                    exercises.setCurrent('category', 'traversing');
-                    exercises.setCurrent('exercise', 1);
-                    exercises.setCurrent('exercise', 9);
-                    var current = exercises.current.exercise;
-                    expect(current).to.be.equal(exercises.traversing[1]);
+                    collection.setCurrent('category', 'traversing');
+                    collection.setCurrent('exercise', 1);
+                    collection.setCurrent('exercise', 9);
+                    var current = collection.current.exercise;
+                    expect(current).to.be.equal(collection.traversing[1]);
                 });
 
             });//-^-
 
             describe('category & exercise', function() {//-v-
-                var exercises = new Exercises();
-                exercises.add('traversing', exers);
-                exercises.add('selecting', exers);
+                var collection = new Exercises();
+                collection.add('traversing', exers);
+                collection.add('selecting', exers);
 
                 it('should accept an object that sets both current category and exercise', function() {
-                    var current = exercises.setCurrent({
+                    var current = collection.setCurrent({
                         category: 'traversing',
                         exercise: 1
                     });
 
-                    expect(exercises.current.category).to.be.equal(exercises.traversing);
-                    expect(exercises.current.exercise).to.be.equal(exercises.traversing[1]);
+                    expect(collection.current.category).to.be.equal(collection.traversing);
+                    expect(collection.current.exercise).to.be.equal(collection.traversing[1]);
 
-                    expect(exercises.current.category).to.be.equal(current.category);
-                    expect(exercises.current.exercise).to.be.equal(current.exercise);
+                    expect(collection.current.category).to.be.equal(current.category);
+                    expect(collection.current.exercise).to.be.equal(current.exercise);
                 });
             });//-^-
 
