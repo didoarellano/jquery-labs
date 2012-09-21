@@ -10,7 +10,7 @@ define(['jquery', 'exercise'], function($, Exercise) {
             hash = hash.split('/');
             return {
                 category: hash[1],
-                exercise: hash[2] || '0',
+                exercise: parseInt( (hash[2] || 0), 10 ),
             };
         }
 
