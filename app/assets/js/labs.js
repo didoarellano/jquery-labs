@@ -1,4 +1,4 @@
-define(['jquery', 'exercise'], function($, Exercise) {
+define(['jquery', 'exercises'], function($, Exercises) {
 
     "use strict";
 
