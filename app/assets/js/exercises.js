@@ -16,7 +16,13 @@ define(['jquery', 'exercise'], function($, Exercise) {
                 instances.push( new Exercise(exercises[i]) );
             }
             this[category] = {
-                exercises: instances
+                exercises: instances,
+
+                // Keep track of the current exercise here too because the
+                // models (or just some data about them) will get saved to
+                // local storage eventually.
+                currentExerciseIndex: 0
+
             };
         },
 
