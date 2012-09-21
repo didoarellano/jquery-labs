@@ -6,6 +6,9 @@ define(['jquery', 'exercise'], function($, Exercise) {
 
     Labs.prototype = {
 
+        currentCategory: '',
+        currentExercise: null,
+
         parseHash: function(hash) {
             hash = hash.split('/');
             return {

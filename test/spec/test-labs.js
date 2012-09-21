@@ -21,6 +21,15 @@ define(['labs'], function(Labs) {
 
         });//-^-
 
+        describe('Keeps track of current category/exercise', function() {//-v-
+
+            it('should have currentCategory and currentExercise properties', function() {
+                expect(labs.currentCategory).to.exist.and.to.be.a('string');
+                expect(labs.currentExercise).to.be.null;
+            });
+
+        });//-^-
+
     });
 
 });
