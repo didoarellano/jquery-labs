@@ -101,6 +101,24 @@ define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
 
         });//-^-
 
+        describe('#start method', function() {//-v-
+            it('should exist', function() {
+                expect(labs.start).to.be.a('function');
+            });
+        });//-^-
+
+        describe('#cacheSelectors method', function() {//-v-
+            it('should exist', function() {
+                expect(labs.cacheSelectors).to.be.a('function');
+            });
+        });//-^-
+
+        describe('#attachListeners method', function() {//-v-
+            it('should exist', function() {
+                expect(labs.attachListeners).to.be.a('function');
+            });
+        });//-^-
+
         describe('#parseHash method', function() {//-v-
 
             it('should return an object with category & exercise properties', function() {

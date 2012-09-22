@@ -22,8 +22,9 @@
     }
 
     require.config(config);
-    require(['labs'], function(labs) {
-        labs.init();
+    require(['labs'], function(Labs) {
+        var labs = new Labs();
+        labs.start();
     });
 
 })(window, require);
