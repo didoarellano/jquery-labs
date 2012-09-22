@@ -2,11 +2,42 @@
 .container {
   width: 200%;
   position: relative;
+  -webkit-transition: all 0.4s;
 }
 .index, .exercise {
   width: 50%;
   float: left;
-  -webkit-transition: height 0.2s;
+}
+footer {
+  position: relative;
+  top: 0;
+  -webkit-transition: all 0.2s;
+}
+body:after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  background: #bbb;
+  background: rgba(0,0,0,0.2);
+}
+.back a {
+  -webkit-transition: all 0.2s;
+  opacity: 0;
+}
+.onexercise .back a {
+  opacity: 1;
+}
+.oneindex .container {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.onexercise .container {
+  -webkit-transform: translate3d(-50%, 0, 0);
+}
+.onindex footer {
+  top: -100px;
+  margin-bottom: 0;
 }
 /*-^-*/
 /* Index section *//*-v-*/
@@ -49,40 +80,8 @@
 /*-^-*/
 /* Exercise section *//*-v-*/
 .exercise {
-  position: relative;
+  /* position: relative; */
 }
-/* Back to index nav *//*-v-*/
-/* TODO: Make it slideToggle on transitions */
-.back {
-  width: 100%;
-  height: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #bbb;
-  background: rgba(0,0,0,0.2);
-  text-align: left;
-  z-index: 100;
-
-  -webkit-transition: all 0.2s;
-  opacity: 1;
-}
-.onindex .back {
-  opacity: 0;
-}
-
-.back a {
-  padding: 0 10px 5px;
-  margin: 10px;
-  display: inline-block;
-  font-size: 10px;
-  border-bottom-left-radius:   4px;
-  border-bottom-right-radius:  4px;
-  background: #bbb;
-  background: rgba(0,0,0,0.2);
-  color: #222;
-}
-/*-^-*/
 /* Live/Code views *//*-v-*/
 .view {
   width: 100%;
@@ -205,4 +204,29 @@ iframe {
   /* display: none; */
 /* } */
 /*-^-*/
+/*-^-*/
+/* Back to index nav *//*-v-*/
+.back {
+  width: 100%;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #bbb;
+  background: rgba(0,0,0,0.2);
+  text-align: left;
+  z-index: 100;
+}
+
+.back a {
+  padding: 0 10px 5px;
+  margin: 10px;
+  display: inline-block;
+  font-size: 10px;
+  border-bottom-left-radius:   4px;
+  border-bottom-right-radius:  4px;
+  background: #bbb;
+  background: rgba(0,0,0,0.2);
+  color: #222;
+}
 /*-^-*/
