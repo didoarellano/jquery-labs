@@ -1,5 +1,5 @@
 define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, AppView, $) {
-    /*global describe, it, expect*/
+    /*global describe, it, expect FnFaker*/
 
     "use strict";
 
