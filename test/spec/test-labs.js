@@ -1,4 +1,4 @@
-define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
+define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, AppView, $) {
     /*global describe, it, expect*/
 
     "use strict";
@@ -93,20 +93,42 @@ define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
         });//-^-
 
         describe('#start method', function() {//-v-
-            it('should exist', function() {
-                expect(labs.start).to.be.a('function');
+            var labs = new Labs();
+            var cacheSelectors = new FnFaker();
+            var attachListeners = new FnFaker();
+
+            labs.cacheSelectors = cacheSelectors;
+            labs.attachListeners = attachListeners;
+
+            labs.start();
+
+            it('should call #cacheSelectors', function() {
+                expect(cacheSelectors.called).to.be.true;
+            });
+
+            it('should call #attachListeners', function() {
+                expect(attachListeners.called).to.be.true;
             });
         });//-^-
 
         describe('#cacheSelectors method', function() {//-v-
-            it('should exist', function() {
-                expect(labs.cacheSelectors).to.be.a('function');
+            var labs = new Labs();
+            labs.cacheSelectors();
+            it('should cache selectors', function() {
+                expect(labs.$window).to.exist;
             });
         });//-^-
 
         describe('#attachListeners method', function() {//-v-
-            it('should exist', function() {
-                expect(labs.attachListeners).to.be.a('function');
+            var labs = new Labs();
+            var $window = $(window);
+
+            labs.$window = $window;
+            labs.attachListeners();
+
+            it('should bind a hashchange event listener to the window', function() {
+                var events = $._data(window, 'events');
+                expect(events.hashchange).to.exist;
             });
         });//-^-
 

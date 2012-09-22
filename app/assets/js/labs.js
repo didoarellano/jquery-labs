@@ -11,11 +11,23 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
     Labs.prototype = {
 
-        start: function() {},
+        start: function() {
+            // Assumes that document is ready.
+            this.cacheSelectors();
+            this.attachListeners();
+        },
 
-        cacheSelectors: function() {},
+        cacheSelectors: function() {
+            this.$window = $(window);
+        },
 
-        attachListeners: function() {},
+        attachListeners: function() {
+            this.$window.on(
+                'hashchange',
+                window.location,
+                $.proxy(this.onHashChange, this)
+            ).trigger('hashchange');
+        },
 
         onHashChange: function(evt) {
             var hash = this.parseHash(evt.data.hash);
