@@ -18,6 +18,89 @@ define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
 
         });//-^-
 
+        describe('#onHashChange method', function() {//-v-
+            var fakeEvt = {
+                data: { hash: '' }
+            };
+
+            function Faker() {
+                function fn() {
+                    fn.called = true;
+                    fn.args = Array.prototype.slice.call(arguments);
+                }
+                fn.called = false;
+                return fn;
+            }
+
+            describe('Case: hash.category doesn\'t exist', function() {//-v-
+
+                it('should call AppView#gotoIndex', function() {
+                    fakeEvt.data.hash = '';
+                    var gotoIndex = new Faker();
+
+                    labs.appview.gotoIndex = gotoIndex;
+
+                    labs.onHashChange(fakeEvt);
+                    expect(gotoIndex.called).to.be.true;
+                });
+
+            });//-^-
+
+            describe('Case: hash.category is not the current category', function() {//-v-
+
+                var fetch = new Faker();
+                var gotoExercise = new Faker();
+
+                labs.collection.fetch = fetch;
+                labs.appview.gotoExercise = gotoExercise;
+
+                labs.currentCategory = 'selecting';
+                fakeEvt.data.hash = '#/traversing';
+                labs.onHashChange(fakeEvt);
+
+                it('should call Exercises#fetch', function() {
+                    expect(fetch.called).to.be.true;
+                    expect(fetch.args).to.have.length.above(1);
+                    expect(fetch.args[0]).to.equal('traversing');
+                    expect(fetch.args[1]).to.equal('assets/exercises/traversing.xml');
+                    if (fetch.args[2]) {
+                        expect(fetch.args[2]).to.be.a('function');
+                    }
+                });
+
+                it('should call AppView#gotoExercise', function() {
+                    expect(gotoExercise.called).to.be.true;
+                });
+
+            });//-^-
+
+            describe('Case: hash.category has already been loaded', function() {//-v-
+
+                labs.currentCategory = 'selecting';
+                labs.collection.filtering = {};
+
+                var fetch = new Faker();
+                var gotoExercise = new Faker();
+
+                labs.collection.fetch = fetch;
+                labs.appview.gotoExercise = gotoExercise;
+
+                fakeEvt.data.hash = '#/filtering';
+                labs.onHashChange(fakeEvt);
+
+                it('should not call Exercises#fetch', function() {
+                    expect(fetch.called).to.be.false;
+                });
+
+                it('should call AppView#gotoExercise', function() {
+                    expect(gotoExercise.called).to.be.true;
+                });
+
+            });//-^-
+
+
+        });//-^-
+
         describe('#parseHash method', function() {//-v-
 
             it('should return an object with category & exercise properties', function() {

@@ -11,6 +11,42 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
     Labs.prototype = {
 
+
+        onHashChange: function(evt) {
+            var hash = this.parseHash(evt.data.hash);
+            var category = hash.category;
+
+            if (!category) {
+
+                this.appview.gotoIndex();
+                return;
+
+            } else if (this.currentCategory === category) {
+
+                // console.log('load new exercise');
+
+            } else if (this.collection[category]) {
+
+                // category has already been loaded and instatiated
+                this.appview.gotoExercise();
+
+            } else {
+
+                this.collection.fetch(
+                    category,
+                    'assets/exercises/' + category + '.xml',
+                    function() {
+                        // console.log('set this.currentCategory and this.currentExercise');
+                        // this.currentCategory = category;
+                    }
+                );
+
+                this.appview.gotoExercise();
+
+            }
+
+        },
+
         parseHash: function(hash) {
             hash = hash.split('/');
             return {
