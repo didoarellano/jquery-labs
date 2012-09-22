@@ -14,8 +14,10 @@ define(['labs'], function(Labs) {
                 expect(hash.exercise).to.be.equal(4);
             });
 
-            it('exercise property should default to 0 if omitted in argument', function() {
+            it('exercise property should default to 0 if omitted or NaN in argument', function() {
                 var noNum = labs.parseHash('#/selecting');
+                expect(noNum.exercise).to.be.equal(0);
+                noNum = labs.parseHash('#/selecting/x');
                 expect(noNum.exercise).to.be.equal(0);
             });
 

@@ -13,7 +13,7 @@ define(['jquery', 'exercises'], function($, Exercises) {
             hash = hash.split('/');
             return {
                 category: hash[1],
-                exercise: parseInt( (hash[2] || 0), 10 ),
+                exercise: parseInt((hash[2]), 10) || 0
             };
         }
 
