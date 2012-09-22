@@ -1,8 +1,10 @@
-define(['jquery', 'exercises'], function($, Exercises) {
+define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
     "use strict";
 
     function Labs() {
+        this.collection = new Exercises();
+        this.appview = new AppView();
         this.currentCategory = '';
         this.currentExercise = null;
     }

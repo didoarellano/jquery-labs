@@ -1,10 +1,22 @@
-define(['labs'], function(Labs) {
+define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
     /*global describe, it, expect*/
 
     "use strict";
 
     describe('Labs controller', function() {
         var labs = new Labs();
+
+        describe('On instantiation', function() {//-v-
+
+            it('should instantiate an Exercises object', function() {
+                expect(labs.collection).to.be.an.instanceof(Exercises);
+            });
+
+            it('should instantiate an AppView object', function() {
+                expect(labs.appview).to.be.an.instanceof(AppView);
+            });
+
+        });//-^-
 
         describe('#parseHash method', function() {//-v-
 
