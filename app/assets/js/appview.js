@@ -11,11 +11,17 @@ define(['jquery'], function($) {
 
     AppView.prototype = {
 
-        gotoExercise: function() {},
+        gotoExercise: function() {
+            console.log('AppView#gotoExercise');
+        },
 
-        gotoIndex: function() {},
+        gotoIndex: function() {
+            console.log('AppView#gotoIndex');
+        },
 
-        resizeViewPort: function() {}
+        resizeViewPort: function() {
+            console.log('AppView#resizeViewPort');
+        }
 
     };
 
