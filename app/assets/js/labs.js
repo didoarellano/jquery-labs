@@ -2,12 +2,12 @@ define(['jquery', 'exercises'], function($, Exercises) {
 
     "use strict";
 
-    function Labs() {}
+    function Labs() {
+        this.currentCategory = '';
+        this.currentExercise = null;
+    }
 
     Labs.prototype = {
-
-        currentCategory: '',
-        currentExercise: null,
 
         parseHash: function(hash) {
             hash = hash.split('/');
