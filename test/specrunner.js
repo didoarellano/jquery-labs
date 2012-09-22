@@ -22,7 +22,8 @@
     var specs = [
         '/test/spec/test-exercise.js',
         '/test/spec/test-exercises.js',
-        '/test/spec/test-labs.js'
+        '/test/spec/test-labs.js',
+        '/test/spec/test-appview.js'
     ];
 
     mocha.setup('bdd');
