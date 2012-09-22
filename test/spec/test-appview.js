@@ -21,12 +21,6 @@ define(['appview'], function(AppView) {
             });
         });
 
-        describe('#resizeViewPort method', function() {
-            it('should exist', function() {
-                expect(appview.resizeViewPort).to.be.a('function');
-            });
-        });
-
     });
 
 });

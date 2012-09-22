@@ -13,10 +13,6 @@ define(['jquery'], function($) {
 
         slideTo: function(section) {
             this.body.className = 'on' + section;
-        },
-
-        resizeViewPort: function() {
-            console.log('AppView#resizeViewPort');
         }
 
     };
