@@ -1,30 +1,23 @@
-/* Back to index nav *//*-v-*/
-nav.back {
-  width: 100%;
-  height: 10px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #bbb;
-  background: rgba(0,0,0,0.2);
-  text-align: left;
-  z-index: 100;
+/* Styles for the sliding container *//*-v-*/
+.container {
+  width: 200%;
+  position: relative;
 }
-.back a {
-  padding: 0 10px 5px;
-  margin: 10px;
-  display: inline-block;
-  font-size: 10px;
-  border-bottom-left-radius:   4px;
-  border-bottom-right-radius:  4px;
-  background: #bbb;
-  background: rgba(0,0,0,0.2);
-  color: #222;
-}
-.index nav.back {
-  display: none;
+.index, .exercise {
+  width: 50%;
+  float: left;
+  -webkit-transition: height 0.2s;
 }
 /*-^-*/
+/* Index section *//*-v-*/
+.index {
+  text-align: center;
+}
+.index h1 {
+  padding-top: 60px;
+  margin: 0;
+  font-size: 80px;
+}
 /* Category list *//*-v-*/
 .categories {
   margin: 60px 0;
@@ -52,10 +45,68 @@ nav.back {
   text-decoration: none;
 }
 /*-^-*/
+
+/*-^-*/
+/* Exercise section *//*-v-*/
+.exercise {
+  position: relative;
+}
+/* Back to index nav *//*-v-*/
+/* TODO: Make it slideToggle on transitions */
+.back {
+  width: 100%;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #bbb;
+  background: rgba(0,0,0,0.2);
+  text-align: left;
+  z-index: 100;
+
+  -webkit-transition: all 0.2s;
+  opacity: 1;
+}
+.onindex .back {
+  opacity: 0;
+}
+
+.back a {
+  padding: 0 10px 5px;
+  margin: 10px;
+  display: inline-block;
+  font-size: 10px;
+  border-bottom-left-radius:   4px;
+  border-bottom-right-radius:  4px;
+  background: #bbb;
+  background: rgba(0,0,0,0.2);
+  color: #222;
+}
+/*-^-*/
+/* Live/Code views *//*-v-*/
+.view {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #f6f6f6;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+}
+.view div {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+/*-^-*/
 /* Tabs *//*-v-*/
 .tabs {
   margin: 0;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
   display: none;
 }
 .tabs li {
@@ -66,110 +117,37 @@ nav.back {
 .tabs a {
   height: 25px;
   padding: 10px;
-  border: 1px solid #ccc;
   display: block;
   position: relative;
   color: #444;
   background: #ddd;
   text-shadow: -1px 1px 1px #fff;
   z-index: 10;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.tabs li:first-child a {
+  border-left-color: transparent;
+}
+.tabs li:last-child a {
+  border-right-color: transparent;
 }
 .tabs a:hover {
   text-decoration: none;
 }
-.tabs li:first-child a {
-  border-top-left-radius: 2px;
-}
-.tabs li:last-child a {
-  border-top-right-radius: 2px;
-}
 .tabs a.current {
-  height: 26px;
-  border-bottom: none;
   background: #f6f6f6;
   text-shadow: -1px 1px 1px #eee;
-}
-/*-^-*/
-/* Index page *//*-v-*/
-body.index {
-  box-shadow: inset 0 0 0 10px rgba(0,0,0,0.2);
-  text-align: center;
-}
-.index h1 {
-  padding-top: 60px;
-  margin: 0;
-  font-size: 80px;
-}
-/*-^-*/
-
-/* Exercise container *//*-v-*/
-/* TODO: Go back to this once there's real exercises being loaded. */
-#exercise {
-  height: 400px;
-  border: 1px solid #ccc;
-  position: relative;
-  border-radius: 2px;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-}
-.iframe, .codeview {
-  width: 50%;
-  height: 100%;
-  float: left;
-  background: #f6f6f6;
-}
-/*-^-*/
-/* #cmd line *//*-v-*/
-#cmd {
-  max-width: 520px;
-  margin: -60px auto 30px;
-}
-#cmd label {
-  display: block;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  background: #f6f6f6;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-  font-size: 14px;
-}
-#cmd input, #cmd-context {
-  font-family: monospace;
-}
-#cmd input {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  display: inline-block;
-
-  /* Setting width per exercise will need to be done in JS. */
-  width: 130px;
-}
-#cmd input:focus {
-  outline: none;
-}
-#cmd button {
-  width: 90px;
-  padding: 8px 25px;
-  font-size: 14px;
-  margin: 15px auto;
-  display: block;
-}
-
-.selecting #cmd input {
-  width: 100%;
-  text-align: center;
-}
-.selecting #cmd-context {
-  display: none;
+  border-color: transparent;
 }
 /*-^-*/
 /* Exercise progress and controls *//*-v-*/
 .progress {
+  padding: 5px;
   text-align: right;
   font-size: 12px;
   font-family: monospace;
   font-style: italic;
-  padding: 5px;
 }
 .controls {
   text-align: center;
@@ -178,7 +156,53 @@ body.index {
   display: inline-block;
 }
 .controls select {
-  font-size: 10px;
   margin: 0 20px;
+  font-size: 10px;
 }
+/*-^-*/
+/* .command line *//*-v-*/
+.command {
+  max-width: 520px;
+  margin: -60px auto 30px;
+}
+.command label {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #f6f6f6;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+.command input, .command .context {
+  font-family: monospace;
+}
+.command input {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+
+  /* Setting width per exercise will need to be done in JS. */
+  width: 130px;
+}
+.command input:focus {
+  outline: none;
+}
+.command button {
+  width: 90px;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin: 15px auto;
+  display: block;
+}
+
+/* .selecting .command input { */
+  /* width: 100%; */
+  /* text-align: center; */
+/* } */
+/* .selecting .command-context { */
+  /* display: none; */
+/* } */
+/*-^-*/
 /*-^-*/

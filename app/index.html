@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/vendor/modernizr.js"></script>
   </head>
-  <body class="index">
+  <body class="onindex">
     <!--[if lt IE 7]>
     <p class="chromeframe">
       You are using an outdated browser.
@@ -22,23 +22,80 @@
     </p>
     <![endif]-->
 
-    <nav class="back">
-      <a href="index.html">&laquo Back to Index</a>
-    </nav>
+    <div class="container clearfix">
 
-    <section class="row">
+      <div class="index">
+        <section class="row">
+          <h1>jQuery Labs</h1>
+          <h2>Lorem ipsum key concepts dolor sit amet practice, understand, and stuff</h2>
 
-      <h1>jQuery Labs</h1>
-      <h2>Lorem ipsum key concepts dolor sit amet practice, understand, and stuff</h2>
+          <ul class="categories">
+            <li><a href="#/selecting">Selecting Elements</a></li>
+            <li><a href="#/traversing">Traversing Methods</a></li>
+            <li><a href="#/filtering">Filtering Methods</a></li>
+            <li><a href="#/inserting">Inserting Methods</a></li>
+          </ul>
+        </section>
+      </div>
 
-      <ul class="categories">
-        <li><a href="#/selecting">Selecting Elements</a></li>
-        <li><a href="#/traversing">Traversing Methods</a></li>
-        <li><a href="#/filtering">Filtering Methods</a></li>
-        <li><a href="#/inserting">Inserting Methods</a></li>
-      </ul>
+      <div class="exercise clearfix">
+        <nav class="back">
+          <a href="#">&laquo Back to Index</a>
+        </nav>
 
-    </section>
+        <section class="row">
+          <h1 id="instructions">This what you should do.</h1>
+
+          <div class="view clearfix">
+            <ul class="tabs clearfix">
+              <li><a class="current" href="#live">Live</a></li>
+              <li><a href="#code">Code</a></li>
+            </ul>
+
+            <div>
+              <iframe id="sandbox" src="sandbox.html" scrolling="no"></iframe>
+            </div>
+            <div>
+              <pre><code></code></pre>
+            </div>
+          </div>
+
+          <div class="progress">
+            <!-- <strong>4</strong> <small>of</small> <strong>16</strong> -->
+            <strong>moisture is the essence</strong> <small>of</small> <strong>wetness</strong>
+          </div>
+        </section>
+
+        <form class="command row">
+          <label>
+            <code class="context">$('.tabs li')</code>
+            <input type="text" tabindex="1" placeholder=".methodName()">
+          </label>
+          <button type="submit">Run</button>
+        </form>
+
+        <section class="row controls">
+          <button>Prev</button>
+          <div>
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+          <button>Next</button>
+        </section>
+
+      </div>
+
+    </div>
 
     <footer class="row">
       <p>
