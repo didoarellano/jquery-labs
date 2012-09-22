@@ -23,20 +23,11 @@ define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
                 data: { hash: '' }
             };
 
-            function Faker() {
-                function fn() {
-                    fn.called = true;
-                    fn.args = Array.prototype.slice.call(arguments);
-                }
-                fn.called = false;
-                return fn;
-            }
-
             describe('Case: hash.category doesn\'t exist', function() {//-v-
 
                 it('should call AppView#gotoIndex', function() {
                     fakeEvt.data.hash = '';
-                    var gotoIndex = new Faker();
+                    var gotoIndex = new FnFaker();
 
                     labs.appview.gotoIndex = gotoIndex;
 
@@ -48,8 +39,8 @@ define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
 
             describe('Case: hash.category is not the current category', function() {//-v-
 
-                var fetch = new Faker();
-                var gotoExercise = new Faker();
+                var fetch = new FnFaker();
+                var gotoExercise = new FnFaker();
 
                 labs.collection.fetch = fetch;
                 labs.appview.gotoExercise = gotoExercise;
@@ -79,8 +70,8 @@ define(['labs', 'exercises', 'appview'], function(Labs, Exercises, AppView) {
                 labs.currentCategory = 'selecting';
                 labs.collection.filtering = {};
 
-                var fetch = new Faker();
-                var gotoExercise = new Faker();
+                var fetch = new FnFaker();
+                var gotoExercise = new FnFaker();
 
                 labs.collection.fetch = fetch;
                 labs.appview.gotoExercise = gotoExercise;
