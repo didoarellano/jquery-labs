@@ -35,7 +35,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
             if (!category) {
 
-                this.appview.gotoIndex();
+                this.appview.slideTo('index');
                 return;
 
             } else if (this.currentCategory === category) {
@@ -45,7 +45,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             } else if (this.collection[category]) {
 
                 // category has already been loaded and instatiated
-                this.appview.gotoExercise();
+                this.appview.slideTo('exercise');
 
             } else {
 
@@ -58,7 +58,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
                     }
                 );
 
-                this.appview.gotoExercise();
+                this.appview.slideTo('exercise');
 
             }
 

@@ -25,14 +25,15 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
 
             describe('Case: hash.category doesn\'t exist', function() {//-v-
 
-                it('should call AppView#gotoIndex', function() {
+                it('should call AppView#slideTo(\'index\')', function() {
                     fakeEvt.data.hash = '';
-                    var gotoIndex = new FnFaker();
+                    var slideTo = new FnFaker();
 
-                    labs.appview.gotoIndex = gotoIndex;
+                    labs.appview.slideTo = slideTo;
 
                     labs.onHashChange(fakeEvt);
-                    expect(gotoIndex.called).to.be.true;
+                    expect(slideTo.called).to.be.true;
+                    expect(slideTo.args[0]).to.be.equal('index');
                 });
 
             });//-^-
@@ -40,10 +41,10 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
             describe('Case: hash.category is not the current category', function() {//-v-
 
                 var fetch = new FnFaker();
-                var gotoExercise = new FnFaker();
+                var slideTo = new FnFaker();
 
                 labs.collection.fetch = fetch;
-                labs.appview.gotoExercise = gotoExercise;
+                labs.appview.slideTo = slideTo;
 
                 labs.currentCategory = 'selecting';
                 fakeEvt.data.hash = '#/traversing';
@@ -59,8 +60,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     }
                 });
 
-                it('should call AppView#gotoExercise', function() {
-                    expect(gotoExercise.called).to.be.true;
+                it('should call AppView#slideTo(\'exercise\')', function() {
+                    expect(slideTo.called).to.be.true;
+                    expect(slideTo.args[0]).to.be.equal('exercise');
                 });
 
             });//-^-
@@ -71,10 +73,10 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 labs.collection.filtering = {};
 
                 var fetch = new FnFaker();
-                var gotoExercise = new FnFaker();
+                var slideTo = new FnFaker();
 
                 labs.collection.fetch = fetch;
-                labs.appview.gotoExercise = gotoExercise;
+                labs.appview.slideTo = slideTo;
 
                 fakeEvt.data.hash = '#/filtering';
                 labs.onHashChange(fakeEvt);
@@ -83,8 +85,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(fetch.called).to.be.false;
                 });
 
-                it('should call AppView#gotoExercise', function() {
-                    expect(gotoExercise.called).to.be.true;
+                it('should call AppView#slideTo(\'exercise\')', function() {
+                    expect(slideTo.called).to.be.true;
+                    expect(slideTo.args[0]).to.be.equal('exercise');
                 });
 
             });//-^-

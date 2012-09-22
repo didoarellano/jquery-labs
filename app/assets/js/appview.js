@@ -11,12 +11,8 @@ define(['jquery'], function($) {
 
     AppView.prototype = {
 
-        gotoExercise: function() {
-            console.log('AppView#gotoExercise');
-        },
-
-        gotoIndex: function() {
-            console.log('AppView#gotoIndex');
+        slideTo: function(section) {
+            this.body.className = 'on' + section;
         },
 
         resizeViewPort: function() {

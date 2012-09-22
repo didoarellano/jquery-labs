@@ -15,15 +15,9 @@ define(['appview'], function(AppView) {
             expect(appview.$exercise).to.exist;
         });
 
-        describe('#gotoExercise method', function() {
+        describe('#slideTo method', function() {
             it('should exist', function() {
-                expect(appview.gotoExercise).to.be.a('function');
-            });
-        });
-
-        describe('#gotoIndex method', function() {
-            it('should exist', function() {
-                expect(appview.gotoIndex).to.be.a('function');
+                expect(appview.slideTo).to.be.a('function');
             });
         });
 
