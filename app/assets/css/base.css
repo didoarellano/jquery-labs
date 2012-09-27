@@ -8,11 +8,9 @@ body {
   padding: 0;
   font-size: 16px;
   line-height: 1.5;
+  color: #444;
   overflow: hidden;
   position: relative;
-}
-.container, footer {
-  color: #444;
 }
 
 ul {
@@ -35,7 +33,7 @@ footer {
 }
 
 /* Buttons *//*-v-*/
-button {
+button, .button {
   padding: 5px 25px;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
@@ -50,25 +48,20 @@ button {
   text-shadow: -1px 1px 1px #ffffff;
   position: relative;
 }
-button:hover, button:focus {
+button:hover, button:focus,
+.button:hover, .button:focus {
+  text-decoration: none;
   background: #ccc;
   background: -webkit-linear-gradient(top, #ccc, #eee);
   background: -moz-linear-gradient(top, #ccc, #eee);
   background: linear-gradient(top, #ccc, #eee);
   box-shadow: inset 0px 1px 0px 0px #eee;
 }
-button:active {
+button:active,
+.button:active {
   top: 1px;
 }
 /*-^-*/
-
-.row {
-  width: 90%;
-  margin: 0 auto 60px;
-}
-.row h1 {
-  text-align: center;
-}
 
 .clearfix:before, .clearfix:after {
   content: " ";

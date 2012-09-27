@@ -24,8 +24,8 @@
 
     <div class="container clearfix">
 
-      <div class="index">
-        <section class="row">
+      <section class="index"><!---v--->
+        <div>
           <h1>jQuery Labs</h1>
           <h2>Lorem ipsum key concepts dolor sit amet practice, understand, and stuff</h2>
 
@@ -35,45 +35,33 @@
             <li><a href="#/filtering">Filtering Methods</a></li>
             <li><a href="#/inserting">Inserting Methods</a></li>
           </ul>
-        </section>
-      </div>
 
-      <div class="exercise clearfix">
+          <footer>
+            <p>
+              A <a href="http://www.didoarellano.com">Dido Arellano</a> &amp;
+              <a href="http://semicolonstudios.com"><b>Semicolon</b><i>Studios</i></a>
+              shindig.
+            </p>
+            <small>forever beta</small>
+          </footer>
+        </div>
+      </section><!---^--->
 
-        <section class="row">
-          <h1 id="instructions">This what you should do.</h1>
+      <div class="sidebar"><!---v--->
 
-          <div class="view clearfix">
-            <ul class="tabs clearfix">
-              <li><a class="current" href="#live">Live</a></li>
-              <li><a href="#code">Code</a></li>
-            </ul>
+        <a href="#" class="back">&laquo Back to Index</a>
 
-            <div>
-              <iframe id="sandbox" src="assets/exercises/sandbox.html" scrolling="no"></iframe>
-            </div>
-            <div>
-              <pre><code></code></pre>
-            </div>
-          </div>
+        <div class="instructions">
+          <h2>This is what you should do.</h2>
+          <p>Write another stubbing and mocking library? There are already a few out there, and several testing libraries ship with built-in stubs and mocks. I originally wrote Sinon for the book, with the intention of using it for one of the "TDD by example" chapters.</p>
+        </div>
+
+        <div class="controls">
+
+          <button type="prev">Prev</button>
+          <button type="next">Next</button>
 
           <div class="progress">
-            <!-- <strong>4</strong> <small>of</small> <strong>16</strong> -->
-            <strong>moisture is the essence</strong> <small>of</small> <strong>wetness</strong>
-          </div>
-        </section>
-
-        <form class="command row">
-          <label>
-            <code class="context">$('.tabs li')</code>
-            <input type="text" tabindex="1" placeholder=".methodName()">
-          </label>
-          <button type="submit">Run</button>
-        </form>
-
-        <section class="row controls">
-          <button>Prev</button>
-          <div>
             <select>
               <option>1</option>
               <option>2</option>
@@ -86,26 +74,78 @@
               <option>9</option>
               <option>10</option>
             </select>
+
+            <!-- <p> -->
+              <!-- <strong>4</strong> -->
+              <!-- <small>of</small> -->
+              <!-- <strong>16</strong> -->
+              <!-- </p> -->
+
+            <p>
+              <strong>moisture is the essence</strong>
+              <small>of</small>
+              <strong>wetness</strong>
+            </p>
           </div>
-          <button>Next</button>
+
+        </div>
+
+        <a class="button" id="toggletype" href="#">Toggle Exercise Type</a>
+
+        <footer>
+          <p>
+            A <a href="http://www.didoarellano.com">Dido Arellano</a> &amp;
+            <a href="http://semicolonstudios.com"><b>Semicolon</b><i>Studios</i></a>&nbsp;shindig.
+          </p>
+          <small>forever beta</small>
+        </footer>
+      </div><!---^--->
+
+      <section class="exercise"><!---v--->
+
+        <section class="startscreen">
+          <div>
+            <h1>Selecting Elements</h1>
+            <p>So, why write another stubbing and mocking library? There are already a few out there, and several testing libraries ship with built-in stubs and mocks. I originally wrote Sinon for the book, with the intention of using it for one of the "TDD by example" chapters. That didn't happen, but I still used it as an example of using a library for stubbing and mocking (as opposed to manual stubbing, which works for most simple use cases).</p>
+            <ul>
+              <li><b>Standalone</b> There's no reason to tie stubbing and mocking to a specific testing library. Granted, some aspects can be automated when doing so, but such integration can be provided for standalone libraries as well.</li>
+              <li><b>Minimal global footprint</b> The test environment is the last environment you want massive global pollution. The stub and mock API should live within a single object.</li>
+              <li><b>Easy to use</b> That's probably a given, but some of the mocking solutions I've seen requires unnecessary amounts of scaffolding to get going.</li>
+            </ul>
+          </div>
+          <a class="button" href="#/selecting/0">Start</a>
         </section>
 
-      </div>
+        <div class="clearfix views">
+
+          <nav class="labels">
+            <a href="#live" class="current">Live</a>
+            <a href="#code">Code</a>
+          </nav>
+
+          <div class="live">
+            <iframe src="assets/exercises/sandbox.html"></iframe>
+          </div>
+
+          <div class="code">
+            <pre class="cm-s-default"></pre>
+          </div>
+
+          <form class="editor"></form>
+
+          <form class="command">
+            <label>
+              <code class="context">$('.tabs li')</code>
+              <input type="text" tabindex="1" placeholder=".methodName()">
+            </label>
+            <!-- <button type="submit">Run</button> -->
+          </form>
+
+        </div>
+
+      </section><!---^--->
 
     </div>
-
-    <nav class="back">
-      <a href="#">&laquo Back to Index</a>
-    </nav>
-
-    <footer class="row">
-      <p>
-        A <a href="http://www.didoarellano.com">Dido Arellano</a> &amp;
-        <a href="http://semicolonstudios.com"><b>Semicolon</b><i>Studios</i></a>
-        shindig.
-      </p>
-      <small>forever beta</small>
-    </footer>
 
     <script data-main="assets/js/main" src="assets/js/vendor/require.js"></script>
 
