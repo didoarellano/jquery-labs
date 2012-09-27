@@ -1,0 +1,349 @@
+/* Sidebar *//*-v-*/
+.sidebar {
+  width: 200px;
+
+  /* Height will be set via JS */
+
+  padding: 0 20px;
+  border-left: 1px solid #ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f6f6f6;
+  box-shadow: -1px 1px 10px rgba(0,0,0,0.1);
+  z-index: 50;
+}
+.back, .progress {
+  font-size: 75%;
+}
+.back {
+  display: inline-block;
+  padding-top: 20px;
+}
+.progress {
+  margin: 15px 0;
+}
+.progress p {
+  margin: 5px 0;
+  text-align: center;
+}
+.controls {
+  text-align: center;
+}
+.controls button {
+  margin: 0 5px;
+}
+.sidebar footer {
+  position: absolute;
+  bottom: 20px;
+}
+/*-^-*/
+
+/* Index section *//*-v-*/
+.index div {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.index h1 {
+  padding-top: 60px;
+  margin: 0;
+  font-size: 80px;
+}
+/* Category list *//*-v-*/
+.categories {
+  margin: 60px 0;
+}
+.categories a {
+  max-width: 200px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  margin: 0 auto 10px auto;
+  display: block;
+  border-radius: 2px;
+  background: #f6f6f6;
+  color: #666;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  -moz-transition:     all 0.2s;
+  -webkit-transition:  all 0.2s;
+  -o-transition:       all 0.2s;
+  -ms-transition:      all 0.2s;
+  transition:          all 0.2s;
+}
+.categories a:hover, .categories a:focus {
+  background: rgba(0,0,0,0.6);
+  color: #eee;
+  outline: none;
+  text-decoration: none;
+}
+/*-^-*/
+
+/*-^-*/
+
+/* Exercise section *//*-v-*/
+
+.exercise {}
+
+/* Start screen *//*-v-*/
+.startscreen {
+  width: 90%;
+  max-width: 800px;
+  margin: 80px auto;
+}
+.startscreen div {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #f6f6f6;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+}
+.startscreen h1 {
+  margin: 10px 0 0;
+  text-align: center;
+}
+.startscreen .button {
+  width: 100px;
+  text-align: center;
+  padding: 10px 15px;
+  margin: 30px auto 0;
+  display: block;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+/*-^-*/
+
+/* Exercise views *//*-v-*/
+.views {
+  position: relative;
+}
+.views .live, .views .code {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+.live:before {
+  content: '';
+  width: 1px;
+  height: 100%;
+  border: 1px solid #f6f6f6;
+  border-top: none;
+  border-bottom: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #bbb;
+  z-index: 10;
+}
+.live iframe, .code pre {
+  width: 96%;
+  height: 97%;
+  padding: 3% 2% 0;
+  margin: 0;
+  position: relative;
+  background: #eee;
+}
+.views iframe {
+  border: none;
+}
+/*-^-*/
+
+/* Floating labels and nav links *//*-v-*/
+.live:after {
+  content: 'Live';
+}
+.code:after {
+  content: 'Code';
+}
+.live:after, .code:after,
+.labels a {
+  width: 50px;
+  padding: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #f6f6f6;
+  font-size: 75%;
+  text-align: center;
+  font-family: monospace;
+  opacity: 0.7;
+  color: #444;
+  z-index: 10;
+}
+
+.labels {
+  position: absolute;
+  right: 50%;
+  z-index: 50;
+  margin: 15px 20px;
+  box-shadow: -1px 1px 5px rgba(0,0,0,0.1);
+}
+.labels a {
+  position: static;
+  float: left;
+  border-radius: 0px;
+}
+.labels a:first-child {
+  border-right: none;
+}
+.labels a:hover {
+  text-decoration: none;
+  background: #eee;
+}
+.labels .current, .labels .current:hover {
+  background: #ddd;
+  cursor: default;
+}
+/*-^-*/
+
+/* Command line *//*-v-*/
+.command {
+  width: 400px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 50;
+}
+.command label {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: #f6f6f6;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  font-size: 14px;
+  -webkit-transition: all 0.2s;
+}
+.error label {
+  background: #b94a48;
+  color: #eee;
+}
+.error input {
+  color: #eee;
+}
+.command input, .command .context {
+  font-family: monospace;
+}
+.command input {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+
+  /* Setting width per exercise will need to be done in JS. */
+  width: 130px;
+}
+.command input:focus {
+  outline: none;
+}
+
+.error {
+  -webkit-animation: shake 0.1s 3;
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate3d(5px, 0, 0);
+  }
+  33% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+  }
+}
+
+/*-^-*/
+
+/* Codemirror editor *//*-v-*/
+.editor {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+/* CodeMirror default style overrides */
+.CodeMirror {
+  height: 100%;
+  line-height: 1.5;
+}
+.CodeMirror-scroll {
+  height: 100%;
+}
+
+/*-^-*/
+
+/*-^-*/
+
+/* Sliding container transitions *//*-v-*/
+.container {
+  width: 200%;
+  -webkit-transition:  all 0.4s;
+  -moz-transition:     all 0.4s;
+  position: relative;
+}
+.index, .exercise {
+  width: 50%;
+  float: left;
+}
+.onindex .container {
+  -webkit-transform:  translate3d(0, 0, 0);
+  -moz-transform:     translate3d(0, 0, 0);
+}
+.onexercise .container {
+  -webkit-transform:  translate3d(-50%, 0, 0);
+  -moz-transform:     translate3d(-50%, 0, 0);
+}
+/*-^-*/
+
+/* Exercise pop and sidebar slide in transitions *//*-v-*/
+.started .startscreen, .views {
+  display: none;
+}
+.started .views {
+  display: block;
+}
+
+.sidebar {
+  -webkit-transition:  all 0.2s;
+  -moz-transition:     all 0.2s;
+  -webkit-transform:  translate3d(240px, 0, 0);
+  -moz-transform:     translate3d(240px, 0, 0);
+}
+.sidebar.show {
+  -webkit-transform:  translate3d(0px, 0, 0);
+  -moz-transform:     translate3d(0px, 0, 0);
+}
+/*-^-*/
+
+/* Command line / Codemirror exercise type switch *//*-v-*/
+.labels {
+  display: none;
+}
+.editor {
+  display: none;
+}
+
+.codemirror .command {
+  display: none;
+}
+.codemirror .code {
+  display: none;
+}
+.codemirror .live:after, .codemirror .code:after {
+  display: none;
+}
+.codemirror .live, .codemirror .code {
+  position: absolute;
+  left: 0;
+}
+
+.codemirror .labels {
+  display: block;
+}
+.codemirror .editor {
+  display: block;
+}
+/*-^-*/

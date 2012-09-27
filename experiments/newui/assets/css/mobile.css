@@ -1,0 +1,19 @@
+.index h1 {
+  font-size: 60px;
+}
+nav.back {
+  position: absolute;
+}
+
+/* TODO: Move this to a wider breakpoint */
+.tabs {
+  display: block;
+}
+.view div {
+  width: 100%;
+  position: absolute;
+}
+
+.command input, .command .context {
+  font-size: 12px;
+}
