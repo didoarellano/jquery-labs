@@ -5,7 +5,7 @@ define(['appview'], function(AppView) {
 
     // Learn how to test DOM-tied shit and come back to this.
 
-    describe('Main App View', function() {
+    describe.only('Main App View', function() {
         var appview = new AppView();
 
         it('should cache selectors on instantiation', function() {
@@ -13,11 +13,18 @@ define(['appview'], function(AppView) {
             expect(appview.$container).to.exist;
             expect(appview.$index).to.exist;
             expect(appview.$exercise).to.exist;
+            expect(appview.$startScreens).to.exist;
         });
 
         describe('#slideTo method', function() {
             it('should exist', function() {
                 expect(appview.slideTo).to.be.a('function');
+            });
+        });
+
+        describe('#toggleStartScreen method', function() {
+            it('should exist', function() {
+                expect(appview.toggleStartScreen).to.be.a('function');
             });
         });
 
