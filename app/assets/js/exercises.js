@@ -26,9 +26,9 @@ define(['jquery', 'exercise'], function($, Exercise) {
             };
         },
 
-        fetch: function(category, configPath, cb) {
+        fetch: function(category, configPath) {
 
-            $.ajax({
+            return $.ajax({
                 context: this,
                 url: configPath,
                 dataType: 'xml',
@@ -46,7 +46,6 @@ define(['jquery', 'exercise'], function($, Exercise) {
                 }
 
                 this.add(category, configs);
-                cb();
             }
 
         },

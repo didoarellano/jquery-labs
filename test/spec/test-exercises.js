@@ -1,4 +1,4 @@
-define(['exercises', 'exercise'], function(Exercises, Exercise) {
+define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
     /*global describe, beforeEach, it, expect*/
 
     "use strict";
@@ -71,24 +71,35 @@ define(['exercises', 'exercise'], function(Exercises, Exercise) {
         describe('#fetch method', function() {//-v-
 
             var collection;
+            var dfd;
 
             beforeEach(function() {
                 collection = new Exercises();
+                dfd = collection.fetch('filtering', 'fixtures/test-exercises-fetch.xml');
+            });
+
+            it('should return a jQuery deferred object', function(done) {
+                // replace this with a chai deferred plugin when you get DSL
+                // back.
+                expect(dfd.done).to.be.a('function');
+                done();
             });
 
             it('should create a category with Exercise objects instatiated from the xml config', function(done) {
-                collection.fetch('filtering', 'fixtures/test-exercises-fetch.xml', function() {
-                    var first = collection.filtering.exercises[0];
-                    var second = collection.filtering.exercises[1];
+                dfd.done(
+                    function() {
+                        var first = collection.filtering.exercises[0];
+                        var second = collection.filtering.exercises[1];
 
-                    expect(collection).to.contain.key('filtering');
-                    expect(collection.filtering.exercises).to.be.an('array').and.have.length(2);
+                        expect(collection).to.contain.key('filtering');
+                        expect(collection.filtering.exercises).to.be.an('array').and.have.length(2);
 
-                    expect(first).to.be.an.instanceof(Exercise);
-                    expect(second).to.be.an.instanceof(Exercise);
+                        expect(first).to.be.an.instanceof(Exercise);
+                        expect(second).to.be.an.instanceof(Exercise);
 
-                    done();
-                });
+                        done();
+                    }
+                );
             });
 
         });//-^-
