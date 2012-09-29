@@ -41,6 +41,12 @@ define(['appview'], function(AppView) {
             });
         });
 
+        describe('#setDimensions method', function() {
+            it('should exist', function() {
+                expect(appview.setDimensions).to.be.a('function');
+            });
+        });
+
     });
 
 });

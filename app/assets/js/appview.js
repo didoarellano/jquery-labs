@@ -3,10 +3,12 @@ define(['jquery'], function($) {
     "use strict";
 
     function AppView() {
+        this.$window = $(window);
         this.body = document.body;
         this.$container = $('.container');
         this.$index = this.$container.find('.index');
         this.$exercise = this.$container.find('.exercise');
+        this.$views = this.$exercise.find('.views');
         this.$sidebar = this.$container.find('.sidebar');
         this.$startScreens = this.$exercise.find('.startscreen article');
         this.$visibleStartScreen = $([]);
@@ -34,6 +36,17 @@ define(['jquery'], function($) {
         endExercise: function() {
             this.$exercise.removeClass('started');
             this.$sidebar.removeClass('show');
+        },
+
+        setDimensions: function() {
+            this.sideBarWidth = this.sideBarWidth || this.$sidebar.innerWidth();
+            var dimensions = {
+                width:  this.$window.width() - this.sideBarWidth,
+                height: this.body.offsetHeight
+            };
+
+            this.$sidebar.height(dimensions.height);
+            this.$views.css(dimensions);
         }
 
     };
