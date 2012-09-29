@@ -40,7 +40,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
 
             describe('Case: hash.category is not the current category', function() {//-v-
 
-                var fetch = new FnFaker();
+                var fetch = new FnFaker({
+                    done: function() {}
+                });
                 var slideTo = new FnFaker();
 
                 labs.collection.fetch = fetch;
