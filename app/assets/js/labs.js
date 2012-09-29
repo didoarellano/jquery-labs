@@ -22,11 +22,24 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
         },
 
         attachListeners: function() {
+            var self = this;
+
             this.$window.on(
                 'hashchange',
                 window.location,
                 $.proxy(this.onHashChange, this)
             ).trigger('hashchange');
+
+            this.appview.$exercise.on(
+                'click',
+                'a.button',
+                function(e) {
+                    e.preventDefault();
+                    var hash = '/' + self.currentCategory;
+                    hash += '/' + self.currentExercise;
+                    window.location.hash = hash;
+                }
+            );
         },
 
         onHashChange: function(evt) {

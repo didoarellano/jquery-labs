@@ -124,13 +124,22 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
         describe('#attachListeners method', function() {//-v-
             var labs = new Labs();
             var $window = $(window);
+            var $exercise = $(document.createElement('div'));
 
             labs.$window = $window;
+            labs.appview.$exercise = $exercise;
             labs.attachListeners();
 
             it('should bind a hashchange event listener to the window', function() {
                 var events = $._data(window, 'events');
                 expect(events.hashchange).to.exist;
+            });
+
+            it('should delegate clicks on a.button elements to appview.$exercise', function() {
+                var events = $._data(labs.appview.$exercise[0], 'events');
+                var click = events.click;
+                expect(click.delegateCount).to.be.greaterThan(0);
+                expect(click[0].selector).to.be.equal('a.button');
             });
         });//-^-
 
