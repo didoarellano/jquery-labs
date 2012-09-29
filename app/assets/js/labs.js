@@ -32,34 +32,25 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
         onHashChange: function(evt) {
             var hash = this.parseHash(evt.data.hash);
             var category = hash.category;
-            var slideTo = category ? 'exercise' : 'index';
+            var appview = this.appview;
+            var collection = this.collection;
 
-            if (this.currentCategory === category) {
+            if (!category) {
+                appview.slideTo('index');
+                return;
+            }
 
-                // console.log('load new exercise');
+            if (!collection[category]) {
 
-            } else if (this.collection[category]) {
-
-                // category has already been loaded and instatiated
-
-            } else if (category) {
-
-                this.collection.fetch(
+                collection.fetch(
                     category,
-                    'assets/exercises/' + category + '.xml',
-                    function() {
-                        // console.log('set this.currentCategory and this.currentExercise');
-                        // this.currentCategory = category;
-                    }
+                    'assets/exercises/' + category + '.xml'
                 );
 
             }
 
-            if (slideTo === 'exercise') {
-                this.appview.prepareStartScreen(hash);
-            }
-
-            this.appview.slideTo(slideTo);
+            appview.prepareStartScreen(hash);
+            appview.slideTo('exercise');
 
         },
 
