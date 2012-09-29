@@ -143,11 +143,11 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 expect(hash.exercise).to.be.equal(4);
             });
 
-            it('exercise property should default to 0 if omitted or NaN in argument', function() {
+            it('exercise property should be NaN if argument is not a number or missing', function() {
                 var noNum = labs.parseHash('#/selecting');
-                expect(noNum.exercise).to.be.equal(0);
+                expect(isNaN(noNum.exercise)).to.be.true;
                 noNum = labs.parseHash('#/selecting/x');
-                expect(noNum.exercise).to.be.equal(0);
+                expect(isNaN(noNum.exercise)).to.be.true;
             });
 
         });//-^-

@@ -67,7 +67,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             hash = hash.split('/');
             return {
                 category: hash[1],
-                exercise: parseInt((hash[2]), 10) || 0
+                exercise: parseInt((hash[2]), 10)
             };
         }
 
