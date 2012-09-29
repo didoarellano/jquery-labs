@@ -13,31 +13,28 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
         start: function() {
             // Assumes that document is ready.
-            this.cacheSelectors();
             this.appview = new AppView();
             this.attachListeners();
             this.appview.setDimensions();
         },
 
-        cacheSelectors: function() {
-            this.$window = $(window);
-        },
-
         attachListeners: function() {
             var self = this;
+            var appview = this.appview;
+            var $window = appview.$window;
 
-            this.$window.on(
+            $window.on(
                 'hashchange',
                 window.location,
                 $.proxy(this.onHashChange, this)
             ).trigger('hashchange');
 
-            this.$window.on(
+            $window.on(
                 'resize',
                 $.proxy(this.appview.setDimensions, this.appview)
             );
 
-            this.appview.$exercise.on(
+            appview.$exercise.on(
                 'click',
                 'a.button',
                 function(e) {
