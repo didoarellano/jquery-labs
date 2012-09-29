@@ -15,6 +15,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             // Assumes that document is ready.
             this.cacheSelectors();
             this.attachListeners();
+            this.appview.setDimensions();
         },
 
         cacheSelectors: function() {
@@ -29,6 +30,11 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
                 window.location,
                 $.proxy(this.onHashChange, this)
             ).trigger('hashchange');
+
+            this.$window.on(
+                'resize',
+                $.proxy(this.appview.setDimensions, this.appview)
+            );
 
             this.appview.$exercise.on(
                 'click',

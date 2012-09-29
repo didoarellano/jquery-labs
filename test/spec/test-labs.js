@@ -123,9 +123,11 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
             var labs = new Labs();
             var cacheSelectors = new FnFaker();
             var attachListeners = new FnFaker();
+            var setDimensions = new FnFaker();
 
             labs.cacheSelectors = cacheSelectors;
             labs.attachListeners = attachListeners;
+            labs.appview.setDimensions = setDimensions;
 
             labs.start();
 
@@ -136,6 +138,11 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
             it('should call #attachListeners', function() {
                 expect(attachListeners.called).to.be.true;
             });
+
+            it('should call AppView#setDimensions', function() {
+                expect(setDimensions.called).to.be.true;
+            });
+
         });//-^-
 
         describe('#cacheSelectors method', function() {//-v-
@@ -158,6 +165,11 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
             it('should bind a hashchange event listener to the window', function() {
                 var events = $._data(window, 'events');
                 expect(events.hashchange).to.exist;
+            });
+
+            it('should bind a resize event listener to the window', function() {
+                var events = $._data(window, 'events');
+                expect(events.resize).to.exist;
             });
 
             it('should delegate clicks on a.button elements to appview.$exercise', function() {
