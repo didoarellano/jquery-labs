@@ -325,7 +325,15 @@
 }
 /*-^-*/
 
-/* Command line / Codemirror exercise type switch *//*-v-*/
+/* Exercise type switch *//*-v-*/
+/*
+Exercise Type    | className
+-----------------+-------------
+context.method() | 'method'
+$('selectors')   | 'selecting'
+CodeMirror       | 'codemirror'
+*/
+
 .labels {
   display: none;
 }
@@ -345,6 +353,14 @@
 .codemirror .live, .codemirror .code {
   position: absolute;
   left: 0;
+}
+
+.selecting .context {
+  display: none;
+}
+.selecting input {
+  text-align: center;
+  width: 100%;
 }
 
 .codemirror .labels {
