@@ -22,9 +22,9 @@ define(['appview'], function(AppView) {
             });
         });
 
-        describe('#toggleStartScreen method', function() {
+        describe('#prepareStartScreen method', function() {
             it('should exist', function() {
-                expect(appview.toggleStartScreen).to.be.a('function');
+                expect(appview.prepareStartScreen).to.be.a('function');
             });
         });
 

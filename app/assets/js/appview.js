@@ -14,7 +14,7 @@ define(['jquery'], function($) {
 
     AppView.prototype = {
 
-        toggleStartScreen: function(hash) {
+        prepareStartScreen: function(hash) {
             var $startScreen = this.$startScreens.filter(function() {
                 return $(this).data('category') === hash.category;
             });

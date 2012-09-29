@@ -56,7 +56,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             }
 
             if (slideTo === 'exercise') {
-                this.appview.toggleStartScreen(hash);
+                this.appview.prepareStartScreen(hash);
             }
 
             this.appview.slideTo(slideTo);
