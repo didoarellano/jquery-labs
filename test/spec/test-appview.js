@@ -5,7 +5,7 @@ define(['appview'], function(AppView) {
 
     // Learn how to test DOM-tied shit and come back to this.
 
-    describe.only('Main App View', function() {
+    describe('Main App View', function() {
         var appview = new AppView();
 
         it('should cache selectors on instantiation', function() {
