@@ -59,7 +59,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
                 return;
             }
 
-            maybeFetch= $.Deferred().resolve();
+            maybeFetch = $.Deferred().resolve();
 
             if (!collection[category]) {
 
