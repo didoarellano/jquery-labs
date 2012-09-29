@@ -8,7 +8,7 @@ define(['jquery'], function($) {
         this.$index = this.$container.find('.index');
         this.$exercise = this.$container.find('.exercise');
         this.$sidebar = this.$container.find('.sidebar');
-        this.$startScreens = this.$exercise.find('.startscreen > div');
+        this.$startScreens = this.$exercise.find('.startscreen article');
         this.$visibleStartScreen = $([]);
     }
 
