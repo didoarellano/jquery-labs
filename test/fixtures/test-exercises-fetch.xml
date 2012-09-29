@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <exercises>
     <exercise>
-        <instructions>Move $me to the beginning of the section</instructions>
+        <type>method</type>
+        <instructionsheading>Move $me to the beginning of the section</instructionsheading>
         <selector>section</selector>
         <iframehtml>
             <section>
@@ -15,7 +16,8 @@
         </iframehtml>
     </exercise>
     <exercise>
-        <instructions>Select all h2s and ps that are children of a div</instructions>
+        <type>codemirror</type>
+        <instructionsheading>Select all h2s and ps that are children of a div</instructionsheading>
         <selector>div</selector>
         <iframehtml>
             <div>

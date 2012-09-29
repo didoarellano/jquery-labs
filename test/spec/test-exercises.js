@@ -4,10 +4,12 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
     "use strict";
 
     var exers = [
-        { instructions: 'Instruction 1',
+        { type: 'method',
+        instructionsheading: 'Instruction 1',
         selector: '#1',
         iframehtml: '<p>next</p>' },
-        { instructions: 'Instruction 2',
+        { type: 'method',
+        instructionsheading: 'Instruction 2',
         selector: '#2',
         iframehtml: '<p>prev</p>' }
     ];
@@ -39,19 +41,23 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
         });//-^-
 
         describe('#_massageToObject method', function() {//-v-
+            var _type = 'codemirror';
             var _instructions = 'This is what you should do.';
             var _iframehtml = '<div><p>Haych-tee-em-el</p></div>';
             var _selector = '#element';
             var exercise = document.createElement('exercise');
-            var instructions = document.createElement('instructions');
+            var type = document.createElement('type');
+            var instructionsheading = document.createElement('instructionsheading');
             var iframehtml = document.createElement('iframehtml');
             var selector = document.createElement('selector');
 
-            instructions.innerHTML = _instructions;
+            type.innerHTML = _type;
+            instructionsheading.innerHTML = _instructions;
             iframehtml.innerHTML = _iframehtml;
             selector.innerHTML = _selector;
 
-            exercise.appendChild(instructions);
+            exercise.appendChild(type);
+            exercise.appendChild(instructionsheading);
             exercise.appendChild(iframehtml);
             exercise.appendChild(selector);
 
@@ -59,9 +65,10 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
 
             it('should convert a DOM element tree to a JS object', function() {
                 expect(res).to.be.an('object')
-                    .and.include.keys(['instructions', 'iframehtml', 'selector']);
+                    .and.include.keys(['type', 'instructionsheading', 'iframehtml', 'selector']);
 
-                expect(res.instructions).to.be.equal(_instructions);
+                expect(res.type).to.be.equal(_type);
+                expect(res.instructionsheading).to.be.equal(_instructions);
                 expect(res.iframehtml).to.be.equal(_iframehtml);
                 expect(res.selector).to.be.equal(_selector);
             });

@@ -5,21 +5,34 @@ define(['jquery'], function($) {
     function Exercise(config) {
         /*
          *  Properties:
-         *      instructions
+         *      instructionsheading
          *          - Required in config.
-         *          - Will appear as heading in the view.
+         *          - Will appear as heading in the sidebar.
          *      iframehtml
          *          - Required in config.
          *          - This will be inserted into the iframeView's iframe.
-         *      selector
+         *      type
+         *          - Required in config
+         *          - Type will be toggled with a className on .exercise via
+         *            the View object
+         *          - Three types:
+         *              Exercise Type    | property/className
+         *              -----------------+--------------------
+         *              context.method() | 'method'
+         *              $('selectors')   | 'selecting'
+         *              CodeMirror       | 'codemirror'
+         *      instructionstext
          *          - Optional in config.
+         *          - Will appear as paragraphs or any html in the sidebar.
+         *      selector
+         *          - Optional in config. Defaults to null.
          *          - The context which the student's command will be run with.
          *            "Command prefix".
          *      command
          *          - The student's input ("command").
          */
 
-        var requiredProps = ['instructions', 'iframehtml'];
+        var requiredProps = ['type', 'instructionsheading', 'iframehtml'];
         var i = requiredProps.length;
         while (i--) {
             if (config[requiredProps[i]] === undefined) {

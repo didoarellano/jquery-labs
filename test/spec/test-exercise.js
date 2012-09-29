@@ -8,7 +8,8 @@ define(['exercise'], function(Exercise) {
         // Set up the Exercise instance //-v-
         var exercise, conf;
         conf = {
-            instructions: 'This is what you should do.',
+            type: 'method',
+            instructionsheading: 'This is what you should do.',
             selector: '#context',
             iframehtml: '<h1>Insert me into the iframe.</h1>'
         };
@@ -19,30 +20,34 @@ define(['exercise'], function(Exercise) {
 
         it('should expose config properties as instance properties', function() {
 
-            var props = ['instructions', 'selector', 'iframehtml'];
+            var props = ['type', 'instructionsheading', 'selector', 'iframehtml'];
 
             expect(exercise).to.include.keys(props);
 
-            expect(exercise.instructions).to.equal( conf.instructions );
+            expect(exercise.instructionsheading).to.equal( conf.instructionsheading );
             expect(exercise.selector).to.equal( conf.selector );
             expect(exercise.iframehtml).to.equal( conf.iframehtml );
 
         });
 
         it('should throw an error if config object is missing required properties', function() {
-            var msg = /config object needs a\(n\) (instructions|iframehtml) property/;
+            var msg = /config object needs a\(n\) (type|instructionsheading|iframehtml) property/;
 
+            expect(missingType).to.throw(msg);
             expect(missingInstructions).to.throw(msg);
             expect(missingIframeHTML).to.throw(msg);
-            expect(missingBoth).to.throw(msg);
+            expect(missingAll).to.throw(msg);
 
+            function missingType() {
+                new Exercise({instructionsheading: '', iframehtml: ''});
+            }
             function missingInstructions() {
-                new Exercise({iframehtml: ''});
+                new Exercise({type: '', iframehtml: ''});
             }
             function missingIframeHTML() {
-                new Exercise({instructions: ''});
+                new Exercise({type: '', instructionsheading: ''});
             }
-            function missingBoth() {
+            function missingAll() {
                 new Exercise({});
             }
         });
@@ -53,7 +58,8 @@ define(['exercise'], function(Exercise) {
 
         it('the optional selector property should default to null', function() {
             var noSelector = new Exercise({
-                instructions: 'd',
+                type: 'selecting',
+                instructionsheading: 'd',
                 iframehtml: 'a'
             });
             expect(noSelector.selector).to.be.null;
@@ -73,7 +79,8 @@ define(['exercise'], function(Exercise) {
 
             it('should return just the input when selector is null', function() {
                 var noSelector = new Exercise({
-                    instructions: 'd',
+                    type: 'codemirror',
+                    instructionsheading: 'd',
                     iframehtml: 'a'
                 });
                 noSelector.buildCommand('$("p.eanut")');
