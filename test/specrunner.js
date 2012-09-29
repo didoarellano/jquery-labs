@@ -27,6 +27,7 @@
     ];
 
     mocha.setup('bdd');
+    mocha.options.ignoreLeaks = true;
     window.expect = chai.expect;
     require(specs, mocha.run);
 

@@ -1,186 +1,57 @@
 define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, AppView, $) {
-    /*global describe, it, expect FnFaker*/
+    /*global describe, it, expect, FnFaker, beforeEach*/
 
     "use strict";
 
     describe('Labs controller', function() {
-        var labs = new Labs();
 
         describe('On instantiation', function() {//-v-
+
+            var labs;
+            beforeEach(function() {
+                labs = new Labs();
+            });
 
             it('should instantiate an Exercises object', function() {
                 expect(labs.collection).to.be.an.instanceof(Exercises);
             });
 
+            it('should create properties with null values', function() {
+                expect(labs.appview).to.be.null;
+                expect(labs.currentCategory).to.be.null;
+                expect(labs.currentExercise).to.be.null;
+            });
+
+        });//-^-
+
+        describe('#start()', function() {//-v-
+
+            var labs;
+            beforeEach(function() {
+                labs = new Labs();
+            });
+
             it('should instantiate an AppView object', function() {
+                labs.start();
                 expect(labs.appview).to.be.an.instanceof(AppView);
             });
 
-        });//-^-
-
-        describe('#onHashChange method', function() {//-v-
-            var fakeEvt = {
-                data: { hash: '' }
-            };
-
-            describe('Case: hash.category doesn\'t exist', function() {//-v-
-
-                it('should call AppView#slideTo(\'index\')', function() {
-                    fakeEvt.data.hash = '';
-                    var slideTo = new FnFaker();
-
-                    labs.appview.slideTo = slideTo;
-
-                    labs.onHashChange(fakeEvt);
-                    expect(slideTo.called).to.be.true;
-                    expect(slideTo.args[0]).to.be.equal('index');
-                });
-
-            });//-^-
-
-            describe('Case: hash.category is not the current category', function() {//-v-
-
-                var fetch = new FnFaker({
-                    done: function() {}
-                });
-                var slideTo = new FnFaker();
-
-                labs.collection.fetch = fetch;
-                labs.appview.slideTo = slideTo;
-
-                labs.currentCategory = 'selecting';
-                fakeEvt.data.hash = '#/traversing';
-                labs.onHashChange(fakeEvt);
-
-                it('should call Exercises#fetch', function() {
-                    expect(fetch.called).to.be.true;
-                    expect(fetch.args).to.have.length.above(1);
-                    expect(fetch.args[0]).to.equal('traversing');
-                    expect(fetch.args[1]).to.equal('assets/exercises/traversing.xml');
-                });
-
-                it('should call AppView#slideTo(\'exercise\')', function() {
-                    expect(slideTo.called).to.be.true;
-                    expect(slideTo.args[0]).to.be.equal('exercise');
-                });
-
-            });//-^-
-
-            describe('Case: hash.category has already been loaded', function() {//-v-
-
-                labs.currentCategory = 'selecting';
-                labs.collection.filtering = {};
-
-                var fetch = new FnFaker();
-                var slideTo = new FnFaker();
-
-                labs.collection.fetch = fetch;
-                labs.appview.slideTo = slideTo;
-
-                fakeEvt.data.hash = '#/filtering';
-                labs.onHashChange(fakeEvt);
-
-                it('should not call Exercises#fetch', function() {
-                    expect(fetch.called).to.be.false;
-                });
-
-                it('should call AppView#slideTo(\'exercise\')', function() {
-                    expect(slideTo.called).to.be.true;
-                    expect(slideTo.args[0]).to.be.equal('exercise');
-                });
-
-            });//-^-
-
-            describe('Case: hash.exercise exists and is a number', function() {//-v-
-                fakeEvt.data.hash = '#/filtering/0';
-                var startExercise = new FnFaker();
-
-                labs.appview.startExercise = startExercise;
-                labs.onHashChange(fakeEvt);
-
-                it('should call AppView#startExercise', function() {
-                    expect(startExercise.called).to.be.true;
-                });
-
-            });//-^-
-
-            describe('Case: hash.exercise is NaN', function() {//-v-
-                fakeEvt.data.hash = '#/filtering/';
-                var endExercise = new FnFaker();
-
-                labs.appview.endExercise = endExercise;
-                labs.onHashChange(fakeEvt);
-
-                it('should call AppView#endExercise', function() {
-                    expect(endExercise.called).to.be.true;
-                });
-
-            });//-^-
-
-        });//-^-
-
-        describe('#start method', function() {//-v-
-            var labs = new Labs();
-            var cacheSelectors = new FnFaker();
-            var attachListeners = new FnFaker();
-            var setDimensions = new FnFaker();
-
-            labs.cacheSelectors = cacheSelectors;
-            labs.attachListeners = attachListeners;
-            labs.appview.setDimensions = setDimensions;
-
-            labs.start();
-
-            it('should call #cacheSelectors', function() {
-                expect(cacheSelectors.called).to.be.true;
-            });
-
             it('should call #attachListeners', function() {
+                var attachListeners = new FnFaker();
+                labs.attachListeners = attachListeners;
+                labs.start();
+
                 expect(attachListeners.called).to.be.true;
             });
 
-            it('should call AppView#setDimensions', function() {
-                expect(setDimensions.called).to.be.true;
-            });
-
         });//-^-
 
-        describe('#cacheSelectors method', function() {//-v-
-            var labs = new Labs();
-            labs.cacheSelectors();
-            it('should cache selectors', function() {
-                expect(labs.$window).to.exist;
+        describe('#parseHash()', function() {//-v-
+
+            var labs;
+            beforeEach(function() {
+                labs = new Labs();
             });
-        });//-^-
-
-        describe('#attachListeners method', function() {//-v-
-            var labs = new Labs();
-            var $window = $(window);
-            var $exercise = $(document.createElement('div'));
-
-            labs.$window = $window;
-            labs.appview.$exercise = $exercise;
-            labs.attachListeners();
-
-            it('should bind a hashchange event listener to the window', function() {
-                var events = $._data(window, 'events');
-                expect(events.hashchange).to.exist;
-            });
-
-            it('should bind a resize event listener to the window', function() {
-                var events = $._data(window, 'events');
-                expect(events.resize).to.exist;
-            });
-
-            it('should delegate clicks on a.button elements to appview.$exercise', function() {
-                var events = $._data(labs.appview.$exercise[0], 'events');
-                var click = events.click;
-                expect(click.delegateCount).to.be.greaterThan(0);
-                expect(click[0].selector).to.be.equal('a.button');
-            });
-        });//-^-
-
-        describe('#parseHash method', function() {//-v-
 
             it('should return an object with category & exercise properties', function() {
                 var hash = labs.parseHash('#/selecting/4');
@@ -197,13 +68,193 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
 
         });//-^-
 
-        describe('Keeps track of current category/exercise', function() {//-v-
+        describe('#attachListeners()', function() {//-v-
 
-            it('should have currentCategory and currentExercise properties', function() {
-                var labs = new Labs();
-                expect(labs.currentCategory).to.be.null;
-                expect(labs.currentExercise).to.be.null;
+            var labs, windowEvents;
+            beforeEach(function() {
+                var $fakeWindow = $(document.createElement('div'));
+                var $fakeExercise = $(document.createElement('span'));
+                labs = new Labs();
+
+                labs.appview = new AppView();
+                labs.appview.$window = $fakeWindow;
+                labs.appview.$exercise = $fakeExercise;
+
+                labs.attachListeners();
+
+                windowEvents = $._data($fakeWindow[0], 'events');
             });
+
+            it('should bind a hashchange event listener to the window', function() {
+                expect(windowEvents.hashchange).to.exist;
+            });
+
+            it('should bind a resize event listener to the window', function() {
+                expect(windowEvents.resize).to.exist;
+            });
+
+            it('should delegate clicks on a.button elements to appview.$exercise', function() {
+                var events = $._data(labs.appview.$exercise[0], 'events');
+                var click = events.click;
+                expect(click.delegateCount).to.be.greaterThan(0);
+                expect(click[0].selector).to.be.equal('a.button');
+            });
+
+        });//-^-
+
+        describe('#onHashChange()', function() {//-v-
+
+            var labs, fakeEvt;
+            beforeEach(function() {
+                labs = new Labs();
+                labs.appview = new AppView();
+
+                fakeEvt = {
+                    data: { hash: '' }
+                };
+
+            });
+
+            describe('Case: hash.category doesn\'t exist', function() {//-v-
+
+                it('should call AppView#slideTo(\'index\')', function() {
+                    fakeEvt.data.hash = '';
+                    var slideTo = new FnFaker();
+
+                    labs.appview.slideTo = slideTo;
+
+                    labs.onHashChange(fakeEvt);
+                    expect(slideTo.called).to.be.true;
+                    expect(slideTo.args[0]).to.be.equal('index');
+                });
+
+            });//-^-
+
+            describe('Case: hash.category hasn\'t been fetched', function() {//-v-
+
+                it('should call Exercises#fetch', function() {
+                    var fetch = new FnFaker({
+                        done: function() {}
+                    });
+                    labs.collection.fetch = fetch;
+
+                    labs.collection.traversing = null;
+                    fakeEvt.data.hash = '#/traversing';
+
+                    labs.onHashChange(fakeEvt);
+
+                    expect(fetch.called).to.be.true;
+                    expect(fetch.args).to.have.length.above(1);
+                    expect(fetch.args[0]).to.equal('traversing');
+                    expect(fetch.args[1]).to.equal('assets/exercises/traversing.xml');
+                });
+
+            });//-^-
+
+            describe('Case: hash.category has already been loaded', function() {//-v-
+
+                it('should not call Exercises#fetch', function() {
+                    var fetch = new FnFaker({
+                        done: function() {}
+                    });
+                    labs.collection.fetch = fetch;
+
+                    labs.collection.filtering = ['truthy'];
+                    fakeEvt.data.hash = '#/filtering';
+
+                    labs.onHashChange(fakeEvt);
+
+                    expect(fetch.called).to.be.false;
+                });
+
+            });//-^-
+
+            describe('Set currentCategory & currentExercise properties', function() {//-v-
+
+                it('should set properties', function(done) {
+                    var fetch = new FnFaker({
+                        done: function(cb) {
+                            cb();
+                            expect(labs.currentCategory).to.equal('traversing');
+                            expect(labs.currentExercise).to.equal(0);
+                            done();
+                        }
+                    });
+                    labs.collection.fetch = fetch;
+
+                    labs.collection.traversing = null;
+                    fakeEvt.data.hash = '#/traversing';
+
+                    labs.onHashChange(fakeEvt);
+                });
+
+            });//-^-
+
+            describe('Transition to Start Screen', function() {//-v-
+
+                it('should call AppView#prepareStartScreen()', function() {
+                    var prepareStartScreen = new FnFaker();
+                    labs.appview.prepareStartScreen = prepareStartScreen;
+
+                    labs.collection.selecting = ['skip the fetch'];
+
+                    fakeEvt.data.hash = '#/selecting';
+                    labs.onHashChange(fakeEvt);
+
+                    expect(prepareStartScreen.called).to.be.true;
+                    expect(prepareStartScreen.args[0]).to.contain.keys(['category', 'exercise']);
+                });
+
+                it('should call AppView#slideTo(\'exercise\')', function() {
+                    var slideTo = new FnFaker();
+                    labs.appview.slideTo = slideTo;
+
+                    labs.collection.selecting = ['skip the fetch'];
+
+                    fakeEvt.data.hash = '#/selecting';
+                    labs.onHashChange(fakeEvt);
+
+                    expect(slideTo.called).to.be.true;
+                    expect(slideTo.args[0]).to.be.equal('exercise');
+                });
+
+            });//-^-
+
+            describe('Case: hash.exercise exists and is a number', function() {//-v-
+
+                it('should call only AppView#startExercise', function() {
+                    var startExercise = new FnFaker();
+                    var endExercise = new FnFaker();
+
+                    labs.appview.startExercise = startExercise;
+                    labs.appview.endExercise = endExercise;
+
+                    fakeEvt.data.hash = '#/filtering/0';
+                    labs.onHashChange(fakeEvt);
+
+                    expect(startExercise.called).to.be.true;
+                    expect(endExercise.called).to.be.false;
+                });
+
+            });//-^-
+
+            describe('Case: hash.exercise is NaN', function() {//-v-
+
+                it('should call only AppView#endExercise', function() {
+                    var startExercise = new FnFaker();
+                    var endExercise = new FnFaker();
+
+                    labs.appview.startExercise = startExercise;
+                    labs.appview.endExercise = endExercise;
+
+                    fakeEvt.data.hash = '#/filtering/';
+                    labs.onHashChange(fakeEvt);
+
+                    expect(endExercise.called).to.be.true;
+                    expect(startExercise.called).to.be.false;
+                });
+
+            });//-^-
 
         });//-^-
 
