@@ -14,6 +14,7 @@ define(['appview'], function(AppView) {
             expect(appview.$index).to.exist;
             expect(appview.$exercise).to.exist;
             expect(appview.$startScreens).to.exist;
+            expect(appview.$sidebar).to.exist;
         });
 
         describe('#slideTo method', function() {
