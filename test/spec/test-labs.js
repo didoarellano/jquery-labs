@@ -155,7 +155,8 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
         describe('Keeps track of current category/exercise', function() {//-v-
 
             it('should have currentCategory and currentExercise properties', function() {
-                expect(labs.currentCategory).to.exist.and.to.be.a('string');
+                var labs = new Labs();
+                expect(labs.currentCategory).to.be.null;
                 expect(labs.currentExercise).to.be.null;
             });
 

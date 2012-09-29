@@ -5,7 +5,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
     function Labs() {
         this.collection = new Exercises();
         this.appview = new AppView();
-        this.currentCategory = '';
+        this.currentCategory = null;
         this.currentExercise = null;
     }
 
