@@ -4,7 +4,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
     function Labs() {
         this.collection = new Exercises();
-        this.appview = new AppView();
+        this.appview = null;
         this.currentCategory = null;
         this.currentExercise = null;
     }
@@ -14,6 +14,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
         start: function() {
             // Assumes that document is ready.
             this.cacheSelectors();
+            this.appview = new AppView();
             this.attachListeners();
             this.appview.setDimensions();
         },
