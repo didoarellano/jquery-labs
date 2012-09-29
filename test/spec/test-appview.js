@@ -29,6 +29,18 @@ define(['appview'], function(AppView) {
             });
         });
 
+        describe('#startExercise method', function() {
+            it('should exist', function() {
+                expect(appview.startExercise).to.be.a('function');
+            });
+        });
+
+        describe('#endExercise method', function() {
+            it('should exist', function() {
+                expect(appview.endExercise).to.be.a('function');
+            });
+        });
+
     });
 
 });

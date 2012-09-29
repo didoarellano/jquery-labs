@@ -24,6 +24,16 @@ define(['jquery'], function($) {
 
         slideTo: function(section) {
             this.body.className = 'on' + section;
+        },
+
+        startExercise: function() {
+            this.$exercise.addClass('started');
+            this.$sidebar.addClass('show');
+        },
+
+        endExercise: function() {
+            this.$exercise.removeClass('started');
+            this.$sidebar.removeClass('show');
         }
 
     };
