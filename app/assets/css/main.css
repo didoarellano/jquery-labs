@@ -102,14 +102,20 @@
   margin: 10px 0 0;
   text-align: center;
 }
-.startscreen .button {
+.startscreen .start {
   width: 100px;
-  text-align: center;
-  padding: 10px 15px;
+  padding: 10px 20px;
   margin: 30px auto 0;
+  text-align: center;
   display: block;
   font-size: 18px;
   text-transform: uppercase;
+  background: -webkit-linear-gradient(top, #2e87dd, #2f538f);
+  color: #eee;
+  font-weight: normal;
+  text-shadow: -1px 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  border-color: #2f538f;
 }
 /*-^-*/
 
