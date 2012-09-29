@@ -74,6 +74,12 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             appview.prepareStartScreen(hash);
             appview.slideTo('exercise');
 
+            if ( !isNaN(hash.exercise) ) {
+                appview.startExercise();
+            } else {
+                appview.endExercise();
+            }
+
         },
 
         parseHash: function(hash) {

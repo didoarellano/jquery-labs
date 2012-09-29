@@ -91,6 +91,31 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
 
             });//-^-
 
+            describe('Case: hash.exercise exists and is a number', function() {//-v-
+                fakeEvt.data.hash = '#/filtering/0';
+                var startExercise = new FnFaker();
+
+                labs.appview.startExercise = startExercise;
+                labs.onHashChange(fakeEvt);
+
+                it('should call AppView#startExercise', function() {
+                    expect(startExercise.called).to.be.true;
+                });
+
+            });//-^-
+
+            describe('Case: hash.exercise is NaN', function() {//-v-
+                fakeEvt.data.hash = '#/filtering/';
+                var endExercise = new FnFaker();
+
+                labs.appview.endExercise = endExercise;
+                labs.onHashChange(fakeEvt);
+
+                it('should call AppView#endExercise', function() {
+                    expect(endExercise.called).to.be.true;
+                });
+
+            });//-^-
 
         });//-^-
 
