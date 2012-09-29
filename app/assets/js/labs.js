@@ -30,24 +30,33 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
         },
 
         onHashChange: function(evt) {
+            var self = this;
             var hash = this.parseHash(evt.data.hash);
             var category = hash.category;
             var appview = this.appview;
             var collection = this.collection;
+            var maybeFetch;
 
             if (!category) {
                 appview.slideTo('index');
                 return;
             }
 
+            maybeFetch= $.Deferred().resolve();
+
             if (!collection[category]) {
 
-                collection.fetch(
+                maybeFetch = collection.fetch(
                     category,
                     'assets/exercises/' + category + '.xml'
                 );
 
             }
+
+            maybeFetch.done(function() {
+                self.currentCategory = category;
+                self.currentExercise = 0;
+            });
 
             appview.prepareStartScreen(hash);
             appview.slideTo('exercise');

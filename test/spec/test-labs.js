@@ -55,9 +55,6 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(fetch.args).to.have.length.above(1);
                     expect(fetch.args[0]).to.equal('traversing');
                     expect(fetch.args[1]).to.equal('assets/exercises/traversing.xml');
-                    if (fetch.args[2]) {
-                        expect(fetch.args[2]).to.be.a('function');
-                    }
                 });
 
                 it('should call AppView#slideTo(\'exercise\')', function() {
