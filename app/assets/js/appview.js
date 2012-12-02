@@ -12,6 +12,7 @@ define(['jquery'], function($) {
         this.$sidebar = this.$container.find('.sidebar');
         this.$startScreens = this.$exercise.find('.startscreen article');
         this.$visibleStartScreen = $([]);
+        this.$iframe = $('#sandbox');
     }
 
     AppView.prototype = {
@@ -47,6 +48,18 @@ define(['jquery'], function($) {
 
             this.$sidebar.height(dimensions.height);
             this.$views.css(dimensions);
+        },
+
+        prepareIframe: function() {
+            this.iframeWindow = this.$iframe[0].contentWindow;
+            this.iframeBody = this.iframeWindow.document.body;
+            this.iframeStyles = $('#sandbox-styles')[0].cloneNode(true);
+            this.iframeScript = $('script[data-requiremodule=jquery]')[0].cloneNode();
+
+            var head = this.iframeWindow.document.getElementsByTagName('head')[0];
+
+            head.appendChild(this.iframeStyles);
+            head.appendChild(this.iframeScript);
         }
 
     };
