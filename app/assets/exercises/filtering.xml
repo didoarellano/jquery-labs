@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <exercises>
-    <exercise>
-        <instructions>Move $me to the beginning of the section</instructions>
-        <selector>section</selector>
-        <iframehtml>
-            <section>
-                <article class="me">$me</article>
-                <div>
-                    <article class="me">$me</article>
-                    <p>Paragraph</p>
-                </div>
-            </section>
-            <article class="me">$me</article>
-        </iframehtml>
-    </exercise>
-    <exercise>
-        <instructions>Select all h2s and ps that are children of a div</instructions>
-        <selector>div</selector>
-        <iframehtml>
-            <div>
-                <h2> Heading2 1 </h2>
-                <p> Paragraph 2</p>
-                <h2> Heading2 2 </h2>
-                <p> Paragraph 2</p>
-            </div>
-        </iframehtml>
-    </exercise>
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Move $me to the beginning of the section</instructionsheading>
+    <instructionstext>
+      <strong>jQuery</strong> is obviously a fantastic JavaScript library and has
+      been my tool of choice for quite a while now, and it’ll probably continue that
+      way until something better comes along.
+    </instructionstext>
+    <selector>section</selector>
+    <iframehtml>
+      <section>
+        <article class="me">$me</article>
+        <div>
+          <article class="me">$me</article>
+          <p>Paragraph</p>
+        </div>
+      </section>
+      <article class="me">$me</article>
+    </iframehtml>
+  </exercise>
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Select all h2s and ps that are children of a div</instructionsheading>
+    <instructionstext>
+      This isn’t really about jQuery, this is about a <em>much</em> larger
+      problem which has proven to be unavoidable.
+    </instructionstext>
+    <selector>div</selector>
+    <iframehtml>
+      <div>
+        <h2> Heading2 1 </h2>
+        <p> Paragraph 2</p>
+        <h2> Heading2 2 </h2>
+        <p> Paragraph 2</p>
+      </div>
+    </iframehtml>
+  </exercise>
 </exercises>
