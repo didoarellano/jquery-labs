@@ -48,7 +48,7 @@ define(['jquery', 'appview'], function($, AppView) {
         });
 
 
-        describe.only('#startExercise method', function() {
+        describe('#startExercise method', function() {
             it('should add a "started" class to appview.$exercise', function() {
                 appview.$exercise = $('<div>');
                 appview.startExercise();
@@ -63,8 +63,15 @@ define(['jquery', 'appview'], function($, AppView) {
 
 
         describe('#endExercise method', function() {
-            it('should exist', function() {
-                expect(appview.endExercise).to.be.a('function');
+            it('should remove the "started" class from appview.$exercise', function() {
+                appview.$exercise = $('<div class="started">');
+                appview.endExercise();
+                expect(appview.$exercise[0].className).to.equal('');
+            });
+            it('should remove the "show" class from appview.$sidebar', function() {
+                appview.$sidebar = $('<aside class="show">');
+                appview.endExercise();
+                expect(appview.$sidebar[0].className).to.equal('');
             });
         });
 
