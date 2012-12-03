@@ -33,9 +33,10 @@ define(['jquery', 'appview'], function($, AppView) {
 
 
         describe('#slideTo method', function() {
-            // TODO: mock this.body and test if it gets className prop;
-            it('should exist', function() {
-                expect(appview.slideTo).to.be.a('function');
+            it('should set a className property on appview.body equal to "on" + param', function() {
+                appview.body = {};
+                appview.slideTo('exercise');
+                expect(appview.body.className).to.equal('onexercise');
             });
         });
 
