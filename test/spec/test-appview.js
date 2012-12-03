@@ -85,10 +85,9 @@ define(['jquery', 'appview'], function($, AppView) {
 
         describe('#prepareIframe method', function() {
 
-            var appview, mockStyle;
+            var mockStyle;
 
             beforeEach(function() {
-                appview = new AppView();
                 appview.$iframe = $('<iframe>').appendTo('body').hide();
                 mockStyle = $('<style id="sandbox-styles">')
                     .text("[s=✓] {background-color: #8ae234;} [s=x] {background-color: red;}")
@@ -99,7 +98,6 @@ define(['jquery', 'appview'], function($, AppView) {
             afterEach(function() {
                 appview.$iframe.remove();
                 mockStyle.remove();
-                appview = null;
             });
 
             it('should cache the iframe\'s window', function() {
