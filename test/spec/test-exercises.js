@@ -3,23 +3,33 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
 
     "use strict";
 
-    var exers = [
-        { type: 'method',
-        instructionsheading: 'Instruction 1',
-        selector: '#1',
-        iframehtml: '<p>next</p>' },
-        { type: 'method',
-        instructionsheading: 'Instruction 2',
-        selector: '#2',
-        iframehtml: '<p>prev</p>' }
-    ];
-
     describe('Exercises collection', function() {
 
-        describe('#add method', function() {//-v-
+        var collection, exers;
+        exers = [
+            { type: 'method',
+              instructionsheading: 'Instruction 1',
+              selector: '#1',
+              iframehtml: '<p>next</p>' },
+            { type: 'method',
+              instructionsheading: 'Instruction 2',
+              selector: '#2',
+              iframehtml: '<p>prev</p>' }
+        ];
 
-            var collection = new Exercises();
-            collection.add('traversing', exers);
+        beforeEach(function() {
+            collection = new Exercises();
+        });
+        afterEach(function() {
+            collection = null;
+        });
+
+
+        describe('#add method', function() {
+
+            beforeEach(function() {
+                collection.add('traversing', exers);
+            });
 
             it('should take a category name and an array of objects as its arguments', function() {
                 expect(collection).to.contain.key('traversing');
@@ -38,11 +48,12 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
                 expect(collection.noarray.exercises).to.be.an('array').and.to.be.empty;
             });
 
-        });//-^-
+        });
 
-        describe('#_massageToObject method', function() {//-v-
+
+        describe('#_massageToObject method', function() {
             var _type = 'codemirror';
-            var _instructions = 'This is what you should do.';
+            var _instructionsheading = 'This is what you should do.';
             var _iframehtml = '<div><p>Haych-tee-em-el</p></div>';
             var _selector = '#element';
             var exercise = document.createElement('exercise');
@@ -52,7 +63,7 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
             var selector = document.createElement('selector');
 
             type.innerHTML = _type;
-            instructionsheading.innerHTML = _instructions;
+            instructionsheading.innerHTML = _instructionsheading;
             iframehtml.innerHTML = _iframehtml;
             selector.innerHTML = _selector;
 
@@ -68,32 +79,30 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
                     .and.include.keys(['type', 'instructionsheading', 'iframehtml', 'selector']);
 
                 expect(res.type).to.be.equal(_type);
-                expect(res.instructionsheading).to.be.equal(_instructions);
+                expect(res.instructionsheading).to.be.equal(_instructionsheading);
                 expect(res.iframehtml).to.be.equal(_iframehtml);
                 expect(res.selector).to.be.equal(_selector);
             });
 
-        });//-^-
+        });
 
-        describe('#fetch method', function() {//-v-
 
-            var collection;
-            var dfd;
+        describe('#fetch method', function() {
 
+            var deferred;
             beforeEach(function() {
-                collection = new Exercises();
-                dfd = collection.fetch('filtering', 'fixtures/test-exercises-fetch.xml');
+                deferred = collection.fetch('filtering', 'fixtures/test-exercises-fetch.xml');
             });
 
             it('should return a jQuery deferred object', function(done) {
                 // replace this with a chai deferred plugin when you get DSL
                 // back.
-                expect(dfd.done).to.be.a('function');
+                expect(deferred.done).to.be.a('function');
                 done();
             });
 
             it('should create a category with Exercise objects instatiated from the xml config', function(done) {
-                dfd.done(
+                deferred.done(
                     function() {
                         var first = collection.filtering.exercises[0];
                         var second = collection.filtering.exercises[1];
@@ -109,15 +118,17 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
                 );
             });
 
-        });//-^-
+        });
 
-        describe('#setCurrent method', function() {//-v-
 
-            var collection = new Exercises();
-            collection.add('traversing', exers);
-            collection.add('selecting', exers);
+        describe('#setCurrent method', function() {
 
-            describe('category', function() {//-v-
+            beforeEach(function() {
+                collection.add('traversing', exers);
+                collection.add('selecting', exers);
+            });
+
+            describe('category', function() {
 
                 it('should set current category to the object matching the string param', function() {
                     collection.setCurrent('category', 'traversing');
@@ -143,9 +154,9 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
                     expect(current).to.be.equal(collection.traversing);
                 });
 
-            });//-^-
+            });
 
-            describe('exercise', function() {//-v-
+            describe('exercise', function() {
 
                 it('should set current exercise to the object matching the index param', function() {
                     collection.setCurrent('category', 'traversing');
@@ -174,7 +185,7 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
                     expect(current).to.be.equal(collection.traversing.exercises[1]);
                 });
 
-            });//-^-
+            });
 
             describe('category & exercise', function() {//-v-
                 var collection = new Exercises();
@@ -193,9 +204,9 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
                     expect(collection.current.category).to.be.equal(current.category);
                     expect(collection.current.exercise).to.be.equal(current.exercise);
                 });
-            });//-^-
+            });
 
-        });//-^-
+        });
 
     });
 

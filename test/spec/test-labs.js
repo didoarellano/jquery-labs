@@ -4,13 +4,16 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
     "use strict";
 
     describe('Labs controller', function() {
+        var labs;
+        beforeEach(function() {
+            labs = new Labs();
+        });
+        afterEach(function() {
+            labs = null;
+        });
 
-        describe('On instantiation', function() {//-v-
 
-            var labs;
-            beforeEach(function() {
-                labs = new Labs();
-            });
+        describe('On instantiation', function() {
 
             it('should instantiate an Exercises object', function() {
                 expect(labs.collection).to.be.an.instanceof(Exercises);
@@ -22,14 +25,10 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 expect(labs.currentExercise).to.be.null;
             });
 
-        });//-^-
+        });
 
-        describe('#start()', function() {//-v-
 
-            var labs;
-            beforeEach(function() {
-                labs = new Labs();
-            });
+        describe('#start method', function() {
 
             it('should instantiate an AppView object', function() {
                 labs.start();
@@ -44,14 +43,10 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 expect(attachListeners.called).to.be.true;
             });
 
-        });//-^-
+        });
 
-        describe('#parseHash()', function() {//-v-
 
-            var labs;
-            beforeEach(function() {
-                labs = new Labs();
-            });
+        describe('#parseHash method', function() {
 
             it('should return an object with category & exercise properties', function() {
                 var hash = labs.parseHash('#/selecting/4');
@@ -66,15 +61,15 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 expect(isNaN(noNum.exercise)).to.be.true;
             });
 
-        });//-^-
+        });
 
-        describe('#attachListeners()', function() {//-v-
 
-            var labs, windowEvents;
+        describe('#attachListeners method', function() {
+
+            var windowEvents;
             beforeEach(function() {
                 var $fakeWindow = $(document.createElement('div'));
                 var $fakeExercise = $(document.createElement('span'));
-                labs = new Labs();
 
                 labs.appview = new AppView();
                 labs.appview.$window = $fakeWindow;
@@ -100,22 +95,20 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 expect(click[0].selector).to.be.equal('a.button');
             });
 
-        });//-^-
+        });
 
-        describe('#onHashChange()', function() {//-v-
 
-            var labs, fakeEvt;
+        describe('#onHashChange method', function() {
+
+            var fakeEvt;
             beforeEach(function() {
-                labs = new Labs();
                 labs.appview = new AppView();
-
                 fakeEvt = {
                     data: { hash: '' }
                 };
-
             });
 
-            describe('Case: hash.category doesn\'t exist', function() {//-v-
+            describe('Case: hash.category doesn\'t exist', function() {
 
                 it('should call AppView#slideTo(\'index\')', function() {
                     fakeEvt.data.hash = '';
@@ -128,9 +121,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(slideTo.args[0]).to.be.equal('index');
                 });
 
-            });//-^-
+            });
 
-            describe('Case: hash.category hasn\'t been fetched', function() {//-v-
+            describe('Case: hash.category hasn\'t been fetched', function() {
 
                 it('should call Exercises#fetch', function() {
                     var fetch = new FnFaker({
@@ -149,9 +142,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(fetch.args[1]).to.equal('assets/exercises/traversing.xml');
                 });
 
-            });//-^-
+            });
 
-            describe('Case: hash.category has already been loaded', function() {//-v-
+            describe('Case: hash.category has already been loaded', function() {
 
                 it('should not call Exercises#fetch', function() {
                     var fetch = new FnFaker({
@@ -167,9 +160,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(fetch.called).to.be.false;
                 });
 
-            });//-^-
+            });
 
-            describe('Set currentCategory & currentExercise properties', function() {//-v-
+            describe('Set currentCategory & currentExercise properties', function() {
 
                 it('should set properties', function(done) {
                     var fetch = new FnFaker({
@@ -188,9 +181,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     labs.onHashChange(fakeEvt);
                 });
 
-            });//-^-
+            });
 
-            describe('Transition to Start Screen', function() {//-v-
+            describe('Transition to Start Screen', function() {
 
                 it('should call AppView#prepareStartScreen()', function() {
                     var prepareStartScreen = new FnFaker();
@@ -218,9 +211,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(slideTo.args[0]).to.be.equal('exercise');
                 });
 
-            });//-^-
+            });
 
-            describe('Case: hash.exercise exists and is a number', function() {//-v-
+            describe('Case: hash.exercise exists and is a number', function() {
 
                 it('should call only AppView#startExercise', function() {
                     var startExercise = new FnFaker();
@@ -236,9 +229,9 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(endExercise.called).to.be.false;
                 });
 
-            });//-^-
+            });
 
-            describe('Case: hash.exercise is NaN', function() {//-v-
+            describe('Case: hash.exercise is NaN', function() {
 
                 it('should call only AppView#endExercise', function() {
                     var startExercise = new FnFaker();
@@ -254,9 +247,10 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                     expect(startExercise.called).to.be.false;
                 });
 
-            });//-^-
+            });
 
-        });//-^-
+        });
+
 
     });
 

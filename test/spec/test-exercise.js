@@ -2,21 +2,25 @@ define(['exercise'], function(Exercise) {
     /*global describe, beforeEach, it, expect*/
 
     "use strict";
-
     describe('Exercise constructor', function() {
 
-        // Set up the Exercise instance //-v-
         var exercise, conf;
+        // Mock configuration for the constructor
         conf = {
             type: 'method',
             instructionsheading: 'This is what you should do.',
             selector: '#context',
             iframehtml: '<h1>Insert me into the iframe.</h1>'
         };
+
         beforeEach(function() {
             exercise = new Exercise(conf);
         });
-        //-^-
+
+        afterEach(function() {
+            exercise = null;
+        });
+
 
         it('should expose config properties as instance properties', function() {
 
@@ -64,6 +68,7 @@ define(['exercise'], function(Exercise) {
             });
             expect(noSelector.selector).to.be.null;
         });
+
 
         describe('#buildCommand method', function() {
 

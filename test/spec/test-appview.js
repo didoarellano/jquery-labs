@@ -3,28 +3,42 @@ define(['jquery', 'appview'], function($, AppView) {
 
     "use strict";
 
-    // Learn how to test DOM-tied shit and come back to this.
-
     describe('Main App View', function() {
-        var appview = new AppView();
-
-        it('should cache selectors on instantiation', function() {
-            expect(appview.$window).to.exist;
-            expect(appview.body).to.exist;
-            expect(appview.$container).to.exist;
-            expect(appview.$index).to.exist;
-            expect(appview.$exercise).to.exist;
-            expect(appview.$views).to.exist;
-            expect(appview.$startScreens).to.exist;
-            expect(appview.$sidebar).to.exist;
-            expect(appview.$iframe).to.exist;
+        var appview;
+        beforeEach(function() {
+            appview = new AppView();
+        });
+        afterEach(function() {
+            appview = null;
         });
 
+        it('should cache selectors on instantiation', function() {
+            var props = [
+                '$window',
+                'body',
+                '$container',
+                '$index',
+                '$exercise',
+                '$views',
+                '$startScreens',
+                '$sidebar',
+                '$iframe'
+            ];
+            var i = props.length;
+
+            while (i--) {
+                expect(appview[props[i]]).to.exist;
+            }
+        });
+
+
         describe('#slideTo method', function() {
+            // TODO: mock this.body and test if it gets className prop;
             it('should exist', function() {
                 expect(appview.slideTo).to.be.a('function');
             });
         });
+
 
         describe('#prepareStartScreen method', function() {
             it('should exist', function() {
@@ -32,11 +46,13 @@ define(['jquery', 'appview'], function($, AppView) {
             });
         });
 
+
         describe('#startExercise method', function() {
             it('should exist', function() {
                 expect(appview.startExercise).to.be.a('function');
             });
         });
+
 
         describe('#endExercise method', function() {
             it('should exist', function() {
@@ -44,11 +60,13 @@ define(['jquery', 'appview'], function($, AppView) {
             });
         });
 
+
         describe('#setDimensions method', function() {
             it('should exist', function() {
                 expect(appview.setDimensions).to.be.a('function');
             });
         });
+
 
         describe('#prepareIframe method', function() {
 
@@ -88,6 +106,7 @@ define(['jquery', 'appview'], function($, AppView) {
             });
 
         });
+
 
     });
 
