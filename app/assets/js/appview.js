@@ -54,7 +54,17 @@ define(['jquery'], function($) {
             this.iframeWindow = this.$iframe[0].contentWindow;
             this.iframeBody = this.iframeWindow.document.body;
             this.iframeStyles = $('#sandbox-styles')[0].cloneNode(true);
-            this.iframeScript = $('script[data-requiremodule=jquery]')[0].cloneNode();
+
+            // this.iframeScript = $('script[data-requiremodule=jquery]')[0].cloneNode();
+            // The .cloneNode way above doesn't work, i.e. iframeWindow.jQuery
+            // is undefined. I'm not sure if it's a same domain thing or if
+            // cloning script elements doesn't work like I want it to. Either
+            // way, creating a new script element, copying the src property from
+            // the target jquery script tag, and appending to head works
+            // (manually tested on Chrome and Firefox).
+
+            this.iframeScript = document.createElement('script');
+            this.iframeScript.src = $('script[data-requiremodule=jquery]')[0].src;
 
             var head = this.iframeWindow.document.getElementsByTagName('head')[0];
 

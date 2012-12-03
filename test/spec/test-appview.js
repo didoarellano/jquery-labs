@@ -115,7 +115,18 @@ define(['jquery', 'appview'], function($, AppView) {
 
             it('should inject a script tag in head pointing to jquery', function() {
                 var script = appview.iframeWindow.document.getElementsByTagName('script')[0];
-                expect(script.src).to.contain('jquery');
+                var src = script.getAttribute('src');
+
+                // TODO Find a better way to test the presence of jQuery in
+                // iframeWindow. This is suboptimal because:
+                //   - the cloneNode way doesn't fire onload.
+                //   - onload on script elements don't work in IE, use
+                //     onreadystatechange instead.
+                appview.iframeScript.onload = function() {
+                    expect(appview.iframeWindow.jQuery).to.exist;
+                };
+
+                expect(src).to.contain('http').and.to.contain('jquery');
             });
 
         });
