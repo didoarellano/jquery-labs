@@ -16,6 +16,7 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             this.appview = new AppView();
             this.attachListeners();
             this.appview.setDimensions();
+            this.appview.prepareIframe();
         },
 
         attachListeners: function() {

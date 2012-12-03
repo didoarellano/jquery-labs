@@ -30,6 +30,17 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
 
         describe('#start method', function() {
 
+            var prepareIframe, origPrepareIframe;
+            beforeEach(function() {
+                origPrepareIframe = AppView.prototype.prepareIframe;
+                prepareIframe = new FnFaker();
+                AppView.prototype.prepareIframe = prepareIframe;
+            });
+            afterEach(function() {
+                prepareIframe = null;
+                AppView.prototype.prepareIframe = origPrepareIframe;
+            });
+
             it('should instantiate an AppView object', function() {
                 labs.start();
                 expect(labs.appview).to.be.an.instanceof(AppView);
