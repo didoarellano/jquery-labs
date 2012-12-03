@@ -48,9 +48,16 @@ define(['jquery', 'appview'], function($, AppView) {
         });
 
 
-        describe('#startExercise method', function() {
-            it('should exist', function() {
-                expect(appview.startExercise).to.be.a('function');
+        describe.only('#startExercise method', function() {
+            it('should add a "started" class to appview.$exercise', function() {
+                appview.$exercise = $('<div>');
+                appview.startExercise();
+                expect(appview.$exercise[0].className).to.equal('started');
+            });
+            it('should add a "show" class to appview.$sidebar', function() {
+                appview.$sidebar = $('<aside>');
+                appview.startExercise();
+                expect(appview.$sidebar[0].className).to.equal('show');
             });
         });
 
