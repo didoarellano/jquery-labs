@@ -208,6 +208,22 @@ define(['exercises', 'exercise', 'jquery'], function(Exercises, Exercise, $) {
 
         });
 
+
+        describe("#getExercise method", function() {
+
+            it("should return the Exercise object specified by the window.hash object parameter", function() {
+                var hash = {
+                    category: 'inserting',
+                    exercise: 1
+                };
+                collection.add('inserting', exers);
+                var exercise = collection.getExercise(hash);
+
+                expect(exercise).to.be.an.instanceOf(Exercise);
+                expect(exercise.selector).to.be.equal(exers[1].selector);
+
+            });
+        });
     });
 
 });

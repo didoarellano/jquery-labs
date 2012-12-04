@@ -76,6 +76,10 @@ define(['jquery', 'exercise'], function($, Exercise) {
             return obj;
         },
 
+        getExercise: function(which) {
+            return this[which.category].exercises[which.exercise];
+        },
+
         setCurrent: function(what, setTo) {
 
             var ret;
