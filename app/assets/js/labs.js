@@ -15,6 +15,9 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             // Assumes that document is ready.
             this.appview = new AppView();
             this.attachListeners();
+
+            // TODO Delay execution of these two methods to before showing the
+            // exercise view.
             this.appview.setDimensions();
             this.appview.prepareIframe();
         },

@@ -6,8 +6,10 @@ define(['jquery'], function($) {
         this.$window = $(window);
         this.body = document.body;
         this.$container = $('.container');
-        this.$index = this.$container.find('.index');
         this.$exercise = this.$container.find('.exercise');
+
+        // TODO Candidates for lazy loading
+        this.$index = this.$container.find('.index');
         this.$views = this.$exercise.find('.views');
         this.$sidebar = this.$container.find('.sidebar');
         this.$startScreens = this.$exercise.find('.startscreen article');
@@ -40,6 +42,8 @@ define(['jquery'], function($) {
         },
 
         setDimensions: function() {
+            // TODO Candidate for lazy function definition pattern, "caching"
+            // $sidebar(?) $views(?), sidebarWidth.
             this.sideBarWidth = this.sideBarWidth || this.$sidebar.innerWidth();
             var dimensions = {
                 width:  this.$window.width() - this.sideBarWidth,
@@ -51,6 +55,9 @@ define(['jquery'], function($) {
         },
 
         prepareIframe: function() {
+            // TODO Candidate for lazy function definition pattern, "caching"
+            // iframeWindow & iframeBody.
+
             this.iframeWindow = this.$iframe[0].contentWindow;
             this.iframeBody = this.iframeWindow.document.body;
             this.iframeStyles = $('#sandbox-styles')[0].cloneNode(true);
