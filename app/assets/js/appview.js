@@ -84,9 +84,11 @@ define(['jquery'], function($) {
 
         renderExercise: function(exercise) {
             this.updateViews(exercise.iframehtml);
-            // Add exercise.type as data-type attribute
-            // Add <h3>exercise.instructionsheading</h3> to this.$instructions
-            // Add $("exercise.selector") to this.$context if has exercise.selector
+            this.$views.attr('data-type', exercise.type);
+            this.$instructions.html('<h3>' +exercise.instructionsheading+ '</h3>');
+            if (exercise.selector) {
+                this.$context.text('$("' +exercise.selector+ '")');
+            }
         },
 
         updateViews: function(html) {

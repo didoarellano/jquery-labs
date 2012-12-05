@@ -154,16 +154,53 @@ define(['jquery', 'appview'], function($, AppView) {
 
 
         describe("#renderExercise method", function() {
+
+            var exercise;
+
+            beforeEach(function() {
+                exercise = {
+                    type: 'selecting',
+                    iframehtml: '<p>hi</p>',
+                    instructionsheading: 'DO DEES TING'
+                };
+                appview.iframeBody = {};
+                appview.$pre = $('<pre>');
+                appview.$views = $('<div>');
+                appview.$instructions = $('<div>');
+                appview.$context = $('<span>');
+            });
+
             it("should call appview.updateViews, passing in the iframehtml property of an exercise object", function() {
                 var updateViews = new FnFaker();
                 appview.updateViews = updateViews;
 
-                var exercise = {iframehtml: '<p>hi</p>'};
                 appview.renderExercise(exercise);
 
                 expect(updateViews.called).to.be.true;
                 expect(updateViews.args[0]).to.be.equal(exercise.iframehtml);
             });
+
+            it("should set $views data-type attribute to exercise.type property", function() {
+                appview.renderExercise(exercise);
+                expect(appview.$views.data('type')).to.equal(exercise.type);
+            });
+
+            it("should add an H3 element containg exercise.instructionsheading to appview.$instructions", function() {
+                appview.renderExercise(exercise);
+                expect(appview.$instructions.html()).to.equal('<h3>'+exercise.instructionsheading+ '</h3>');
+            });
+
+            it("should add $(\"exercise.selector\") text to appview.$context if exercise.selector is defined", function() {
+                exercise.selector = '.shouldexist';
+                appview.renderExercise(exercise);
+                expect(appview.$context.text()).to.equal('$("'+exercise.selector+'")');
+            });
+
+            it("should NOT add $(\"exercise.selector\") text to appview.$context if exercise.selector is undefined", function() {
+                appview.renderExercise(exercise);
+                expect(appview.$context.text()).to.equal('');
+            });
+
         });
 
     });
