@@ -82,6 +82,7 @@ define(['jquery', 'exercise'], function($, Exercise) {
         },
 
         setCurrent: function(what, setTo) {
+            // TODO Simplify this to take just a configuration object.
 
             var ret;
 

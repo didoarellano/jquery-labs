@@ -67,6 +67,8 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
 
             if (!collection[category]) {
 
+                // TODO Delay execution to start of exercise (when user clicks
+                // on "start" button).
                 maybeFetch = collection.fetch(
                     category,
                     'assets/exercises/' + category + '.xml'
