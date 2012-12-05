@@ -341,32 +341,34 @@ CodeMirror       | 'codemirror'
   display: none;
 }
 
-.codemirror .command {
+[data-type="codemirror"] .command {
   display: none;
 }
-.codemirror .code {
+[data-type="codemirror"] .code {
   display: none;
 }
-.codemirror .live:after, .codemirror .code:after {
+[data-type="codemirror"] .live:after,
+[data-type="codemirror"] .code:after {
   display: none;
 }
-.codemirror .live, .codemirror .code {
+[data-type="codemirror"] .live,
+[data-type="codemirror"] .code {
   position: absolute;
   left: 0;
 }
 
-.selecting .context {
+[data-type="selecting"] .context {
   display: none;
 }
-.selecting input {
+[data-type="selecting"] input {
   text-align: center;
   width: 100%;
 }
 
-.codemirror .labels {
+[data-type="codemirror"] .labels {
   display: block;
 }
-.codemirror .editor {
+[data-type="codemirror"] .editor {
   display: block;
 }
 /*-^-*/
