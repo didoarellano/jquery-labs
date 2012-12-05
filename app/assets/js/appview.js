@@ -82,6 +82,13 @@ define(['jquery'], function($) {
             head.appendChild(this.iframeScript);
         },
 
+        renderExercise: function(exercise) {
+            this.updateViews(exercise.iframehtml);
+            // Add exercise.type as className
+            // Add <h3>exercise.instructionsheading</h3> to this.$instructions
+            // Add $("exercise.selector") to this.$context if has exercise.selector
+        },
+
         updateViews: function(html) {
             this.iframeBody.innerHTML = html;
             this.$pre.text(html);

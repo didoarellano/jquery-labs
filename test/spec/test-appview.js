@@ -1,5 +1,5 @@
 define(['jquery', 'appview'], function($, AppView) {
-    /*global describe, it, expect*/
+    /*global describe, it, expect, FnFaker*/
 
     "use strict";
 
@@ -149,6 +149,20 @@ define(['jquery', 'appview'], function($, AppView) {
             });
             it("should set appview.$pre text content to passed html parameter", function() {
                 expect(appview.$pre.text()).to.equal(html);
+            });
+        });
+
+
+        describe("#renderExercise method", function() {
+            it("should call appview.updateViews, passing in the iframehtml property of an exercise object", function() {
+                var updateViews = new FnFaker();
+                appview.updateViews = updateViews;
+
+                var exercise = {iframehtml: '<p>hi</p>'};
+                appview.renderExercise(exercise);
+
+                expect(updateViews.called).to.be.true;
+                expect(updateViews.args[0]).to.be.equal(exercise.iframehtml);
             });
         });
 
