@@ -135,6 +135,23 @@ define(['jquery', 'appview'], function($, AppView) {
         });
 
 
+        describe("#updateViews method", function() {
+            var html;
+            beforeEach(function() {
+                html = '<h1>This be the html</h1>';
+                appview.iframeBody = {};
+                appview.$pre = $('<pre>');
+                appview.updateViews(html);
+            });
+
+            it("should set appview.iframeBody.innerHTML to passed html parameter", function() {
+                expect(appview.iframeBody.innerHTML).to.equal(html);
+            });
+            it("should set appview.$pre text content to passed html parameter", function() {
+                expect(appview.$pre.text()).to.equal(html);
+            });
+        });
+
     });
 
 });

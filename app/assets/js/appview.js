@@ -80,6 +80,11 @@ define(['jquery'], function($) {
 
             head.appendChild(this.iframeStyles);
             head.appendChild(this.iframeScript);
+        },
+
+        updateViews: function(html) {
+            this.iframeBody.innerHTML = html;
+            this.$pre.text(html);
         }
 
     };
