@@ -1,29 +1,283 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <exercises>
+
   <exercise>
     <type>selecting</type>
-    <instructionsheading>Move $me to the beginning of the section</instructionsheading>
+    <instructionsheading>Select all paragraph elements</instructionsheading>
     <iframehtml>
-      <section>
-        <article class="me">$me</article>
-        <div>
-          <article class="me">$me</article>
-          <p>Paragraph</p>
-        </div>
-      </section>
-      <article class="me">$me</article>
+      <p>Paragraph 1</p>
+      <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+      </ul>
+      <p>Paragraph 2</p>
+      <p>Paragraph 3</p>
+      <ul>
+        <li>List item 3</li>
+        <li>List item 4</li>
+      </ul>
+      <p>Paragraph 4</p>
     </iframehtml>
   </exercise>
+
   <exercise>
     <type>selecting</type>
-    <instructionsheading>Select all h2s and ps that are children of a div</instructionsheading>
+    <instructionsheading>Select all list item elements</instructionsheading>
+    <iframehtml>
+      <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+      </ul>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <ul>
+        <li>List item 3</li>
+        <li>List item 4</li>
+      </ul>
+      <p>Paragraph 3</p>
+      <p>Paragraph 4</p>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the div with an ID of "me"</instructionsheading>
+    <iframehtml>
+      <div>Just a div</div>
+      <div>Just a div</div>
+      <div>Just a div</div>
+      <div id="me">Select me!</div>
+      <div>Just a div</div>
+      <div>Just a div</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select all paragraphs with a class of "eanut" </instructionsheading>
+    <iframehtml>
+      <p class="eanut">Paragraph 1</p>
+      <p class="eanut">Paragraph 2</p>
+      <p>Paragraph 3 - It's a trap!</p>
+      <p class="eanut">Paragraph 4</p>
+      <div class="eanut">It's a trap!</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the ul with a class of "main-nav"</instructionsheading>
+    <iframehtml>
+      <ul><li>It's a trap!</li></ul>
+      <ul class="main-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About</a>
+        <ul>
+          <li><a href="#">Loren</a></li>
+          <li><a href="#">Epson</a></li>
+          <li><a href="#">Dolores</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select all input and textarea elements</instructionsheading>
+    <iframehtml>
+      <form>
+
+        <label>
+          <span>Name</span>
+          <input type="text" />
+        </label>
+
+        <label>
+          <span>Email address</span>
+          <input type="text" />
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea></textarea>
+        </label>
+
+      </form>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select all h3s that are children of div.accordion</instructionsheading>
+    <iframehtml>
+      <div class="accordion">
+
+        <h3>H3 Heading 1</h3>
+        <div></div>
+
+        <h3>H3 Heading 2</h3>
+        <div></div>
+
+        <h3>H3 Heading 3</h3>
+        <div></div>
+
+        <h3>H3 Heading 4</h3>
+        <div></div>
+
+      </div>
+
+      <h3>H3 Heading 5 - It's a trap!</h3>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select all divs that are children of a div</instructionsheading>
     <iframehtml>
       <div>
-        <h2> Heading2 1 </h2>
-        <p> Paragraph 2</p>
-        <h2> Heading2 2 </h2>
-        <p> Paragraph 2</p>
+
+        <div> Div 1 </div>
+
+        <div> Div 2 </div>
+
+        <div> Div 3 </div>
+
+        <div> Div 4 </div>
+
+        <section>
+          <div>It's a trap!</div>
+        </section>
+
       </div>
     </iframehtml>
   </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the div that is a child of div.profile</instructionsheading>
+    <iframehtml>
+      <div class="profile">
+        <div>
+          <h3>The Team</h3>
+          <div>
+            <p>Lorem ipsum dolor sit amet</p>
+          </div>
+        </div>
+      </div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select all tr elements with an even numbered index</instructionsheading>
+    <iframehtml>
+      <table>
+        <tbody>
+          <tr> <td>Milton</td> </tr>
+
+          <tr> <td>Cary</td> </tr>
+
+          <tr> <td>Marilyn</td> </tr>
+
+          <tr> <td>Maria</td> </tr>
+
+          <tr> <td>James</td> </tr>
+
+          <tr> <td>Annie</td> </tr>
+        </tbody>
+      </table>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select all tr elements with an odd numbered index</instructionsheading>
+    <iframehtml>
+      <table>
+        <tbody>
+          <tr> <td>Milton</td> </tr>
+
+          <tr> <td>Cary</td> </tr>
+
+          <tr> <td>Marilyn</td> </tr>
+
+          <tr> <td>Maria</td> </tr>
+
+          <tr> <td>James</td> </tr>
+
+          <tr> <td>Annie</td> </tr>
+        </tbody>
+      </table>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the first and last div</instructionsheading>
+    <iframehtml>
+      <div> Div 1</div>
+      <div> Div 2</div>
+      <div> Div 3</div>
+      <div> Div 4</div>
+      <div> Div 5</div>
+      <div> Div 6</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the input element with a type of "radio"</instructionsheading>
+    <iframehtml>
+      <form>
+        <input type="text" value="lorem" />
+        <input type="radio" />
+        <input type="password" value="password" />
+        <input type="checkbox" />
+      </form>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the input element with a type of "checkbox"</instructionsheading>
+    <iframehtml>
+      <form>
+        <input type="text" value="lorem" />
+        <input type="radio" />
+        <input type="password" value="password" />
+        <input type="checkbox" />
+      </form>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the input element with a type of "password"</instructionsheading>
+    <iframehtml>
+      <form>
+        <input type="text" value="lorem" />
+        <input type="radio" />
+        <input type="password" value="password" />
+        <input type="checkbox" />
+      </form>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>selecting</type>
+    <instructionsheading>Select the input element with a type of "text"</instructionsheading>
+    <iframehtml>
+      <form>
+        <input type="text" value="lorem" />
+        <input type="radio" />
+        <input type="password" value="password" />
+        <input type="checkbox" />
+      </form>
+    </iframehtml>
+  </exercise>
+
 </exercises>

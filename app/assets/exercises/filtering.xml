@@ -1,40 +1,203 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <exercises>
+
   <exercise>
     <type>method</type>
-    <instructionsheading>Move $me to the beginning of the section</instructionsheading>
-    <instructionstext>
-      <strong>jQuery</strong> is obviously a fantastic JavaScript library and has
-      been my tool of choice for quite a while now, and it’ll probably continue that
-      way until something better comes along.
-    </instructionstext>
-    <selector>section</selector>
-    <iframehtml>
-      <section>
-        <article class="me">$me</article>
-        <div>
-          <article class="me">$me</article>
-          <p>Paragraph</p>
-        </div>
-      </section>
-      <article class="me">$me</article>
-    </iframehtml>
-  </exercise>
-  <exercise>
-    <type>method</type>
-    <instructionsheading>Select all h2s and ps that are children of a div</instructionsheading>
-    <instructionstext>
-      This isn’t really about jQuery, this is about a <em>much</em> larger
-      problem which has proven to be unavoidable.
-    </instructionstext>
+    <instructionsheading>Make <em>Div 1</em> go green</instructionsheading>
     <selector>div</selector>
     <iframehtml>
+      <h3>Lorizzle ipsum</h3>
+      <div>Div 1</div>
+
+      <h3>Donizzle posuere</h3>
+      <div>Div 2</div>
+
+      <h3>Gizzle vitae erizzle</h3>
+      <div>Div 3</div>
+
+      <h3>Praesent turpizzle</h3>
+      <div>Div 4</div>
+
+      <h3>Nunc sed izzle</h3>
+      <div>Div 5</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>Div 5</em> go green</instructionsheading>
+    <selector>div</selector>
+    <iframehtml>
+      <h3>Lorizzle ipsum</h3>
+      <div>Div 1</div>
+
+      <h3>Donizzle posuere</h3>
+      <div>Div 2</div>
+
+      <h3>Gizzle vitae erizzle</h3>
+      <div>Div 3</div>
+
+      <h3>Praesent turpizzle</h3>
+      <div>Div 4</div>
+
+      <h3>Nunc sed izzle</h3>
+      <div>Div 5</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>"List item 4"</em> go green</instructionsheading>
+    <selector>li</selector>
+    <iframehtml>
+      <ul>
+        <li> List item 1 </li>
+        <li> List item 2 </li>
+        <li> List item 3 </li>
+      </ul>
+      <ul>
+        <li> List item 4 </li>
+        <li> List item 5 </li>
+        <li> List item 6 </li>
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>Div 3</em> go green</instructionsheading>
+    <selector>div > div</selector>
+    <iframehtml>
       <div>
-        <h2> Heading2 1 </h2>
-        <p> Paragraph 2</p>
-        <h2> Heading2 2 </h2>
-        <p> Paragraph 2</p>
+        <div> Div 1
+        <h1>Section 1</h1>
+        <p>Proin shiz hizzle</p>
+        </div>
+        <div> Div 2
+        <h1>Section 2</h1>
+        <p>Praesent turpizzle get down get down</p>
+        </div>
+        <div> Div 3
+        <h1>Section 3</h1>
+        <p>Yippiyo non leo. Phasellus sempizzle</p>
+        </div>
+        <div> Div 4
+        <h1>Section 4</h1>
+        <p>Crunk velit shizzlin dizzle</p>
+        </div>
       </div>
     </iframehtml>
   </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make the tr elements that have an odd index go green</instructionsheading>
+    <selector>tr</selector>
+    <iframehtml>
+      <table>
+        <tbody>
+          <tr> <td>Milton</td> </tr>
+
+          <tr> <td>Cary</td> </tr>
+
+          <tr> <td>Marilyn</td> </tr>
+
+          <tr> <td>Maria</td> </tr>
+
+          <tr> <td>James</td> </tr>
+
+          <tr> <td>Annie</td> </tr>
+        </tbody>
+      </table>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>Paragraphs 2, 3, &amp; 5</em> go green</instructionsheading>
+    <selector>p</selector>
+    <iframehtml>
+      <p class="peanut"> Paragraph 1 </p>
+      <p> Paragraph 2 </p>
+      <p> Paragraph 3 </p>
+      <p class="peanut"> Paragraph 4 </p>
+      <p> Paragraph 5 </p>
+      <p class="peanut"> Paragraph 6 </p>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make all lis go green except for the li with a class of "label"</instructionsheading>
+    <selector>.filterbar li</selector>
+    <iframehtml>
+      <ul class="filterbar">
+        <li class="label">Sort by:</li>
+        <li>All</li>
+        <li>Tag 1</li>
+        <li>Tag 2</li>
+        <li>Tag 3</li>
+        <li>Tag 4</li>
+        <li>Tag 5</li>
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make ONLY the radio and checkbox input elements go green</instructionsheading>
+    <selector>input</selector>
+    <iframehtml>
+      <form>
+        <input type="text" value="lorem" />
+        <input type="radio" />
+        <input type="password" value="password" />
+        <input type="checkbox" />
+      </form>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make ALL input elements that aren't of type "text" go green</instructionsheading>
+    <selector>input</selector>
+    <iframehtml>
+      <form>
+        <input type="text" value="lorem" />
+        <input type="radio" />
+        <input type="password" value="password" />
+        <input type="checkbox" />
+      </form>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make the two list items that <em>have</em> uls as children go green</instructionsheading>
+    <selector>li</selector>
+    <iframehtml>
+      <ul class="nav">
+
+        <li><a href="#">Section 1</a>
+        <ul>
+          <li><a href="#">Section 1a</a></li>
+          <li><a href="#">Section 1b</a>
+          <ul>
+            <li><a href="#">Section 1b1</a></li>
+            <li><a href="#">Section 1b2</a></li>
+            <li><a href="#">Section 1b3</a></li>
+          </ul>
+          </li>
+          <li><a href="#">Section 1c</a></li>
+          <li><a href="#">Section 1d</a></li>
+          <li><a href="#">Section 1e</a></li>
+        </ul>
+        </li>
+
+        <li><a href="#">Section 2</a></li>
+
+      </ul>
+    </iframehtml>
+  </exercise>
+
 </exercises>

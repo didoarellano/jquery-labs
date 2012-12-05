@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <exercises>
+
   <exercise>
     <type>method</type>
     <instructionsheading>Move $me to the beginning of the section</instructionsheading>
@@ -15,17 +16,83 @@
       <article class="me">$me</article>
     </iframehtml>
   </exercise>
+
   <exercise>
     <type>method</type>
-    <instructionsheading>Select all h2s and ps that are children of a div</instructionsheading>
-    <selector>div</selector>
+    <instructionsheading>Move $me to the end of the ul</instructionsheading>
+    <selector>ul</selector>
     <iframehtml>
-      <div>
-        <h2> Heading2 1 </h2>
-        <p> Paragraph 2</p>
-        <h2> Heading2 2 </h2>
-        <p> Paragraph 2</p>
+      <ul>
+        <li>List item 1</li>
+        <li class="me">$me</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Move #i1 to the beginning of div.wrap</instructionsheading>
+    <selector>#i1</selector>
+    <iframehtml>
+      <div class="wrap">
+        <img src="../../img/3.jpeg" id="i3" />
+        <img src="../../img/6.jpeg" id="i6" />
+        <img src="../../img/5.jpeg" id="i5" />
+        <img src="../../img/4.jpeg" id="i4" />
+        <img src="../../img/2.jpeg" id="i2" />
+        <img src="../../img/1.jpeg" id="i1" />
       </div>
     </iframehtml>
   </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading><em>Insert</em> #i4 so that it appears <em>before</em> #i5</instructionsheading>
+    <selector>#i4</selector>
+    <iframehtml>
+      <div class="wrap">
+        <img src="../../img/1.jpeg" id="i1" />
+        <img src="../../img/3.jpeg" id="i3" />
+        <img src="../../img/6.jpeg" id="i6" />
+        <img src="../../img/5.jpeg" id="i5" />
+        <img src="../../img/4.jpeg" id="i4" />
+        <img src="../../img/2.jpeg" id="i2" />
+      </div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Move #i6 to the end of div.wrap</instructionsheading>
+    <selector>#i6</selector>
+    <iframehtml>
+      <div class="wrap">
+        <img src="../../img/1.jpeg" id="i1" />
+        <img src="../../img/3.jpeg" id="i3" />
+        <img src="../../img/6.jpeg" id="i6" />
+        <img src="../../img/4.jpeg" id="i4" />
+        <img src="../../img/5.jpeg" id="i5" />
+        <img src="../../img/2.jpeg" id="i2" />
+      </div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading><em>Insert</em> #i2 so that it appears <em>after</em> #i1</instructionsheading>
+    <selector>#i2</selector>
+    <iframehtml>
+      <div class="wrap">
+        <img src="../../img/1.jpeg" id="i1" />
+        <img src="../../img/3.jpeg" id="i3" />
+        <img src="../../img/4.jpeg" id="i4" />
+        <img src="../../img/5.jpeg" id="i5" />
+        <img src="../../img/2.jpeg" id="i2" />
+        <img src="../../img/6.jpeg" id="i6" />
+      </div>
+    </iframehtml>
+  </exercise>
+
 </exercises>

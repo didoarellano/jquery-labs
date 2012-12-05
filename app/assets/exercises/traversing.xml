@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <exercises>
+
   <exercise>
-    <type>codemirror</type>
-    <instructionsheading>Move $me to the beginning of the section</instructionsheading>
-    <selector>section</selector>
+    <type>method</type>
+    <instructionsheading>Make the <em>h3</em> go green</instructionsheading>
+    <selector>li a</selector>
     <iframehtml>
-      <section>
-        <article class="me">$me</article>
-        <div>
-          <article class="me">$me</article>
-          <p>Paragraph</p>
-        </div>
-      </section>
-      <article class="me">$me</article>
+      <ul class="gallery">
+
+        <li class="t1 t5">
+          <a href="#"> {Thumbnail} </a>
+          <h3>Astronaut</h3>
+          <p>Lorizzle ipsum dolor sit mofo, pot adipiscing yippiyo.</p>
+        </li>
+
+      </ul>
     </iframehtml>
   </exercise>
+
   <exercise>
-    <type>codemirror</type>
-    <instructionsheading>Select all h2s and ps that are children of a div</instructionsheading>
+    <type>method</type>
+    <instructionsheading>Make all h2s and ps that are children of a div go green</instructionsheading>
     <selector>div</selector>
     <iframehtml>
       <div>
@@ -28,4 +31,210 @@
       </div>
     </iframehtml>
   </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>ALL the divs</em> go green</instructionsheading>
+    <selector>h3</selector>
+    <iframehtml>
+      <h3>H3 Heading 1</h3>
+      <div>Div 1</div>
+      <h3>H3 Heading 2</h3>
+      <div>Div 2</div>
+      <h3>H3 Heading 3</h3>
+      <div>Div 3</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>ALL the h1s</em> go green</instructionsheading>
+    <selector>p</selector>
+    <iframehtml>
+      <div>
+        <h1>H1 Heading 1</h1>
+        <p>Paragraph 1</p>
+      </div>
+      <div>
+        <h1>H1 Heading 2</h1>
+        <p>Paragraph 2</p>
+      </div>
+      <div>
+        <h1>H1 Heading 3</h1>
+        <p>Paragraph 3</p>
+      </div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>List items 1, 3, &amp; 4</em> go green</instructionsheading>
+    <selector>li.current</selector>
+    <iframehtml>
+      <ul>
+        <li> List item 1 </li>
+        <li class="current"> List item 2 </li>
+        <li> List item 3 </li>
+        <li> List item 4 </li>
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>ALL list items</em> go green</instructionsheading>
+    <selector>a</selector>
+    <iframehtml>
+      <ul>
+        <li>
+          <a href="#">Section 1</a>
+        </li>
+        <li>
+          <a href="#">Section 2</a>
+        </li>
+        <li>
+          <a href="#">Section 3</a>
+        </li>
+        <li>
+          <a href="#">Section 4</a>
+        </li>
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>divs 1 &amp; 3</em> go green</instructionsheading>
+    <selector>div.current</selector>
+    <iframehtml>
+      <h3>H3 Heading 1</h3>
+      <div>Div 1</div>
+      <h3>H3 Heading 2</h3>
+      <div class="current">Div 2</div>
+      <h3>H3 Heading 3</h3>
+      <div>Div 3</div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make the ul that is a <em>child</em> of li.current go green</instructionsheading>
+    <selector>li.current</selector>
+    <iframehtml>
+      <ul>
+
+        <li class="current"><a href="#">Section 1</a>
+        <ul>
+          <li><a href="#">Section 1a</a></li>
+          <li><a href="#">Section 1b</a>
+          <ul>
+            <li><a href="#">Section 1b1</a></li>
+            <li><a href="#">Section 1b2</a></li>
+            <li><a href="#">Section 1b3</a></li>
+          </ul>
+          </li>
+          <li><a href="#">Section 1c</a></li>
+          <li><a href="#">Section 1d</a></li>
+          <li><a href="#">Section 1e</a></li>
+        </ul>
+        </li>
+
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make the uls that are <em>descendants</em> of li.current go green</instructionsheading>
+    <selector>li.current</selector>
+    <iframehtml>
+      <ul>
+
+        <li class="current"><a href="#">Section 1</a>
+        <ul>
+          <li><a href="#">Section 1a</a></li>
+          <li><a href="#">Section 1b</a>
+          <ul>
+            <li><a href="#">Section 1b1</a></li>
+            <li><a href="#">Section 1b2</a></li>
+            <li><a href="#">Section 1b3</a></li>
+          </ul>
+          </li>
+          <li><a href="#">Section 1c</a></li>
+          <li><a href="#">Section 1d</a></li>
+          <li><a href="#">Section 1e</a></li>
+        </ul>
+        </li>
+
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>ALL the anchor elements</em> go green</instructionsheading>
+    <selector>.gallery</selector>
+    <iframehtml>
+      <ul class="gallery">
+
+        <li class="t1 t5">
+          <a href="#"> {Thumbnail} </a>
+          <h3>Astronaut</h3>
+          <p>Lorizzle ipsum</p>
+        </li>
+
+        <li class="t1 t2 t3 t4 t5">
+          <a href="#"> {Thumbnail} </a>
+          <h3>Beer &amp; Drugs</h3>
+          <p>Lorizzle ipsum</p>
+        </li>
+
+        <li class="t2 t5">
+          <a href="#"> {Thumbnail} </a>
+          <h3>Bungo</h3>
+          <p>Lorizzle ipsum</p>
+        </li>
+
+      </ul>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make <em>ALL the divs</em> go green</instructionsheading>
+    <selector>p</selector>
+    <iframehtml>
+      <div> Div 1
+      <section>
+        <div> Div 2
+        <div> Div 3
+        <div>
+          <p>Inception</p>
+        </div>
+        </div>
+        </div>
+      </section>
+      </div>
+    </iframehtml>
+  </exercise>
+
+  <exercise>
+    <type>method</type>
+    <instructionsheading>Make the div with a class of "target" go green</instructionsheading>
+    <selector>p</selector>
+    <iframehtml>
+      <div> Div 1
+      <section>
+        <div class="target"> Div 2
+        <div> Div 3
+        <div>
+          <p>Inception</p>
+        </div>
+        </div>
+        </div>
+      </section>
+      </div>
+    </iframehtml>
+  </exercise>
+
 </exercises>
