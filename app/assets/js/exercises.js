@@ -39,9 +39,10 @@ define(['jquery', 'exercise'], function($, Exercise) {
                 /*jshint validthis:true*/
                 var configs = [];
                 var exercises = data.getElementsByTagName('exercise');
-                var i = exercises.length;
+                var l = exercises.length;
+                var i;
 
-                while (i--) {
+                for (i = 0; i < l; i++) {
                     configs.push(this._massageToObject(exercises[i]));
                 }
 
