@@ -15,6 +15,9 @@ define(['jquery'], function($) {
         this.$startScreens = this.$exercise.find('.startscreen article');
         this.$visibleStartScreen = $([]);
         this.$iframe = $('#sandbox');
+        this.$pre = this.$exercise.find('pre');
+        this.$instructions = this.$sidebar.find('.instructions');
+        this.$context = this.$exercise.find('.context');
     }
 
     AppView.prototype = {

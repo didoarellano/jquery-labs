@@ -22,7 +22,10 @@ define(['jquery', 'appview'], function($, AppView) {
                 '$views',
                 '$startScreens',
                 '$sidebar',
-                '$iframe'
+                '$iframe',
+                '$pre',
+                '$instructions',
+                '$context'
             ];
             var i = props.length;
 
