@@ -48,6 +48,19 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
                     window.location.hash = hash;
                 }
             );
+
+            appview.$sidebar.on(
+                'click',
+                'button',
+                function() {
+                    var index = self.currentExercise +
+                            (this.className === 'next' ? 1 : -1);
+                    var hash = '/' + self.currentCategory;
+                    hash += '/' + index;
+                    window.location.hash = hash;
+                }
+            );
+
         },
 
         onHashChange: function(evt) {
@@ -85,6 +98,11 @@ define(['jquery', 'exercises', 'appview'], function($, Exercises, AppView) {
             appview.slideTo('exercise');
 
             if ( !isNaN(hash.exercise) ) {
+                maybeFetch.done(function() {
+                    var exercise = collection.getExercise(hash);
+                    self.currentExercise = hash.exercise;
+                    appview.renderExercise(exercise);
+                });
                 appview.startExercise();
             } else {
                 appview.endExercise();

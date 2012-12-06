@@ -81,10 +81,12 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
             beforeEach(function() {
                 var $fakeWindow = $(document.createElement('div'));
                 var $fakeExercise = $(document.createElement('span'));
+                var $fakeSidebar = $(document.createElement('span'));
 
                 labs.appview = new AppView();
                 labs.appview.$window = $fakeWindow;
                 labs.appview.$exercise = $fakeExercise;
+                labs.appview.$sidebar = $fakeSidebar;
 
                 labs.attachListeners();
 
@@ -104,6 +106,13 @@ define(['labs', 'exercises', 'appview', 'jquery'], function(Labs, Exercises, App
                 var click = events.click;
                 expect(click.delegateCount).to.be.greaterThan(0);
                 expect(click[0].selector).to.be.equal('a.button');
+            });
+
+            it('should delegate clicks on button elements to appview.$sidebar', function() {
+                var events = $._data(labs.appview.$sidebar[0], 'events');
+                var click = events.click;
+                expect(click.delegateCount).to.be.greaterThan(0);
+                expect(click[0].selector).to.be.equal('button');
             });
 
         });
