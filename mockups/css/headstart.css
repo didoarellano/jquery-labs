@@ -1,0 +1,2523 @@
+/* FONTS */
+@font-face {
+  font-family: "TeXGyreBonumRegular";
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumRegular.eot");
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumRegular.woff") format("woff"), url("../fonts/tex-gyre-bonum/TeXGyreBonumRegular.ttf") format("truetype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumRegular.svg#TeXGyreBonumRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "TeXGyreBonumItalic";
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumItalic.eot");
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumItalic.woff") format("woff"), url("../fonts/tex-gyre-bonum/TeXGyreBonumItalic.ttf") format("truetype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumItalic.svg#TeXGyreBonumItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "TeXGyreBonumBold";
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumBold.eot");
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumBold.eot?#iefix") format("embedded-opentype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumBold.woff") format("woff"), url("../fonts/tex-gyre-bonum/TeXGyreBonumBold.ttf") format("truetype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumBold.svg#TeXGyreBonumBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "TeXGyreBonumBoldItalic";
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumBoldItalic.eot");
+  src: url("../fonts/tex-gyre-bonum/TeXGyreBonumBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumBoldItalic.woff") format("woff"), url("../fonts/tex-gyre-bonum/TeXGyreBonumBoldItalic.ttf") format("truetype"), url("../fonts/tex-gyre-bonum/TeXGyreBonumBoldItalic.svg#TeXGyreBonumBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../fonts/open-sans/OpenSansLight.eot");
+  src: url("../fonts/open-sans/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansLight.woff") format("woff"), url("../fonts/open-sans/OpenSansLight.ttf") format("truetype"), url("../fonts/open-sans/OpenSansLight.svg#OpenSansLight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansLightItalic";
+  src: url("../fonts/open-sans/OpenSansLightItalic.eot");
+  src: url("../fonts/open-sans/OpenSansLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansLightItalic.woff") format("woff"), url("../fonts/open-sans/OpenSansLightItalic.ttf") format("truetype"), url("../fonts/open-sans/OpenSansLightItalic.svg#OpenSansLightItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansRegular";
+  src: url("../fonts/open-sans/OpenSansRegular.eot");
+  src: url("../fonts/open-sans/OpenSansRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansRegular.woff") format("woff"), url("../fonts/open-sans/OpenSansRegular.ttf") format("truetype"), url("../fonts/open-sans/OpenSansRegular.svg#OpenSansRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansItalic";
+  src: url("../fonts/open-sans/OpenSansItalic.eot");
+  src: url("../fonts/open-sans/OpenSansItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansItalic.woff") format("woff"), url("../fonts/open-sans/OpenSansItalic.ttf") format("truetype"), url("../fonts/open-sans/OpenSansItalic.svg#OpenSansItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansSemibold";
+  src: url("../fonts/open-sans/OpenSansSemibold.eot");
+  src: url("../fonts/open-sans/OpenSansSemibold.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansSemibold.woff") format("woff"), url("../fonts/open-sans/OpenSansSemibold.ttf") format("truetype"), url("../fonts/open-sans/OpenSansSemibold.svg#OpenSansSemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansSemiboldItalic";
+  src: url("../fonts/open-sans/OpenSansSemiboldItalic.eot");
+  src: url("../fonts/open-sans/OpenSansSemiboldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansSemiboldItalic.woff") format("woff"), url("../fonts/open-sans/OpenSansSemiboldItalic.ttf") format("truetype"), url("../fonts/open-sans/OpenSansSemiboldItalic.svg#OpenSansSemiboldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../fonts/open-sans/OpenSansBold.eot");
+  src: url("../fonts/open-sans/OpenSansBold.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansBold.woff") format("woff"), url("../fonts/open-sans/OpenSansBold.ttf") format("truetype"), url("../fonts/open-sans/OpenSansBold.svg#OpenSansBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansBoldItalic";
+  src: url("../fonts/open-sans/OpenSansBoldItalic.eot");
+  src: url("../fonts/open-sans/OpenSansBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansBoldItalic.woff") format("woff"), url("../fonts/open-sans/OpenSansBoldItalic.ttf") format("truetype"), url("../fonts/open-sans/OpenSansBoldItalic.svg#OpenSansBoldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansExtrabold";
+  src: url("../fonts/open-sans/OpenSansExtrabold.eot");
+  src: url("../fonts/open-sans/OpenSansExtrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansExtrabold.woff") format("woff"), url("../fonts/open-sans/OpenSansExtrabold.ttf") format("truetype"), url("../fonts/open-sans/OpenSansExtrabold.svg#OpenSansExtrabold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "OpenSansExtraboldItalic";
+  src: url("../fonts/open-sans/OpenSansExtraboldItalic.eot");
+  src: url("../fonts/open-sans/OpenSansExtraboldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSansExtraboldItalic.woff") format("woff"), url("../fonts/open-sans/OpenSansExtraboldItalic.ttf") format("truetype"), url("../fonts/open-sans/OpenSansExtraboldItalic.svg#OpenSansExtraboldItalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "IcoMoonSubset";
+  src: url("../fonts/ico-moon-subset/IcoMoonSubset.eot");
+  src: url("../fonts/ico-moon-subset/IcoMoonSubset.eot?#iefix") format("embedded-opentype"), url("../fonts/ico-moon-subset/IcoMoonSubset.woff") format("woff"), url("../fonts/ico-moon-subset/IcoMoonSubset.ttf") format("truetype"), url("../fonts/ico-moon-subset/IcoMoonSubset.svg#IcoMoonSubset") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* normalize.css v1.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000322}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000332}}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000343}}
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000353}}
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000368}}
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Address `font-family` inconsistency between `textarea` and other form
+ * elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000383}}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/**
+ * Address margins handled incorrectly in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\0000391}}
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003103}}
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003112}}
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address font sizes and margins set differently in IE 6/7.
+ * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003126}}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003131}}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003136}}
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003141}}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003146}}
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003151}}
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0; }
+
+/**
+ * Address styling not present in IE 7/8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003160}}
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003169}}
+b,
+strong {
+  font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003173}}
+blockquote {
+  margin: 1em 40px; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003181}}
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ * Known issue: no IE 6/7 normalization.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003190}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 6/7/8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003200}}
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address margins set differently in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003210}}
+p,
+pre {
+  margin: 1em 0; }
+
+/**
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003221}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003231}}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/**
+ * Address CSS quotes not supported in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003241}}
+q {
+  quotes: none; }
+
+/**
+ * Address `quotes` property not supported in Safari 4.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003250}}
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003259}}
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003268}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003275}}
+sup {
+  top: -0.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003279}}
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+/**
+ * Address margins set differently in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003294}}
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003298}}
+dd {
+  margin: 0 0 0 40px; }
+
+/**
+ * Address paddings set differently in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003308}}
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
+/**
+ * Correct list images handled incorrectly in IE 7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003317}}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003331}}
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003340}}
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003352}}
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003364}}
+form {
+  margin: 0; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003372}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003384}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003401}}
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */ }
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003414}}
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003426}}
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003443}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003454}}
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003466}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003479}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003492}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003501}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003511}}
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_normalize\.scss}line{font-family:\00003524}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\000034}}
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\000039}}
+object,
+embed {
+  height: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000313}}
+.row {
+  zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000316}}
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000320}}
+  .row:after {
+    clear: both; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000325}}
+.row {
+  max-width: 100%;
+  margin: 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000328}}
+  .row .row {
+    width: auto;
+    max-width: none;
+    min-width: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000333}}
+  .row.collapse .col {
+    padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000336}}
+  .row .row.collapse {
+    margin: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000341}}
+.col {
+  position: relative; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000348}}
+.box {
+  background-color: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  padding: 18.662px;
+  margin: 0 0 18.662px;
+  border-radius: 0.14em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000354}}
+  .box > :last-child {
+    margin-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000357}}
+  .box > :first-child {
+    margin-top: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000362}}
+.compact {
+  padding: 9.331px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000366}}
+table {
+  width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000380}}
+[class^="mob-"],
+.col {
+  min-height: 1px;
+  padding: 0 9.331px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000383}}
+  [class^="mob-"].center,
+  .col.center {
+    float: none;
+    margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000389}}
+[class^="mob-"] {
+  float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000391}}
+  [class^="mob-"] + [class^="mob-"]:last-child {
+    float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\0000394}}
+  [class^="mob-"] + [class^="mob-"].end {
+    float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003100}}
+.mob-i,
+.row .mob-i {
+  width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003105}}
+.mob-ii,
+.row .mob-ii {
+  width: 50%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003110}}
+.mob-iii,
+.row .mob-iii {
+  width: 75%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003115}}
+.mob-iv,
+.row .mob-iv {
+  width: 100%; }
+
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003125}}
+  body {
+    padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003129}}
+  .row {
+    width: 960px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003131}}
+    .row .row {
+      margin: 0 -10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003136}}
+  .col {
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003138}}
+    .col.center {
+      float: none;
+      margin: 0 auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003142}}
+    .col + .col:last-child {
+      float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003145}}
+    .col + .col.end {
+      float: left; } }
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003164}}
+  .i,
+  .row .i {
+    width: 8.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003169}}
+  .ii,
+  .row .ii {
+    width: 16.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003174}}
+  .iii,
+  .row .iii {
+    width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003179}}
+  .iv,
+  .row .iv {
+    width: 33.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003184}}
+  .v,
+  .row .v {
+    width: 41.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003189}}
+  .vi,
+  .row .vi {
+    width: 50%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003194}}
+  .vii,
+  .row .vii {
+    width: 58.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003199}}
+  .viii,
+  .row .viii {
+    width: 66.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003204}}
+  .ix,
+  .row .ix {
+    width: 75%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003209}}
+  .x,
+  .row .x {
+    width: 83.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003214}}
+  .xi,
+  .row .xi {
+    width: 91.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003219}}
+  .xii,
+  .row .xii {
+    width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003224}}
+  .row .offset-i {
+    margin-left: 8.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003228}}
+  .row .offset-ii {
+    margin-left: 16.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003232}}
+  .row .offset-iii {
+    margin-left: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003236}}
+  .row .offset-iv {
+    margin-left: 33.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003240}}
+  .row .offset-v {
+    margin-left: 41.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003244}}
+  .row .offset-vi {
+    margin-left: 50%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003248}}
+  .row .offset-vi {
+    margin-left: 58.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003252}}
+  .row .offset-viii {
+    margin-left: 66.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003256}}
+  .row .offset-ix {
+    margin-left: 75%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003260}}
+  .row .offset-x {
+    margin-left: 83.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003265}}
+  .push-ii {
+    left: 16.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003269}}
+  .pull-ii {
+    right: 16.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003273}}
+  .push-iii {
+    left: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003277}}
+  .pull-iii {
+    right: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003281}}
+  .push-iv {
+    left: 33.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003285}}
+  .pull-iv {
+    right: 33.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003289}}
+  .push-v {
+    left: 41.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003293}}
+  .pull-v {
+    right: 41.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003297}}
+  .push-vi {
+    left: 50%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003301}}
+  .pull-vi {
+    right: 50%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003305}}
+  .push-vi {
+    left: 58.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003309}}
+  .pull-vi {
+    right: 58.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003313}}
+  .push-viii {
+    left: 66.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003317}}
+  .pull-viii {
+    right: 66.66667%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003321}}
+  .push-ix {
+    left: 75%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003325}}
+  .pull-ix {
+    right: 75%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003329}}
+  .push-x {
+    left: 83.33333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003333}}
+  .pull-x {
+    right: 83.33333%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003600}}
+.blocks {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003607}}
+  .blocks > li {
+    height: auto;
+    padding: 4.6655px;
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003612}}
+    .blocks > li > :last-child {
+      margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003616}}
+    .blocks > li:before {
+      display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003623}}
+  .blocks.mob-ii-up > li {
+    width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003627}}
+  .blocks.mob-iii-up > li {
+    width: 33.333%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003631}}
+  .blocks.mob-iv-up > li {
+    width: 25%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003638}}
+  .blocks.mob-ii-up > li:nth-child(2n+1), .blocks.mob-iii-up > li:nth-child(3n+1), .blocks.mob-iv-up > li:nth-child(4n+1) {
+    clear: both; }
+  @media only screen and (min-width: 37.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003645}}
+    .blocks > li {
+      padding: 9.331px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003649}}
+    .blocks.i-up > li {
+      width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003653}}
+    .blocks.ii-up > li {
+      width: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003657}}
+    .blocks.iii-up > li {
+      width: 33.333%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003661}}
+    .blocks.iv-up > li {
+      width: 25%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003665}}
+    .blocks.v-up > li {
+      width: 20%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003669}}
+    .blocks.vi-up > li {
+      width: 16.666%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003673}}
+    .blocks.vii-up > li {
+      width: 14.285%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003677}}
+    .blocks.viii-up > li {
+      width: 12.5%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003681}}
+    .blocks.ix-up > li {
+      width: 11.111%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003685}}
+    .blocks.x-up > li {
+      width: 10%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003698}}
+    .blocks.ii-up > li:nth-child(2n+1), .blocks.iii-up > li:nth-child(3n+1), .blocks.iv-up > li:nth-child(4n+1), .blocks.v-up > li:nth-child(5n+1), .blocks.vi-up > li:nth-child(6n+1), .blocks.vii-up > li:nth-child(7n+1), .blocks.viii-up > li:nth-child(8n+1), .blocks.ix-up > li:nth-child(9n+1), .blocks.x-up > li:nth-child(10n+1) {
+      clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003704}}
+    .blocks.mob-ii-up > li:nth-child(2n+1), .blocks.mob-iii-up > li:nth-child(3n+1), .blocks.mob-iv-up > li:nth-child(4n+1) {
+      clear: none; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003714}}
+.media {
+  overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003717}}
+  .media .img {
+    float: left;
+    margin: 0 18.662px 18.662px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003721}}
+    .media .img[class^="mob-"] {
+      padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003726}}
+  .media .bd {
+    overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003729}}
+    .media .bd > :first-child {
+      margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_grid\.scss}line{font-family:\00003734}}
+  .media .media .img {
+    margin: 0 9.331px 9.331px 0; }
+
+/* =====[ MAIN ]===== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\000035}}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000312}}
+html {
+  font-size: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000316}}
+body {
+  font: 1.4em/1.634 "OpenSansRegular", "Helvetica Neue", sans-serif;
+  color: #222222; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000321}}
+::-moz-selection {
+  background: #c5d8e4;
+  text-shadow: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000326}}
+::selection {
+  background: #c5d8e4;
+  text-shadow: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000331}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: block;
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin: 18.662px 0;
+  clear: both; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000347}}
+a:link {
+  color: #ec485e;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000355}}
+a:visited,
+a:active {
+  color: #ec485e; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000359}}
+a:hover {
+  color: #4f86a7;
+  border-bottom: 1px solid #4f86a7; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000371}}
+img,
+video,
+audio,
+object {
+  max-width: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000375}}
+img {
+  vertical-align: middle; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000379}}
+video {
+  background-color: #d4d4d4; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000383}}
+.img-bordered {
+  border: 3px solid #f3f3f3;
+  box-shadow: 0 0 0 1px #e1e1e1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\0000397}}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "OpenSansBold", sans-serif;
+  font-weight: normal;
+  line-height: 1.333;
+  margin: 18.662px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003103}}
+  h1 a:link,
+  h2 a:link,
+  h3 a:link,
+  h4 a:link,
+  h5 a:link,
+  h6 a:link {
+    border: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003108}}
+h1 {
+  font-size: 2.179em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003112}}
+h2 {
+  font-size: 1.777em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003116}}
+h3 {
+  font-size: 1.634em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003120}}
+h4 {
+  font-size: 1.333em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003124}}
+h5 {
+  font-size: 1.226em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003128}}
+h6 {
+  font-size: 1em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003133}}
+p,
+pre {
+  margin: 18.662px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003137}}
+small {
+  font-size: .86em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003141}}
+strong {
+  font-family: "OpenSansBold", sans-serif;
+  font-weight: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003146}}
+em {
+  font-family: "OpenSansItalic", sans-serif;
+  font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003151}}
+mark {
+  background-color: #ffe062; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003155}}
+address {
+  font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003159}}
+blockquote {
+  border-left: 2px solid #d4d4d4;
+  padding-left: 18.662px;
+  margin: 18.662px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003164}}
+  blockquote .attribution {
+    display: block;
+    color: #959595; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003170}}
+q {
+  font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003173}}
+  q:before {
+    content: "\201c"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003177}}
+  q:after {
+    content: "\201d"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003182}}
+code {
+  background: #fff1b8; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003186}}
+.aside {
+  color: #959595;
+  font-size: 0.86em;
+  line-height: 1.777; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003192}}
+.leader {
+  font-size: 1.634em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003196}}
+.mute {
+  color: #959595; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003204}}
+[data-icon]:before {
+  font-family: IcoMoonSubset;
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003219}}
+dl,
+menu,
+ol,
+ul {
+  margin: 18.662px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003223}}
+dd {
+  margin: 0 0 0 40px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003227}}
+ul {
+  list-style: none;
+  padding-left: 18.662px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003231}}
+  ul ul, ul ol {
+    padding-left: 18.662px;
+    margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003235}}
+    ul ul li:before, ul ol li:before {
+      border: 1px solid #959595;
+      background: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003241}}
+  ul li {
+    padding-left: .75em;
+    position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003245}}
+    ul li:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .6em;
+      background: #555555;
+      width: .36em;
+      height: .36em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003258}}
+ol ol, ol ul {
+  padding-left: 18.662px;
+  margin: 0;
+  list-style-position: inside; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003264}}
+ol.alpha {
+  list-style: upper-alpha; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003267}}
+  ol.alpha ol {
+    list-style: lower-alpha inside; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003273}}
+dt {
+  font-family: "OpenSansBold"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003277}}
+dd {
+  margin: 0 0 18.662px 0; }
+
+@media only screen and (min-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003282}}
+  dt {
+    text-align: right;
+    padding-right: 18.662px;
+    width: 15%;
+    float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003289}}
+  dd {
+    margin-left: 15%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003298}}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003304}}
+legend {
+  font-size: 1.634em;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #d4d4d4;
+  margin-bottom: 9.331px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003311}}
+  legend small {
+    color: #959595;
+    font-weight: 200; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003317}}
+label {
+  margin: 9.331px 0;
+  display: block;
+  position: relative; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003323}}
+.horizontal label {
+  display: inline;
+  margin-right: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003327}}
+  .horizontal label:last-child {
+    margin-right: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003339}}
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+  line-height: 2.369em;
+  height: 2.369em;
+  padding: .518em;
+  margin: .518em 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 0.14em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003358}}
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+  -moz-transition: box-shadow 0.3s ease-in-out;
+  -o-transition: box-shadow 0.3s ease-in-out;
+  -ms-transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  border-color: #555555;
+  outline: none;
+  box-shadow: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003364}}
+input[type="file"] {
+  font-style: italic;
+  color: #555555; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003369}}
+textarea {
+  height: 7.478em;
+  padding: .518em;
+  margin: .518em 0;
+  border: 1px solid #d4d4d4;
+  resize: vertical;
+  border-radius: 0.14em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003378}}
+select[multiple] {
+  border: 1px solid #d4d4d4;
+  border-radius: 0.14em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003383}}
+.disabled {
+  color: #959595;
+  font-style: italic;
+  opacity: .7; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003391}}
+::-webkit-input-placeholder {
+  font-family: "OpenSansRegular", "Helvetica Neue", sans-serif;
+  color: #555555; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003396}}
+:-moz-placeholder {
+  font-family: "OpenSansRegular", "Helvetica Neue", sans-serif;
+  color: #555555; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003406}}
+.button,
+a.button {
+  font-family: inherit;
+  color: #f3f3f3;
+  vertical-align: middle;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #e71a35;
+  background: #ec485e;
+  display: inline-block;
+  border: 1px solid #ec485e;
+  padding: .518em 1em;
+  border-radius: 0.14em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003419}}
+.button.large {
+  font-size: 1.634em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003423}}
+.button.mini {
+  font-size: 0.71em;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003429}}
+.button.gloss {
+  background: -webkit-linear-gradient(bottom, #ec485e 0%, #ee5f72 100%);
+  background: -moz-linear-gradient(bottom, #ec485e 0%, #ee5f72 100%);
+  box-shadow: inset 1px 1px 0 0 rgba(246, 164, 175, 0.5); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003436}}
+.button.secondary {
+  background: #e1e1e1;
+  color: #555555;
+  text-shadow: 1px 1px 0 #f3f3f3;
+  border-color: #d4d4d4; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003443}}
+.secondary.gloss {
+  background: -webkit-linear-gradient(bottom, #d4d4d4 0%, #e9e9e9 100%);
+  background: -moz-linear-gradient(bottom, #d4d4d4 0%, #e1e1e1 100%);
+  box-shadow: inset 1px 1px 0 0 rgba(243, 243, 243, 0.5); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003450}}
+.button:hover {
+  background: #ea314a; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003454}}
+.secondary:hover {
+  background: #d5d5d5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003463}}
+table {
+  margin: 18.662px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003470}}
+caption,
+tr,
+td,
+th {
+  text-align: left;
+  padding: 9.331px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003475}}
+caption {
+  font-size: 1.226em;
+  font-family: "OpenSansBold";
+  font-weight: normal;
+  padding-top: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003482}}
+tr {
+  border-bottom: 1px solid #e9e9e9; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003486}}
+th {
+  font-family: "OpenSansBold";
+  font-weight: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003491}}
+thead {
+  border-bottom: 2px solid #d4d4d4; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003496}}
+tbody tr:last-child {
+  border-bottom: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003504}}
+.table-bordered td, .table-bordered th {
+  border: 1px solid #e9e9e9; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003510}}
+.table-striped tr:nth-child(even) {
+  background: #f6f6f6; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003519}}
+.table-compact caption,
+.table-compact tr,
+.table-compact td,
+.table-compact th {
+  padding: 0.388em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_mixins\.scss}line{font-family:\00003182}}
+.fatzebra tr:nth-child(6n), .fatzebra tr:nth-child(6n-1), .fatzebra tr:nth-child(6n-2) {
+  background: #f3f3f3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003531}}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003539}}
+.fade.in {
+  opacity: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_main\.scss}line{font-family:\00003560}}
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========[ Common UI Component Styles ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\000033}}
+.horizontal li {
+  float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\000038}}
+[class^="nav-"] ul, [class^="nav-"] ol {
+  margin-top: 0;
+  padding: 0;
+  list-style: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\0000313}}
+  [class^="nav-"] ul li:before, [class^="nav-"] ol li:before {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\0000318}}
+[class^="nav-"] a {
+  text-decoration: none;
+  border: none;
+  color: #999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\0000323}}
+  [class^="nav-"] a.current {
+    font-family: "OpenSansBold";
+    color: #4f86a7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\0000328}}
+  [class^="nav-"] a:hover {
+    color: #555555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_common-styles\.scss}line{font-family:\0000332}}
+  [class^="nav-"] a.current:hover {
+    color: #ec485e; }
+
+/* ==========[ Breadcrumbs ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_breadcrumbs\.scss}line{font-family:\000033}}
+.nav-breadcrumbs {
+  overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_breadcrumbs\.scss}line{font-family:\000036}}
+  .nav-breadcrumbs li {
+    float: left;
+    padding: 0 0.75em 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_breadcrumbs\.scss}line{font-family:\0000310}}
+    .nav-breadcrumbs li:after {
+      content: '\e0d7';
+      font-family: IcoMoonSubset;
+      color: #d4d4d4;
+      padding-left: 0.75em;
+      position: relative;
+      top: 0.1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_breadcrumbs\.scss}line{font-family:\0000318}}
+    .nav-breadcrumbs li.current:after {
+      content: ""; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_breadcrumbs\.scss}line{font-family:\0000322}}
+    .nav-breadcrumbs li.current {
+      font-family: "OpenSansBold";
+      color: #777777; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_breadcrumbs\.scss}line{font-family:\0000328}}
+  .nav-breadcrumbs a:hover {
+    color: #ec485e; }
+
+/* ==========[ Carousel ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\000039}}
+.carousel {
+  margin-bottom: 37.324px;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000313}}
+  .carousel .spinner {
+    left: 50%;
+    bottom: 50%;
+    margin: 0 0 -10px -10px;
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000321}}
+.carousel-content {
+  background: #f3f3f3;
+  width: 100%;
+  max-width: 960px;
+  overflow: hidden;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000338}}
+.carousel-slide {
+  width: 100%;
+  position: absolute;
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000343}}
+  .carousel-slide.is-current {
+    display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000348}}
+.carousel-caption {
+  font-size: 0.86em;
+  color: #d4d4d4;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4.6655px 9.331px;
+  z-index: 50;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000358}}
+.is-current .carousel-caption {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000362}}
+.carousel-controls {
+  width: 100%;
+  height: 0;
+  z-index: 80;
+  position: absolute;
+  bottom: 50%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000368}}
+  .carousel-controls a {
+    font-size: 3em;
+    color: #d4d4d4;
+    text-shadow: 0 0 5px #222222;
+    border: none;
+    margin-top: -0.8em;
+    position: absolute; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000377}}
+  .carousel-controls .prev {
+    left: -3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000381}}
+  .carousel-controls .next {
+    right: -3px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000386}}
+.carousel-pagination {
+  text-align: center;
+  padding: 0;
+  margin: .5em 0 0;
+  position: absolute;
+  right: 0px;
+  left: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000392}}
+  .carousel-pagination li {
+    display: inline-block;
+    padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\0000396}}
+    .carousel-pagination li:before {
+      display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003101}}
+  .carousel-pagination a {
+    font-size: .8em;
+    color: #d4d4d4;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003106}}
+    .carousel-pagination a:before {
+      font-family: IcoMoonSubset;
+      content: '\e0aa'; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003111}}
+    .carousel-pagination a.is-current {
+      color: #ec485e; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003114}}
+      .carousel-pagination a.is-current:before {
+        content: '\e042'; }
+
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003122}}
+  .carousel-controls a {
+    background: rgba(0, 0, 0, 0.5); } }
+@media only screen and (max-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003129}}
+  .carousel-controls {
+    position: absolute;
+    bottom: -20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_carousel\.scss}line{font-family:\00003132}}
+    .carousel-controls a {
+      font-size: 2em;
+      text-shadow: none;
+      color: #959595; } }
+/* ==========[ Collapsible Panels ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\000033}}
+.collapsible {
+  position: relative;
+  padding: 1px;
+  border: 1px solid #f1f1f1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\000039}}
+[class^="collapsible-"] {
+  padding: .75em;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000313}}
+  [class^="collapsible-"] :first-child {
+    margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000317}}
+  [class^="collapsible-"] :last-child {
+    margin-bottom: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000322}}
+.collapsible-heading {
+  font: 1em "OpenSansLight";
+  color: #222222;
+  cursor: pointer;
+  background: #e9e9e9;
+  margin: 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid #d5d5d5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000331}}
+  .collapsible-heading:first-of-type {
+    border-top: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000335}}
+  .collapsible-heading:last-of-type {
+    border-bottom: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000339}}
+  .collapsible-heading:before {
+    font-family: IcoMoonSubset, Arial;
+    color: #4f86a7;
+    content: '\e0c3';
+    position: relative;
+    top: 0.07em;
+    left: -0.25em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000346}}
+  .collapsible-heading.is-active {
+    color: white;
+    background: #555555;
+    border-bottom: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000351}}
+    .collapsible-heading.is-active:before {
+      color: #fdeaec;
+      content: '\e0c5'; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_collapsible-panels\.scss}line{font-family:\0000358}}
+.collapsible-panel {
+  background: #f8f8f8;
+  display: none; }
+
+/* ==========[ Hero Unit ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_hero-unit\.scss}line{font-family:\000033}}
+.hero {
+  padding: 1.777em;
+  margin: 18.662px 0;
+  background: #e8eff4;
+  border: 1px solid #c5d8e4;
+  text-shadow: 0 1px 0 white; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_hero-unit\.scss}line{font-family:\0000310}}
+  .hero p {
+    font-family: "OpenSansLight"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_hero-unit\.scss}line{font-family:\0000314}}
+  .hero h1 {
+    font: 3.157em "OpenSansLight";
+    margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_hero-unit\.scss}line{font-family:\0000319}}
+  .hero :last-child {
+    margin-bottom: 0; }
+
+/* ==========[ Input+Button Pattern ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_inputbutton\.scss}line{font-family:\0000310}}
+.input-and-button button,
+.input-and-button input,
+.input-and-button a {
+  height: 2.369em;
+  padding: 0 .518em;
+  float: left;
+  margin: 0 0 18.662px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_inputbutton\.scss}line{font-family:\0000317}}
+.input-and-button input {
+  border-right: none; }
+
+/* ==========[ Messages and Labels ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_messages-labels\.scss}line{font-family:\000033}}
+.message {
+  color: #f3f3f3;
+  padding: 18.662px;
+  margin: 0 0 18.662px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_messages-labels\.scss}line{font-family:\000039}}
+.label {
+  font: 0.71em Tahoma, Geneva, sans-serif;
+  color: #f3f3f3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #959595;
+  padding: 2px 4px;
+  border-radius: 0.21em;
+  border: none !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_messages-labels\.scss}line{font-family:\0000320}}
+.alert {
+  background: #d6393d;
+  border: 1px solid #8c1d20;
+  text-shadow: 1px 1px 0 #a12125; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_messages-labels\.scss}line{font-family:\0000326}}
+.success {
+  background: #72a449;
+  border: 1px solid #598139;
+  text-shadow: 1px 1px 0 #4d6f31; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_messages-labels\.scss}line{font-family:\0000332}}
+.info {
+  color: #222222;
+  background: #ffec9f;
+  border: 1px solid #ffe26c; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_messages-labels\.scss}line{font-family:\0000340}}
+.alert.small,
+.success.small,
+.info.small {
+  font-size: 0.79em;
+  padding: .388em .75em; }
+
+/* ==========[ Modal Dialogs/Windows ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\000033}}
+[class^="modal-"] {
+  padding: 9.331px 18.662px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\000037}}
+.modal {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top: 20px;
+  left: 0px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000316}}
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 900; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000325}}
+.modal-body {
+  background: white;
+  padding: 18.662px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000330}}
+.modal-header {
+  background: #555555;
+  color: #f3f3f3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000334}}
+  .modal-header h1 {
+    font-family: "OpenSansLight"; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000338}}
+  .modal-header :first-child {
+    margin: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000343}}
+.modal-footer {
+  background-color: #f3f3f3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000347}}
+a.modal-close {
+  font-size: 1.2em;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 0.36em;
+  right: 0.36em; }
+
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000355}}
+  .modal {
+    width: 500px;
+    margin-left: -250px;
+    position: fixed;
+    top: 100px;
+    left: 50%; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000363}}
+.modal:target {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000367}}
+.modal:target ~ .modal-overlay {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_modal\.scss}line{font-family:\0000371}}
+.void {
+  display: none; }
+
+/* ==========[ Themed Navigation Bar ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\000033}}
+.nav-bar-themed {
+  background: #222222;
+  padding: 0;
+  margin: 18.662px 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\000038}}
+  .nav-bar-themed:first-child {
+    margin-top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000312}}
+  .nav-bar-themed ul {
+    margin: 0;
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000317}}
+  .nav-bar-themed li {
+    background: #2f2f2f;
+    border-top: 1px solid #3c3c3c;
+    border-right: 1px solid #3c3c3c;
+    width: 50%;
+    float: left;
+    padding: 9.331px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000325}}
+    .nav-bar-themed li:nth-child(2n) {
+      border-right: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000330}}
+  .nav-bar-themed a:link {
+    display: block;
+    text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000336}}
+.navicon a.button {
+  font-size: 1.4em;
+  color: #f3f3f3;
+  padding: 0 9.331px;
+  margin: 4.6655px;
+  float: right; }
+
+@media only screen and (min-width: 37.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000345}}
+  .nav-bar-themed {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 3px solid #777;
+    padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000353}}
+    .nav-bar-themed ul {
+      display: block !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000357}}
+    .nav-bar-themed li {
+      background: none;
+      border: none;
+      width: auto;
+      padding: 0 9.331px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000364}}
+    .nav-bar-themed a {
+      line-height: 41px;
+      display: block;
+      text-shadow: 1px 1px 0 black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000369}}
+      .nav-bar-themed a.current {
+        color: #91b5cb;
+        border-bottom: 3px solid #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000374}}
+      .nav-bar-themed a:hover {
+        color: #f3f3f3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_nav-bar-themed\.scss}line{font-family:\0000380}}
+  .navicon {
+    display: none; } }
+/* ==========[ Pagination ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\000034}}
+.nav-pagination .nav-alt {
+  display: inline-block;
+  border: 1px solid #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\000038}}
+  .nav-pagination .nav-alt select {
+    margin: 0 9.331px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000312}}
+  .nav-pagination .nav-alt a {
+    display: inline-block;
+    margin: 0;
+    padding: .388em .75em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000318}}
+  .nav-pagination .nav-alt .prev {
+    border-right: 1px solid #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000322}}
+  .nav-pagination .nav-alt .next {
+    border-left: 1px solid #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000327}}
+.nav-pagination ol, .nav-pagination ul {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000331}}
+.nav-pagination li {
+  border: 1px solid #d4d4d4;
+  border-right: none;
+  border-bottom-width: 2px;
+  float: left;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000338}}
+  .nav-pagination li:last-child {
+    border-right: 1px solid #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000342}}
+  .nav-pagination li:hover {
+    background-color: #eeeeee; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000347}}
+.nav-pagination a {
+  display: block;
+  margin: 0 .388em;
+  padding: .388em .75em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000353}}
+.nav-pagination .current {
+  border-bottom: 2px solid #555555;
+  padding-top: 3px;
+  position: relative;
+  top: 2px; }
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000361}}
+  .nav-pagination ol, .nav-pagination ul {
+    display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_pagination\.scss}line{font-family:\0000364}}
+  .nav-pagination .nav-alt {
+    display: none; } }
+
+/* ==========[ Spinner ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_spinner\.scss}line{font-family:\0000310}}
+.spinner {
+  height: 20px;
+  line-height: 20px;
+  -webkit-animation: rotate 1s infinite linear;
+  z-index: 90;
+  position: absolute; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_spinner\.scss}line{font-family:\0000319}}
+  .spinner:before {
+    content: "\e028";
+    font-family: IcoMoonSubset;
+    font-size: 20px;
+    color: #222222; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+/* ==========[ Tabs ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\000036}}
+.nav-tabs {
+  display: none;
+  float: left;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  position: relative;
+  top: 18.662px;
+  right: -1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000314}}
+  .nav-tabs li {
+    padding: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000317}}
+    .nav-tabs li:before {
+      display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000322}}
+  .nav-tabs a {
+    text-align: right;
+    display: block;
+    padding: .388em .75em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000327}}
+    .nav-tabs a.current {
+      background: white;
+      border: 1px solid #d4d4d4;
+      border-right: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000335}}
+.tabs-panel {
+  background: white;
+  border-top: 1px solid #d4d4d4;
+  width: 100%;
+  display: none;
+  float: left;
+  padding: 0 18.662px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000345}}
+.tabs-horizontal .nav-tabs {
+  float: none;
+  top: auto;
+  right: auto;
+  bottom: -1px;
+  left: 18.662px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000352}}
+  .tabs-horizontal .nav-tabs li {
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000356}}
+  .tabs-horizontal .nav-tabs a {
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000359}}
+    .tabs-horizontal .nav-tabs a.current {
+      border-bottom: none;
+      border-right: 1px solid #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000366}}
+.tabs-horizontal .tabs-panel {
+  border-left: none;
+  border-top: 1px solid #d4d4d4;
+  float: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000373}}
+.tabs-select {
+  background-color: white;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  display: inline-block;
+  padding: 4.6655px;
+  margin-bottom: 0;
+  position: relative;
+  top: 1px;
+  left: 9.331px; }
+
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000384}}
+  .tabs-select {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000388}}
+  .nav-tabs {
+    display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tabs\.scss}line{font-family:\0000392}}
+  .tabs-panel {
+    border-left: 1px solid #d4d4d4;
+    border-top: none;
+    width: auto; } }
+/* ==========[ Tooltips ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tooltips\.scss}line{font-family:\000035}}
+[data-tooltip] {
+  border-bottom: 1px dotted;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tooltips\.scss}line{font-family:\0000310}}
+  [data-tooltip]:before, [data-tooltip]:after {
+    position: absolute; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tooltips\.scss}line{font-family:\0000314}}
+  [data-tooltip]:after {
+    font-size: 0.86em;
+    color: #f3f3f3;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    background-color: #555555;
+    display: none;
+    padding: .388em .75em;
+    bottom: 2.25em;
+    left: 0;
+    border-radius: 0.21em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tooltips\.scss}line{font-family:\0000327}}
+  [data-tooltip]:before {
+    bottom: 1.5em;
+    left: 0.14em;
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 0.57em solid #555555;
+    border-left: 0.57em solid transparent;
+    border-right: 0.57em solid transparent;
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_tooltips\.scss}line{font-family:\0000336}}
+  [data-tooltip]:hover:after, [data-tooltip]:hover:before {
+    display: block; }
+
+/* ==========[ Placeholder Badges ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_badges\.scss}line{font-family:\000035}}
+.badge-wrapper {
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_badges\.scss}line{font-family:\000039}}
+  .badge-wrapper input,
+  .badge-wrapper textarea {
+    margin: 0;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_badges\.scss}line{font-family:\0000314}}
+  .badge-wrapper span {
+    color: white;
+    font: 0.71em/1.8em Tahoma, Geneva, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 1.8em;
+    padding: 0 4.6655px;
+    margin-top: 1px;
+    position: absolute;
+    top: -1.8em;
+    background: #555555; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/ui-components\/_badges\.scss}line{font-family:\0000330}}
+.required .badge-wrapper:after {
+  content: '*';
+  color: #d6393d;
+  position: relative;
+  top: -5px;
+  left: 3px; }
+
+/* MQ600 */
+/* ==========[ MISCELLANEOUS HELPER/UTILITY CLASSES ]========== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\000034}}
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000312}}
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000320}}
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000326}}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000340}}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000350}}
+.invisible {
+  visibility: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000363}}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000368}}
+.clearfix:after {
+  clear: both; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000374}}
+.clearfix {
+  *zoom: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000382}}
+.circle {
+  border-radius: 35.71em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000386}}
+.floatL {
+  float: left; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000390}}
+.floatR {
+  float: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000394}}
+.box-center {
+  margin: auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_helpers\.scss}line{font-family:\0000398}}
+.text-center {
+  text-align: center; }
+
+/* ==========[ PRINT STYLES ]========== */
+@media print {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\000033}}
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000311}}
+  a,
+  a:visited {
+    text-decoration: underline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000315}}
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000319}}
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000326}}
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000331}}
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000336}}
+  thead {
+    display: table-header-group; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000341}}
+  tr,
+  img {
+    page-break-inside: avoid; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000345}}
+  img {
+    max-width: 100% !important; }
+
+  @page {
+    margin: 0.5cm; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000355}}
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_print\.scss}line{font-family:\0000361}}
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\000033}}
+button.dev-hud {
+  background: #555; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\000037}}
+button.dev-hud:hover {
+  background: Crimson; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000311}}
+#mq, #outliner {
+  font: 11px Monaco, monospace;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 1100; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000319}}
+#mq {
+  background-color: #222;
+  box-shadow: 2px 2px 0 rgba(51, 51, 51, 0.5);
+  left: 5px;
+  bottom: 5px;
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000327}}
+body:hover #mq {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000331}}
+#mq:before {
+  content: 'MQ';
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 3px 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000339}}
+#mq:after {
+  display: inline-block;
+  padding: 3px 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000344}}
+#outliner {
+  bottom: 0;
+  text-decoration: none;
+  border-radius: 0 3px 0 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000350}}
+.boo {
+  background-color: #de0da2;
+  outline: 1px solid red; }
+
+@media only screen and (min-width: 0) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000358}}
+  #mq {
+    background-color: #00A0B0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000361}}
+  #mq:after {
+    content: 'Mobile First'; } }
+@media only screen and (min-width: 30em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000367}}
+  #mq {
+    background-color: #C4BDB6;
+    color: #333; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000371}}
+  #mq:after {
+    content: 'Small'; } }
+@media only screen and (min-width: 37.5em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000377}}
+  #mq {
+    background-color: #CC333F;
+    color: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000381}}
+  #mq:after {
+    content: 'Medium'; } }
+@media only screen and (min-width: 48em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000387}}
+  #mq {
+    background-color: #B0D236;
+    color: #333; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000391}}
+  #mq:after {
+    content: 'Large'; } }
+@media only screen and (min-width: 64em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\0000397}}
+  #mq {
+    background-color: #EDC951;
+    color: #333; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003101}}
+  #mq:after {
+    content: 'Extra Large'; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003108}}
+.colorchip {
+  font-size: 12px;
+  line-height: 80px;
+  width: 20%;
+  height: 80px;
+  text-align: center;
+  float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003116}}
+  .colorchip.primary:nth-child(1) {
+    background: #5e0a15; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003117}}
+  .colorchip.primary:nth-child(2) {
+    background: #bb132a; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003118}}
+  .colorchip.primary:nth-child(3) {
+    background: #ec485e; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003119}}
+  .colorchip.primary:nth-child(4) {
+    background: #f6a4af; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003120}}
+  .colorchip.primary:nth-child(5) {
+    background: #fdeaec; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003122}}
+  .colorchip.secondary:nth-child(6) {
+    background: #0d171d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003123}}
+  .colorchip.secondary:nth-child(7) {
+    background: #2e4e62; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003124}}
+  .colorchip.secondary:nth-child(8) {
+    background: #4f86a7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003125}}
+  .colorchip.secondary:nth-child(9) {
+    background: #91b5cb; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003126}}
+  .colorchip.secondary:nth-child(10) {
+    background: #c5d8e4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003128}}
+  .colorchip.grey:nth-child(11) {
+    background: #222222; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003129}}
+  .colorchip.grey:nth-child(12) {
+    background: #555555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003130}}
+  .colorchip.grey:nth-child(13) {
+    background: #959595; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003131}}
+  .colorchip.grey:nth-child(14) {
+    background: #d4d4d4; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003132}}
+  .colorchip.grey:nth-child(15) {
+    background: #f3f3f3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003134}}
+  .colorchip:nth-child(16) {
+    background: #d6393d; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003135}}
+  .colorchip:nth-child(17) {
+    background: #72a449; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003136}}
+  .colorchip:nth-child(18) {
+    background: #ffec9f;
+    color: #222222 !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003137}}
+  .colorchip.complement:nth-child(19) {
+    background: #48ecd6;
+    color: #222222; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003141}}
+  .colorchip.inverse:nth-child(20) {
+    background: #13b7a1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003147}}
+  .colorchip:nth-child(5n+1), .colorchip:nth-child(5n+2), .colorchip:nth-child(5n+3) {
+    color: #f3f3f3; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003150}}
+  .colorchip.secondary:nth-child(6), .colorchip.grey:nth-child(11) {
+    clear: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003152}}
+  .colorchip:last-of-type + * {
+    clear: both; }
+
+@font-face {
+  font-family: "RedactedRegular";
+  src: url("../fonts/redacted/RedactedRegular.eot");
+  src: url("../fonts/redacted/RedactedRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/redacted/RedactedRegular.woff") format("woff"), url("../fonts/redacted/RedactedRegular.ttf") format("truetype"), url("../fonts/redacted/RedactedRegular.svg#RedactedRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "RedactedScript";
+  src: url("../fonts/redacted/RedactedScript.eot");
+  src: url("../fonts/redacted/RedactedScript.eot?#iefix") format("embedded-opentype"), url("../fonts/redacted/RedactedScript.woff") format("woff"), url("../fonts/redacted/RedactedScript.ttf") format("truetype"), url("../fonts/redacted/RedactedScript.svg#RedactedScript") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "RedactedScriptBold";
+  src: url("../fonts/redacted/RedactedScriptBold.eot");
+  src: url("../fonts/redacted/RedactedScriptBold.eot?#iefix") format("embedded-opentype"), url("../fonts/redacted/RedactedScriptBold.woff") format("woff"), url("../fonts/redacted/RedactedScriptBold.ttf") format("truetype"), url("../fonts/redacted/RedactedScriptBold.svg#RedactedScriptBold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003184}}
+.redacted {
+  font-family: RedactedScript; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/dido\/code\/headstart\/css\/src\/_dev\.scss}line{font-family:\00003188}}
+.redacted-bold {
+  font-family: RedactedScriptBold; }
