@@ -53,8 +53,9 @@ a.category-label {
   background: rgba(255,255,255,0.4);
   transition: all 0.2s;
 }
-a.category-label:hover {
-  color: #4f86a7;
+a.category-label:hover,
+a.category-label:focus {
+  color: #ec485e;
   background: rgba(255,255,255,0.8);
 }
 
