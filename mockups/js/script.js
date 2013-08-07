@@ -15,4 +15,36 @@
     mockContainer.innerHTML = mockNav;
     document.body.appendChild(mockContainer);
 
+
+    function mockupExercise() {
+        var iframe = document.querySelector('iframe');
+        if (!iframe) { return; }
+        var htmlSeed = document.querySelector('.sidebar');
+        var html = htmlSeed.innerHTML;
+        var code = document.querySelector('code');
+        iframe.contentDocument.body.innerHTML = html;
+
+        // Firefox srcdoc support starts at v25. Chrome works now. This will
+        // make data-binding in Ember templates much easier (I think).
+        // iframe.srcdoc = html;
+
+        html = html.replace(/^\s+|\s+$/g, '').split('\n').map(function(str) {
+            return str.replace('      ', '')
+                .replace(/[<>]/g, function(m) {
+                    return {
+                        '<': '&lt;',
+                        '>': '&gt;'
+                    }[m];
+                });
+        });
+        code.innerHTML = html.join('\n');;
+
+        var container = document.querySelector('.exercise-container');
+        var height = window.innerHeight;
+        container.style.height = height + 'px';
+    }
+
+    mockupExercise();
+
+
 }(window, document));
