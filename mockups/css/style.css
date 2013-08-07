@@ -38,28 +38,14 @@ body {
   padding: 1.777em 0;
   margin: 18.662px 0;
 }
-.category-list a {
-  padding: 16px 0;
+a.category-label {
   border-bottom: none;
-  font-size: 1.4em;
   display: block;
   color: #222;
   background: rgba(255,255,255,0.4);
   transition: all 0.2s;
 }
-.category-list i {
-  width: 40%;
-  font-size: 3em;
-  float: left;
-}
-.category-list span {
-  width: 60%;
-  float: left;
-  text-align: left;
-  position: relative;
-  top: 0.5em;
-}
-.category-list a:hover {
+a.category-label:hover {
   color: #4f86a7;
   background: rgba(255,255,255,0.8);
 }
