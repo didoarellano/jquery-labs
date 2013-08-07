@@ -50,12 +50,13 @@ a.category-label:hover {
   background: rgba(255,255,255,0.8);
 }
 
-.index footer {
+footer {
   padding: 1.777em;
   margin: 18.662px 0;
   font-size: 0.8em;
+  text-align: center;
 }
-.index footer a {
+footer a:link {
   color: #222;
 }
 
