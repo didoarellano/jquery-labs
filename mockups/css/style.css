@@ -7,6 +7,10 @@ body.single {
   background: #fff;
 }
 
+.button[data-icon]:before {
+  margin-right: 4px;
+}
+
 .category-label {
   padding: 18.662px;
   font-size: 1.4em;
@@ -89,6 +93,10 @@ footer a:link {
 }
 .nav .next {
   float: right;
+}
+.app-nav {
+  text-align: center;
+  margin-top: 80px;
 }
 .pagination {
   width: 60px;
