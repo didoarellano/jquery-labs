@@ -132,6 +132,7 @@ footer a:link {
 iframe {
   /* offset iframe content's body's default margin */
   margin: -8px 0 0;
+  padding-top: 10px;
   height: 100%;
   width: 100%;
   border: none;
@@ -151,6 +152,7 @@ input.command-line {
 }
 .exercise-container pre,
 .exercise-container code {
+  padding-top: 10px;
   margin: 0;
   height: 100%;
   background: transparent;
