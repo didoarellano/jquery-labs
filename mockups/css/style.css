@@ -167,6 +167,22 @@ input.command-line {
   white-space: pre-wrap;
 }
 
+.heading {
+  background: #222;
+  margin-top: 80px;
+}
+.heading .category-label {
+  width: 240px;
+  margin: 0 auto;
+}
+.category-description {
+  padding: 20px;
+  background: rgba(255,255,255,0.4);
+}
+.category-description h2 {
+  margin-top: 0;
+}
+
 .exercise-container .label {
   padding: 4px 8px;
   /* Why is headstart using !important?  */
