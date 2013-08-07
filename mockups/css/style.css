@@ -3,6 +3,22 @@ body {
   background: #fff url(../img/bg-light-1.jpg) no-repeat top center fixed;
   background-size: cover;
 }
+.category-label {
+  padding: 18.662px;
+  font-size: 1.4em;
+  margin-top: 0;
+  background: #222;
+  color: #f3f3f3;
+  text-align: left;
+  overflow: hidden;
+  line-height: 3em;
+}
+.category-label:before {
+  width: 30%;
+  margin-right: 9.331px;
+  font-size: 3em;
+  float: left;
+}
 
 .index {
   text-align: center;
