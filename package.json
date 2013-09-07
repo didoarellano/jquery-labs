@@ -1,0 +1,11 @@
+{
+  "name": "jquery-labs",
+  "version": "0.1.0",
+  "description": "Browser-based exercises for learning jQuery",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Dido Arellano <dido@semicolonstudios.com>",
+  "license": "MIT",
+}
