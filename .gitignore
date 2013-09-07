@@ -1,4 +1,5 @@
 *.xcf
+node_modules
 
 # bower directory
 assets/js/vendor
