@@ -1,0 +1,68 @@
+/* FONTS */
+
+
+// (1)
+    // List the fonts here.
+    // Note that font name should be the same as the font's actual file name.
+    // Comment-out to de-activate.
+
+
+// (2)
+    // Folder name of the font family
+
+// ----------[ Open Sans ]---------- //
+@each $fontFace in
+
+    // (1)
+    OpenSansLight,
+    OpenSansLightItalic,
+    OpenSansRegular,
+    OpenSansItalic,
+    OpenSansSemibold,
+    OpenSansSemiboldItalic,
+    OpenSansBold,
+    OpenSansBoldItalic,
+    OpenSansExtrabold,
+    OpenSansExtraboldItalic
+
+    {
+
+    // (2)
+    $fontFamilyDir: "open-sans";
+
+    @font-face {
+        font-family: "#{$fontFace}";
+        src: url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.eot');
+        src: url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.eot?#iefix') format('embedded-opentype'),
+             url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.woff') format('woff'),
+             url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.ttf')  format('truetype'),
+             url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.svg##{$fontFace}')  format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+
+
+// ----------[ IcoMoon ]---------- //
+@each $fontFace in
+
+    // (1)
+    IcoMoonSubset
+
+    {
+
+    // (2)
+    $fontFamilyDir: "ico-moon-subset";
+
+    @font-face {
+        font-family: "#{$fontFace}";
+        src: url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.eot');
+        src: url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.eot?#iefix') format('embedded-opentype'),
+             url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.woff') format('woff'),
+             url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.ttf')  format('truetype'),
+             url('#{$fontsDir}/#{$fontFamilyDir}/#{$fontFace}.svg##{$fontFace}')  format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}

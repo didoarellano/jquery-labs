@@ -1,0 +1,737 @@
+// Responsive media
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto;
+}
+object,
+embed {
+  height: 100%;
+}
+
+.row { // Nicolas Gallagher's micro clearfix
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.row {
+  max-width: 100%;
+  margin: 0 auto;
+  & .row {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+  &.collapse .col {
+    padding: 0;
+  }
+  & .row.collapse {
+    margin: 0;
+  }
+}
+
+.col {
+  position: relative;
+  // & > :first-child {
+  //   margin-top: 0;
+  // }
+}
+
+.box {
+  background-color: #f2f2f2;
+  border: 1px solid #e0e0e0;
+  padding: $spacing;
+  margin: 0 0 $spacing;
+  @include roundedTiny;
+  & > :last-child {
+    margin-bottom: 0;
+  }
+  & > :first-child {
+    margin-top: 0;
+  }
+}
+
+.compact {
+  padding: $spacing/2;
+}
+
+table {
+  width: 100%;
+}
+
+
+
+// ==========[ 4-Column Small-screen Grid ]========== //
+
+// * Cascades to bigger screens.
+
+// TODO: Test if this works in IE
+// IE8 does not support box-sizing: border-box; with min-width/max-width and min-height/max-height.
+// If this fails, one thing you could do is hide the code from oldIEs by putting the code in a media query, .e.g @media only screen and (min-width: 0). OldIEs will then get plain old stacked containers.
+[class^="mob-"],
+.col {
+  min-height: 1px;
+  padding: 0 $spacing/2;
+  &.center {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+[class^="mob-"] {
+  float: left;
+  & + &:last-child {
+    float: right;
+  }
+  & + &.end {
+    float: left;
+  }
+}
+
+.mob-i,
+.row .mob-i {
+  width: 25%;
+}
+
+.mob-ii,
+.row .mob-ii {
+  width: 50%;
+}
+
+.mob-iii,
+.row .mob-iii {
+  width: 75%;
+}
+
+.mob-iv,
+.row .mob-iv {
+  width: 100%;
+}
+
+// NOTE: Do we need push, pull, and offset classes for small screens?
+
+
+// ==========[ Common grid settings for bigger screens ]========== //
+
+@media #{$mqLarge} {
+  body {
+    padding: 0;
+  }
+
+  .row {
+    width: $maxWidth;
+    & .row {
+      margin: 0 -10px;
+    }
+  }
+
+  .col {
+    float: left;
+    &.center {
+      float: none;
+      margin: 0 auto;
+    }
+    & + .col:last-child {
+      float: right;
+    }
+    & + .col.end {
+      float: left;
+    }
+  }
+}
+
+
+
+// ==========[ 12-Column Grid ]========== //
+
+// * Will output only when $gridColumns is set to 12
+
+@if $gridColumns == 12 {
+
+// [ MQ768 ]
+  @media #{$mqLarge} {
+
+    // Widths
+    .i,
+    .row .i {
+      width: 8.33333%;
+    }
+
+    .ii,
+    .row .ii {
+      width: 16.66667%;
+    }
+
+    .iii,
+    .row .iii {
+      width: 25%;
+    }
+
+    .iv,
+    .row .iv {
+      width: 33.33333%;
+    }
+
+    .v,
+    .row .v {
+      width: 41.66667%;
+    }
+
+    .vi,
+    .row .vi {
+      width: 50%;
+    }
+
+    .vii,
+    .row .vii {
+      width: 58.33333%;
+    }
+
+    .viii,
+    .row .viii {
+      width: 66.66667%;
+    }
+
+    .ix,
+    .row .ix {
+      width: 75%;
+    }
+
+    .x,
+    .row .x {
+      width: 83.33333%;
+    }
+
+    .xi,
+    .row .xi {
+      width: 91.66667%;
+    }
+
+    .xii,
+    .row .xii {
+      width: 100%;
+    }
+
+    // Column offsets
+    .row .offset-i {
+      margin-left: 8.33333%;
+    }
+
+    .row .offset-ii {
+      margin-left: 16.66667%;
+    }
+
+    .row .offset-iii {
+      margin-left: 25%;
+    }
+
+    .row .offset-iv {
+      margin-left: 33.33333%;
+    }
+
+    .row .offset-v {
+      margin-left: 41.66667%;
+    }
+
+    .row .offset-vi {
+      margin-left: 50%;
+    }
+
+    .row .offset-vi {
+      margin-left: 58.33333%;
+    }
+
+    .row .offset-viii {
+      margin-left: 66.66667%;
+    }
+
+    .row .offset-ix {
+      margin-left: 75%;
+    }
+
+    .row .offset-x {
+      margin-left: 83.33333%;
+    }
+
+    // Push and pull
+    .push-ii {
+      left: 16.66667%;
+    }
+
+    .pull-ii {
+      right: 16.66667%;
+    }
+
+    .push-iii {
+      left: 25%;
+    }
+
+    .pull-iii {
+      right: 25%;
+    }
+
+    .push-iv {
+      left: 33.33333%;
+    }
+
+    .pull-iv {
+      right: 33.33333%;
+    }
+
+    .push-v {
+      left: 41.66667%;
+    }
+
+    .pull-v {
+      right: 41.66667%;
+    }
+
+    .push-vi {
+      left: 50%;
+    }
+
+    .pull-vi {
+      right: 50%;
+    }
+
+    .push-vi {
+      left: 58.33333%;
+    }
+
+    .pull-vi {
+      right: 58.33333%;
+    }
+
+    .push-viii {
+      left: 66.66667%;
+    }
+
+    .pull-viii {
+      right: 66.66667%;
+    }
+
+    .push-ix {
+      left: 75%;
+    }
+
+    .pull-ix {
+      right: 75%;
+    }
+
+    .push-x {
+      left: 83.33333%;
+    }
+
+    .pull-x {
+      right: 83.33333%;
+    }
+  } // END MQ1
+} // END @if 12-Column Grid
+
+
+
+// ==========[ 16-Column Grid ]========== //
+
+// * Will output only when $gridColumns is set to 16
+
+@if $gridColumns == 16 {
+
+// [ MQ768 ]
+  @media #{$mqLarge} {
+
+    // Widths
+    .i,
+    .row .i {
+      width: 6.25%;
+    }
+
+    .ii,
+    .row .ii {
+      width: 12.5%;
+    }
+
+    .iii,
+    .row .iii {
+      width: 18.75%;
+    }
+
+    .iv,
+    .row .iv {
+      width: 25%;
+    }
+
+    .v,
+    .row .v {
+      width: 31.25%;
+    }
+
+    .vi,
+    .row .vi {
+      width: 37.5%;
+    }
+
+    .vii,
+    .row .vii {
+      width: 43.75%;
+    }
+
+    .viii,
+    .row .viii {
+      width: 50%;
+    }
+
+    .ix,
+    .row .ix {
+      width: 56.25%;
+    }
+
+    .x,
+    .row .x {
+      width: 62.5%;
+    }
+
+    .xi,
+    .row .xi {
+      width: 68.75%;
+    }
+
+    .xii,
+    .row .xii {
+      width: 75%;
+    }
+
+    .xiii,
+    .row .xiii {
+      width: 81.25%;
+    }
+
+    .xiv,
+    .row .xiv {
+      width: 87.5%;
+    }
+
+    .xv,
+    .row .xv {
+      width: 93.75%;
+    }
+
+    .xvi,
+    .row .xvi {
+      width: 100%;
+    }
+
+    // Column offsets
+    .row .offset-i {
+      margin-left: 6.25%;
+    }
+
+    .row .offset-ii {
+      margin-left: 12.5%;
+    }
+
+    .row .offset-iii {
+      margin-left: 18.75%;
+    }
+
+    .row .offset-iv {
+      margin-left: 25%;
+    }
+
+    .row .offset-v {
+      margin-left: 31.25%;
+    }
+
+    .row .offset-vi {
+      margin-left: 37.5%;
+    }
+
+    .row .offset-vii {
+      margin-left: 43.75%;
+    }
+
+    .row .offset-viii {
+      margin-left: 50%;
+    }
+
+    .row .offset-ix {
+      margin-left: 56.25%;
+    }
+
+    .row .offset-x {
+      margin-left: 62.5%;
+    }
+
+    .row .offset-xi {
+      margin-left: 68.75%;
+    }
+
+    .row .offset-xii {
+      margin-left: 75%;
+    }
+
+    .row .offset-xiii {
+      margin-left: 81.25%;
+      }
+
+    .row .offset-xiv {
+      margin-left: 87.5%;
+    }
+
+    // Push and pull
+    .push-ii {
+      left: 12.5%;
+    }
+
+    .pull-ii {
+      right: 12.5%;
+    }
+
+    .push-iii {
+      left: 18.75%;
+    }
+
+    .pull-iii {
+      right: 18.75%;
+    }
+
+    .push-iv {
+      left: 25%;
+    }
+
+    .pull-iv {
+      right: 25%;
+    }
+
+    .push-v {
+      left: 31.25%;
+    }
+
+    .pull-v {
+      right: 31.25%;
+    }
+
+    .push-vi {
+      left: 37.5%;
+    }
+
+    .pull-vi {
+      right: 37.5%;
+    }
+
+    .push-vii {
+      left: 43.75%;
+    }
+
+    .pull-vii {
+      right: 43.75%;
+    }
+
+    .push-viii {
+      left: 50%;
+    }
+
+    .pull-viii {
+      right: 50%;
+    }
+
+    .push-ix {
+      left: 56.25%;
+    }
+
+    .pull-ix {
+      right: 56.25%;
+    }
+
+    .push-x {
+      left: 62.5%;
+    }
+
+    .pull-x {
+      right: 62.5%;
+    }
+
+    .push-xi {
+      left: 68.75%;
+    }
+
+    .pull-xi {
+      right: 68.75%;
+    }
+
+    .push-xii {
+      left: 75%;
+    }
+
+    .pull-xii {
+      right: 75%;
+    }
+
+    .push-xiii {
+      left: 81.25%;
+    }
+
+    .pull-xiii {
+      right: 81.25%;
+    }
+
+    .push-xiv {
+      left: 87.5%;
+    }
+
+    .pull-xiv {
+      right: 87.5%;
+    }
+
+  } // END MQ1
+} // END @if 16-Column Grid
+
+
+
+// ==========[ Block Grid ]========== //
+@if $blockGrid == true {
+  .blocks {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      height: auto;
+      padding: $spacing/4;
+      float: left;
+
+      & > :last-child {
+        margin: 0;
+      }
+
+      &:before {
+        display: none; // removes the "default" Better Bullets
+      }
+    }
+
+    // Block widths for small screens
+    // 2-UP, 3-UP, and 4-UP
+    &.mob-ii-up > li {
+      width: 50%;
+    }
+
+    &.mob-iii-up > li {
+      width: 33.333%;
+    }
+
+    &.mob-iv-up > li {
+      width: 25%;
+    }
+
+    // This group selector prevents wonky spacing when heights are uneven.
+    &.mob-ii-up > li:nth-child(2n+1),
+    &.mob-iii-up > li:nth-child(3n+1),
+    &.mob-iv-up > li:nth-child(4n+1) {
+      clear: both;
+    }
+
+    // Other block widths apply only at $mqMedium
+    // 1-UP to 10-UP
+    @media #{$mqMedium} {
+      & > li {
+        padding: $spacing/2;
+      }
+
+      &.i-up > li {
+        width: 100%;
+      }
+
+      &.ii-up > li {
+        width: 50%;
+      }
+
+      &.iii-up > li {
+        width: 33.333%;
+      }
+
+      &.iv-up > li {
+        width: 25%;
+      }
+
+      &.v-up > li {
+        width: 20%;
+      }
+
+      &.vi-up > li {
+        width: 16.666%;
+      }
+
+      &.vii-up > li {
+        width: 14.285%;
+      }
+
+      &.viii-up > li {
+        width: 12.5%;
+      }
+
+      &.ix-up > li {
+        width: 11.111%;
+      }
+
+      &.x-up > li {
+        width: 10%;
+      }
+
+      // This group selector prevents wonky spacing when heights are uneven.
+      &.ii-up > li:nth-child(2n+1),
+      &.iii-up > li:nth-child(3n+1),
+      &.iv-up > li:nth-child(4n+1),
+      &.v-up > li:nth-child(5n+1),
+      &.vi-up > li:nth-child(6n+1),
+      &.vii-up > li:nth-child(7n+1),
+      &.viii-up > li:nth-child(8n+1),
+      &.ix-up > li:nth-child(9n+1),
+      &.x-up > li:nth-child(10n+1) {
+        clear: both;
+      }
+
+      &.mob-ii-up > li:nth-child(2n+1),
+      &.mob-iii-up > li:nth-child(3n+1),
+      &.mob-iv-up > li:nth-child(4n+1) {
+        clear: none;
+      }
+    }
+  } // END Media Query
+} // END Block Grid
+
+
+
+// ==========[ Media Object ]========== //
+.media {
+  overflow: hidden;
+
+  .img {
+    float: left;
+    margin: 0 $spacing $spacing 0;
+
+    &[class^="mob-"] {
+      padding: 0;
+    }
+  }
+
+  .bd {
+    overflow: hidden;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+  }
+
+  .media .img {
+    margin: 0 $spacing/2 $spacing/2 0;
+  }
+} // END Media Object

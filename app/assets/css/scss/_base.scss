@@ -1,0 +1,564 @@
+/* =====[ MAIN ]===== */
+
+*,
+*:before,
+*:after { // pseudo-elements do not inherit box-sizing from * selector that's why we include them here
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $baseFontSize;
+}
+
+body {
+  font: $bodyFont;
+  color: $fontColor;
+}
+
+::-moz-selection {
+  background: $primaryTint2;
+  text-shadow: none;
+}
+
+::selection {
+  background: $primaryTint2;
+  text-shadow: none;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: block;
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin: $spacing 0;
+}
+
+
+
+// ----------[ LINKS ]---------- //
+
+a:link {
+  color: $linkColor;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  @include transition(color .2s);
+}
+
+a:visited,
+a:active {
+  color: $linkColor;
+}
+
+a:hover {
+  color: $linkHoverColor;
+  border-bottom: 1px solid $linkHoverColor;
+}
+
+
+
+// ----------[ MEDIA ]---------- //
+
+img,
+video,
+audio,
+object {
+  max-width: 100%; // for responsive media
+}
+
+img {
+  vertical-align: middle;
+}
+
+video {
+  background-color: $grey3;
+}
+
+.img-bordered {
+  border: 3px solid $white;
+  box-shadow: 0 0 0 1px lighten($grey3, 5%);
+}
+
+
+
+// ----------[ TYPOGRAPHY ]---------- //
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $boldFont, sans-serif;
+  font-weight: normal;
+  line-height: 1.333;
+  margin: $spacing 0;
+
+  a:link { // Headings that are links
+    border: none;
+  }
+}
+
+h1 {
+  font-size: 2.179em;
+}
+
+h2 {
+  font-size: 1.777em;
+}
+
+h3 {
+  font-size: 1.634em;
+}
+
+h4 {
+  font-size: 1.333em;
+}
+
+h5 {
+  font-size: 1.226em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p,
+pre {
+  margin: $spacing 0;
+}
+
+small {
+  font-size: .86em;
+}
+
+strong {
+  font-family: $boldFont, sans-serif;
+  font-weight: normal;
+}
+
+em {
+  font-family: $italicFont, sans-serif;
+  font-style: normal;
+}
+
+mark {
+  background-color: #ffe062;
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  border-left: 2px solid $grey3;
+  padding-left: $spacing;
+  margin: $spacing;
+
+  .attribution {
+    display: block;
+    color: $grey2;
+  }
+}
+
+q {
+  font-style: italic;
+
+  &:before {
+    content: "\201c";
+  }
+
+  &:after {
+    content: "\201d";
+  }
+}
+
+code {
+  background: lighten($infoColor, 5%);
+}
+
+.aside {
+  color: $grey2;
+  font-size: 0.86em;
+  line-height: 1.777;
+}
+
+.leader {
+  font-size: 1.634em;
+}
+
+.mute {
+  color: $grey2;
+}
+
+
+
+// ----------[ Icon Fonts ]---------- //
+
+[data-icon]:before {
+  font-family: $iconFont;
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+// ----------[ LISTS ]---------- //
+
+dl,
+menu,
+ol,
+ul {
+  margin: $spacing 0;
+}
+
+dd {
+  margin: 0 0 0 40px;
+}
+
+ul {  // Lists with "Better Bullets"
+  list-style: none;
+  padding-left: $spacing;
+
+  ul, ol {
+    padding-left: $spacing;
+    margin: 0;
+
+    li:before {
+      border: 1px solid $grey2;
+      background: none;
+    }
+  }
+
+  li {
+    padding-left: .75em;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .6em;
+      background: $grey1; // bullet color
+      width: .36em;
+      height: .36em;
+    }
+  }
+}
+
+ol {
+  ol, ul {
+    padding-left: $spacing;
+    margin: 0;
+    list-style-position: inside;
+  }
+
+  &.alpha {
+    list-style: upper-alpha;
+
+    ol {
+      list-style: lower-alpha inside;
+    }
+  }
+}
+
+dt {
+  font-family: $boldFont;
+}
+
+dd {
+  margin: 0 0 $spacing 0;
+}
+
+@media #{$mqSmall} { // Responsive definition list
+  dt {
+    text-align: right;
+    padding-right: $spacing;
+    width: 15%;
+    float: left;
+  }
+
+  dd {
+    margin-left: 15%;
+  }
+}
+
+
+
+// ----------[ FORMS ]---------- //
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.634em;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid $grey3;
+  margin-bottom: $spacing/2;
+
+  small {
+    color: $grey2;
+    font-weight: 200;
+  }
+}
+
+label {
+  margin: $spacing/2 0;
+  display: block;
+  position: relative;
+}
+
+.horizontal label {
+  display: inline;
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+  line-height: 2.369em;
+  height: 2.369em;
+  padding: .518em;
+  margin: .518em 0;
+  border: 1px solid $grey3;
+  @include roundedTiny;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea,
+button {
+  &:focus {
+    @include transition(box-shadow .3s ease-in-out);
+    @include focus;
+  }
+}
+
+input[type="file"] {
+  font-style: italic;
+  color: $grey1;
+}
+
+textarea {
+  height: 7.478em;
+  padding: .518em;
+  margin: .518em 0;
+  border: 1px solid $grey3;
+  resize: vertical;
+  @include roundedTiny;
+}
+
+select[multiple] {
+  border: 1px solid $grey3;
+  @include roundedTiny;
+}
+
+.disabled {
+  color: $grey2;
+  font-style: italic;
+  opacity: .7;
+}
+
+
+// Placeholders
+::-webkit-input-placeholder {
+  font-family: $mainFont, $fallbackFontStack;
+  color: $grey1;
+}
+
+:-moz-placeholder {
+  font-family: $mainFont, $fallbackFontStack;
+  color: $grey1;
+}
+
+
+
+// ----------[ Buttons ]---------- //
+
+.button,
+a.button {
+  font-family: inherit;
+  color: $white;
+  vertical-align: middle;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 lighten($primaryShade1, 10%);
+  background: $primaryColor;
+  display: inline-block;
+  border: 1px solid $primaryColor;
+  padding: .518em 1em;
+  @include roundedTiny;
+}
+
+.button.large {
+  font-size: 1.634em;
+}
+
+.button.mini {
+  font-size: 0.71em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button.gloss {
+  // TODO: gradient browser-compatibility
+  background: -webkit-linear-gradient(bottom, $primaryColor 0%, darken($primaryTint1, 15%) 100%);
+  background: -moz-linear-gradient(bottom, $primaryColor 0%, darken($primaryTint1, 15%) 100%);
+  box-shadow: inset 1px 1px 0 0 rgba($primaryTint1, .5);
+}
+
+.button.secondary {
+  background: lighten($grey3, 5%);
+  color: $grey1;
+  text-shadow: 1px 1px 0 $white;
+  border-color: $grey3;
+}
+
+.secondary.gloss {
+  // TODO: gradient browser-compatibility
+  background: -webkit-linear-gradient(bottom, $grey3 0%, lighten($grey3, 8%) 100%);
+  background: -moz-linear-gradient(bottom, $grey3 0%, lighten($grey3, 5%) 100%);
+  box-shadow: inset 1px 1px 0 0 rgba($white, .5);
+}
+
+.button:hover {
+  background: lighten($primaryShade1, 15%);
+}
+
+.secondary:hover {
+  background: lighten($grey2, 25%);
+}
+
+
+
+// ----------[ TABLES ]---------- //
+
+// Defaults
+table {
+  margin: $spacing 0;
+}
+
+caption,
+tr,
+td,
+th {
+  text-align: left;
+  padding: $spacing/2;
+}
+
+caption {
+  font-size: 1.226em;
+  font-family: $boldFont;
+  font-weight: normal;
+  padding-top: 0;
+}
+
+tr {
+  border-bottom: 1px solid lighten($grey3, 8%);
+}
+
+th {
+  font-family: $boldFont;
+  font-weight: normal;
+}
+
+thead {
+  border-bottom: 2px solid $grey3;
+}
+
+tbody {
+  tr:last-child {
+    border-bottom: none;
+  }
+}
+
+// Bordered tables
+.table-bordered {
+  & td,
+  & th {
+    border: 1px solid lighten($grey3, 8%);
+  }
+}
+
+// Striped tables
+.table-striped tr:nth-child(even) {
+  background: lighten($grey3, 13%);
+}
+
+// Compact tables
+.table-compact {
+  caption,
+  tr,
+  td,
+  th {
+    padding: 0.388em;
+  }
+}
+
+// Fat Zebra tables
+@include fatzebra('.fatzebra tr');
+
+
+
+// TODO: ----------[ EFFECTS ]---------- //
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+
+
+// ----------[ OTHERS ]---------- //
+
+// Javascript OFF message
+// .no-js body:before {
+//   content: 'What!? Javascript is OFF? Please enjoy the Comic Sans. :)';
+//   font-family: "Comic Sans MS", cursive;
+//   display: block;
+//   background-color: #de0da2;
+//   color: $white;
+//   padding: $spacing;
+//   font-size: 2em;
+//   z-index: 1000;
+// }
+
+// Chromeframe Prompt
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

@@ -1,0 +1,254 @@
+// ----------[ MIXINS ]----------- //
+
+// Transitions
+  @mixin transition( $transition ) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    transition: $transition;
+  }
+  @mixin simpleTransition {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+
+// Positioning
+  // Stolen from Bourbon.io ( http://goo.gl/v0jnZ ) So cool!!!!
+  @mixin position ($position: relative, $coordinates: 0 0 0 0) {
+
+    @if type-of($position) == list {
+      $coordinates: $position;
+      $position: relative;
+    }
+
+    $top: nth($coordinates, 1);
+    $right: nth($coordinates, 2);
+    $bottom: nth($coordinates, 3);
+    $left: nth($coordinates, 4);
+
+    position: $position;
+
+    @if $top == auto {
+      top: $top;
+    }
+    @else if not(unitless($top)) {
+      top: $top;
+    }
+
+    @if $right == auto {
+      right: $right;
+    }
+    @else if not(unitless($right)) {
+      right: $right;
+    }
+
+    @if $bottom == auto {
+      bottom: $bottom;
+    }
+    @else if not(unitless($bottom)) {
+      bottom: $bottom;
+    }
+
+    @if $left == auto {
+      left: $left;
+    }
+    @else if not(unitless($left)) {
+      left: $left;
+    }
+  }
+
+// Transform
+  @mixin transform( $transform ) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -o-transform: $transform;
+    -ms-transform: $transform;
+    transform: $transform;
+  }
+  @mixin origin( $value ) {
+    -webkit-transform-origin: $value;
+    -moz-transform-origin: $value;
+    -o-transform-origin: $value;
+    -ms-transform-origin: $value;
+    transform-origin: $value;
+  }
+
+// TODO: Shadows
+
+
+// TODO: animation mixins
+
+
+// ----------[ RECIPES ]---------- //
+
+// Rounded Corners
+  @mixin roundedTiny {
+    border-radius: 0.14em; //2px
+  }
+  @mixin roundedSmall {
+    border-radius: 0.21em; //3px
+  }
+  @mixin roundedMedium {
+    border-radius: 0.36em; //5px
+  }
+  @mixin roundedLarge {
+    border-radius: 0.71em; //10px
+  }
+  @mixin roundedBigass {
+    border-radius: 35.71em; //500px
+  }
+
+// Triangles
+  @mixin triangle {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+  }
+  @mixin t-up($size, $color) {
+    @include triangle;
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @mixin t-down($size, $color) {
+    @include triangle;
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+  @mixin t-right($size, $color) {
+    @include triangle;
+    border-top: $size solid transparent;
+    border-left: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @mixin t-left($size, $color) {
+    @include triangle;
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @mixin t-topleft($size, $color) {
+    @include triangle;
+    border-left: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @mixin t-topright($size, $color) {
+    @include triangle;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+  @mixin t-bottomleft($size, $color) {
+    @include triangle;
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+  }
+  @mixin t-bottomright($size, $color) {
+    @include triangle;
+    border-right: $size solid $color;
+    border-top: $size solid transparent;
+  }
+
+// Emboss and Letterpress
+  @mixin box-emboss( $opacity, $opacity2 ) {
+    box-shadow: 0 1px 0 transparentize(white, $opacity), inset 0 1px 0 transparentize(black, $opacity2);
+  }
+  @mixin letterpress($opacity) {
+    text-shadow: 0 1px 0 transparentize(white, $opacity);
+  }
+  @mixin subtleTextShadow($color) {
+    text-shadow: 1px 1px 0 $color;
+  }
+
+
+//  Forms
+  // Common field focus styles
+  @mixin focus {
+    border-color: $grey1;
+    outline: none;
+    box-shadow: none;
+  }
+
+// Fat Zebra (tables and lists)
+@mixin fatzebra($selector) {
+  #{$selector} {
+    &:nth-child(6n),
+    &:nth-child(6n-1),
+    &:nth-child(6n-2) {
+      background: lighten($grey3, 12%);
+    }
+  }
+}
+
+@mixin clearfix {
+  // Nicolas Gallagher's micro clearfix
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Grid mixins
+@mixin grid-row {
+  max-width: 100%;
+  margin: 0 auto;
+
+  @include clearfix();
+
+  @media #{$mqLarge} {
+    & {
+      width: $maxWidth;
+    }
+  }
+
+}
+
+@mixin grid-col($cols, $centered:'') {
+  @if $centered == 'centered' {
+    float: none;
+    margin: 0 auto;
+  } @else {
+    float: left;
+  }
+
+  min-height: 1px;
+  padding: 0 $spacing/2;
+
+  @media #{$mqMedium} {
+    @if $cols == 1 {
+      width: 8.33333%;
+    } @else if $cols == 2 {
+      width: 16.66667%;
+    } @else if $cols == 3 {
+      width: 25%;
+    } @else if $cols == 4 {
+      width: 33.33333%;
+    } @else if $cols == 5 {
+      width: 41.66667%;
+    } @else if $cols == 6 {
+      width: 50%;
+    } @else if $cols == 7 {
+      width: 58.33333%;
+    } @else if $cols == 8 {
+      width: 66.66667%;
+    } @else if $cols == 9 {
+      width: 75%;
+    } @else if $cols == 10 {
+      width: 83.33333%;
+    } @else if $cols == 11 {
+      width: 91.66667%;
+    } @else if $cols == 12 {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+// ----------[ GLOBAL VARIABLES ]---------- //
+
+
+// Modular Scale
+// Perfect Fourth 3:4
+// http://modularscale.com/scale/?px1=14&px2=960&ra1=1.333&ra2=0
+// ----------------------
+// 14px @ 1:1.333 (Base font size)
+// 960px @ 1:1.333 (Max width of a column)
+// ----------------------
+
+
+// Grid
+$maxWidth: 960px; // Important number in the modular scale
+$spacing: 18.662px; // Or 1.333em, and exists in the scale
+$gridColumns: 12;
+$blockGrid: true;
+
+
+// Media Queries
+$mqSmall: "only screen and (min-width: 30em)"; // approx. 480px
+$mqMedium: "only screen and (min-width: 37.5em)"; // approx. 600px
+$mqLarge: "only screen and (min-width: 48em)"; // approx 768px
+$mqExtraLarge: "only screen and (min-width: 64em)"; // approx 1024px
+
+
+// Typography
+$fontsDir: "../fonts";
+
+$mainFont: "OpenSansRegular";
+$displayFont: "OpenSansLight";
+$boldFont: "OpenSansBold";
+$italicFont: "OpenSansItalic";
+$boldItalicFont: "OpenSansBoldItalic";
+$fallbackFontStack: "Helvetica Neue", sans-serif;
+
+$uiFont: Tahoma, Geneva, sans-serif;
+$iconFont: IcoMoonSubset;
+
+$baseFontSize: 62.5%; // resets base font size of root element to 10px
+$bodyFont: 1.4em/1.634 $mainFont, $fallbackFontStack; // 1.4em is 14px, and is the origin of the modular scale
+
+
+// Colours
+$primaryColor: #4f86a7;
+$primaryTint1: lighten( $primaryColor, 20% );
+$primaryTint2: lighten( $primaryColor, 35% );
+$primaryShade1: darken( $primaryColor, 20% );
+$primaryShade2: darken( $primaryColor, 40% );
+
+$secondaryColor: #c0392b;
+$secondaryTint1: lighten( $secondaryColor, 20% );
+$secondaryTint2: lighten( $secondaryColor, 35% );
+$secondaryShade1: darken( $secondaryColor, 20% );
+$secondaryShade2: darken( $secondaryColor, 40% );
+
+$tertiaryColor: #1abc9c;
+$tertiaryTint1: lighten( $tertiaryColor, 20% );
+$tertiaryTint2: lighten( $tertiaryColor, 35% );
+$tertiaryShade1: darken( $tertiaryColor, 20% );
+$tertiaryShade2: darken( $tertiaryColor, 40% );
+
+$complementaryColor: complement( $primaryColor ); // NOTE: is this useful?
+$inverseColor: invert( $primaryColor );
+
+$black: #222;
+$grey1: lighten( $black, 20% );
+$grey2: lighten( $black, 45% );
+$grey3: lighten( $black, 70% );
+$white: lighten( $black, 82% );
+
+$alertColor: #d6393d;
+$successColor: #72a449;
+$infoColor: #ffec9f;
+
+$fontColor: $primaryShade1;
+$linkColor: $primaryColor;
+$linkHoverColor: $secondaryColor;
