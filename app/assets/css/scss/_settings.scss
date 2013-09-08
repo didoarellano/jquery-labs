@@ -42,23 +42,17 @@ $bodyFont: 1.4em/1.634 $mainFont, $fallbackFontStack; // 1.4em is 14px, and is t
 
 
 // Colours
-$primaryColor: #4f86a7;
+$primaryColor: #ec485e;
 $primaryTint1: lighten( $primaryColor, 20% );
 $primaryTint2: lighten( $primaryColor, 35% );
 $primaryShade1: darken( $primaryColor, 20% );
 $primaryShade2: darken( $primaryColor, 40% );
 
-$secondaryColor: #c0392b;
+$secondaryColor: #4f86a7;
 $secondaryTint1: lighten( $secondaryColor, 20% );
 $secondaryTint2: lighten( $secondaryColor, 35% );
 $secondaryShade1: darken( $secondaryColor, 20% );
 $secondaryShade2: darken( $secondaryColor, 40% );
-
-$tertiaryColor: #1abc9c;
-$tertiaryTint1: lighten( $tertiaryColor, 20% );
-$tertiaryTint2: lighten( $tertiaryColor, 35% );
-$tertiaryShade1: darken( $tertiaryColor, 20% );
-$tertiaryShade2: darken( $tertiaryColor, 40% );
 
 $complementaryColor: complement( $primaryColor ); // NOTE: is this useful?
 $inverseColor: invert( $primaryColor );
@@ -73,6 +67,6 @@ $alertColor: #d6393d;
 $successColor: #72a449;
 $infoColor: #ffec9f;
 
-$fontColor: $primaryShade1;
+$fontColor: $black;
 $linkColor: $primaryColor;
 $linkHoverColor: $secondaryColor;
