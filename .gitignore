@@ -3,3 +3,8 @@ node_modules
 
 # bower directory
 app/assets/vendor
+
+# compiled files adds to diff noise
+app/assets/css/*
+!app/assets/css/scss
+app/assets/js/templates.js
