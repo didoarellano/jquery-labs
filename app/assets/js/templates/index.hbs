@@ -6,5 +6,15 @@
       <p class="leader">Lorem ipsum <em>key concepts</em> dolor sit amet <em>understand</em> and stuff</p>
     </section>
 
+    <ul class="category-list blocks iii-up mob-ii-up">
+      {{#each controller}}
+        <li>
+           {{#link-to "" this classNames="category-label" classNameBindings="id"}}
+             {{label}}
+           {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+
   </div>
 </div>
