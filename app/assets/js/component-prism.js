@@ -1,4 +1,5 @@
 App.PrismHighlighterComponent = Ember.Component.extend({
+    tagName: 'pre',
     didInsertElement: function() {
         var code = this.get('code');
         var language = this.get('language');
