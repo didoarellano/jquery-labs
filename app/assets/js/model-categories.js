@@ -1,8 +1,19 @@
 App.Category = Ember.Object.extend({
+    _exercises: null,
+
     label: function() {
         var name = this.get('id');
         return name.charAt(0).toUpperCase() + name.slice(1);
-    }.property('id')
+    }.property('id'),
+
+    getExercises: function() {
+        if (this._exercises) { return this._exercises; }
+        var collection = this._exercises = jQLabsData.exercises.findBy('category', this.get('id'));
+        collection.exercises = collection.exercises.map(function(exercise) {
+            return App.Exercise.create(exercise);
+        });
+        return collection;
+    }
 });
 
 App.Category.reopenClass({
