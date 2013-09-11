@@ -170,4 +170,19 @@ body {
     letter-spacing: 1px;
     @include roundedSmall;
   }
+
+  /* Fix for browser window scrollbar appearing even when it shouldn't. It seems
+  like the iframe has extra vertical spacing that we can't remove. */
+  .col:first-child {
+    position: relative;
+    top: -6px;
+  }
+  iframe {
+    position: relative;
+    top: 6px;
+  }
+
+  .col:last-child .label {
+    top: 6px;
+  }
 }
