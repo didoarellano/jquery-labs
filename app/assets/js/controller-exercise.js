@@ -1,5 +1,10 @@
 App.ExerciseController = Ember.ObjectController.extend({
     needs: ['categories', 'exercises'],
+    actions: {
+        gotoExercise: function(id) {
+            this.transitionToRoute('exercise', this.getExercise(id));
+        }
+    },
 
     getExercise: function(id) {
         return this.get('controllers.categories.model').findExerciseById(id);

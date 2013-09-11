@@ -16,12 +16,14 @@
 
       <div class="pagination">
         <p>{{id}} <small>of</small> {{allExercises.length}}</p>
-        <select>
-          <option></option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
+
+        {{view App.ExerciseSelectView
+          contentBinding="allExercises"
+          optionLabelPath="content.id"
+          optionValuePath="content.id"
+          currentExerciseIdBinding="id"
+          prompt=" "
+        }}
       </div>
 
       {{#if nextExercise}}
