@@ -31,7 +31,7 @@
 a.label-box {
   display: block;
   color: $black;
-  background: rgba(255,255,255,0.4);
+  background: $ghostWhite;
   transition: all 0.2s;
 
   &:link {
