@@ -18,6 +18,10 @@ App.ExerciseController = Ember.ObjectController.extend({
         return html;
     }.property('model'),
 
+    htmlFiltered: function() {
+        return this.get('html').replace(/\sdata-correct="?true"?/g, '');
+    }.property('html'),
+
     allExercises: function() {
         return this.get('controllers.exercises.exercises');
     }.property('controllers.exercises.exercises'),
