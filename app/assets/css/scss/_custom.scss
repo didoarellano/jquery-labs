@@ -40,11 +40,21 @@ body {
   }
 }
 
-.category-description {
+.category-description, .exercise-index {
   padding: $spacing;
   background: $ghostWhite;
 
   h2 {
     margin-top: 0;
   }
+}
+
+
+.exercise-list .label-box {
+  border: 1px solid $grey3;
+  font-size: 1.6em;
+  line-height: 2em;
+  font-family: monospace;
+  background: rgba(237, 237, 237, 0.6);
+  text-align: center;
 }

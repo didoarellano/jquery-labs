@@ -1,0 +1,21 @@
+<div class="row">
+  <section class="col x center">
+    <div class="heading">
+      <h1 {{bindAttr class="controllers.categories.id :label-box"}}>{{controllers.categories.label}}</h1>
+    </div>
+
+    <article class="exercise-index">
+      <ul class="exercise-list blocks vi-up mob-iii-up">
+        {{#each exercises}}
+          <li>
+            {{#link-to "" this classNames="label-box"}}
+              {{id}}
+            {{/link-to}}
+          </li>
+        {{/each}}
+      </ul>
+    </article>
+
+    {{partial "footer"}}
+  </section>
+</div>
