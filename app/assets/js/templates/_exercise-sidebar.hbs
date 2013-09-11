@@ -1,0 +1,35 @@
+<div class="sidebar">
+  <h1 class="label-box selecting">Category</h1>
+
+  <div class="col">
+
+    <section class="instructions">
+      {{{instructions}}}
+    </section>
+
+    <nav class="nav clearfix">
+      <a href="#" class="button mini" rel="prev">prev</a>
+      {{!--<button class="button mini" disabled="disabled" rel="prev">prev</button>--}}
+
+      <div class="pagination">
+        <p>{{id}} <small>of</small> 10</p>
+        <select>
+          <option></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
+      </div>
+
+      {{!--<a href="#" class="button mini" rel="next">next</a>--}}
+      <button class="button mini" disabled="disabled" rel="next">next</button>
+
+      <div class="app-nav">
+        <a href="#">Home</a>
+        <a href="#">Exercises</a>
+      </div>
+    </nav>
+
+    {{partial footer}}
+  </div>
+</div>

@@ -52,3 +52,20 @@ footer {
     color: #222;
   }
 }
+
+
+button {
+  &.mini {
+    padding: 0.6em 1em;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  &.button:hover {
+    background: $primaryColor;
+    cursor: not-allowed;
+  }
+}
