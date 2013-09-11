@@ -9,7 +9,7 @@
     <ul class="category-list blocks iii-up mob-ii-up">
       {{#each controller}}
         <li>
-           {{#link-to "" this classNames="category-label" classNameBindings="id"}}
+           {{#link-to "categories.category" this classNames="category-label" classNameBindings="id"}}
              {{label}}
            {{/link-to}}
         </li>
