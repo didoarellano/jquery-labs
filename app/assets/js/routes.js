@@ -3,6 +3,7 @@ App.Router.map(function() {
         this.route('category', { path: '' });
         this.resource('exercises', function() {
             this.route('index', { path: '' })
+            this.resource('exercise', { path: ':exercise_id' });
         });
     });
 });
@@ -36,3 +37,10 @@ App.ExercisesIndexRoute = Ember.Route.extend({
         return this.modelFor('exercises');
     },
 })
+
+App.ExerciseRoute = Ember.Route.extend({
+    model: function(params) {
+        var id = parseInt(params.exercise_id, 10);
+        return this.modelFor('categories').findExerciseById(id);
+    }
+});
