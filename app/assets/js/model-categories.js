@@ -13,6 +13,11 @@ App.Category = Ember.Object.extend({
             return App.Exercise.create(exercise);
         });
         return collection;
+    },
+
+    findExerciseById: function(id) {
+        var exercises = this._exercises || this.getExercises()
+        return exercises.exercises.findBy('id', id);
     }
 });
 
