@@ -12,7 +12,7 @@ App.IndexRoute = Ember.Route.extend({
 
 App.CategoriesRoute = Ember.Route.extend({
     model: function(params) {
-        return App.Category.find(parmas.category_id);
+        return App.Category.find(params.category_id);
     }
 });
 
