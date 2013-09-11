@@ -60,9 +60,14 @@ body {
 }
 
 
+.exercise-container {
+  background: $white;
+  transition: height 0.2s;
+}
+
 .sidebar {
   width: 240px;
-  height: 100%;
+  min-height: 100%;
   position: absolute;
   border-right: 1px solid $grey3;
   background: #fff;
