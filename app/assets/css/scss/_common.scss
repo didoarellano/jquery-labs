@@ -1,0 +1,44 @@
+.label-box {
+  padding: $spacing;
+  font-size: 1.4em;
+  line-height: 3em;
+
+  // ICONS
+  &:before {
+    width: 30%;
+    margin-right: $spacing/2;
+    font-size: 3em;
+    float: left;
+    font-family: IcoMoonSubset;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &.selecting:before {
+    content: "\e007";
+  }
+
+  &.traversing:before {
+    content: "\f0e8";
+  }
+
+  &.filtering:before {
+    content: "\f0b0";
+  }
+}
+
+a.label-box {
+  display: block;
+  color: $black;
+  background: rgba(255,255,255,0.4);
+  transition: all 0.2s;
+
+  &:link {
+    border-bottom: none;
+  }
+  &:hover, &:focus {
+    color: $linkColor;
+    background: rgba(255,255,255,0.8);
+  }
+}
