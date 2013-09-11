@@ -29,14 +29,12 @@
 }
 
 a.label-box {
+  border-bottom: none;
   display: block;
   color: $black;
   background: $ghostWhite;
   transition: all 0.2s;
 
-  &:link {
-    border-bottom: none;
-  }
   &:hover, &:focus {
     color: $linkColor;
     background: rgba(255,255,255,0.8);
