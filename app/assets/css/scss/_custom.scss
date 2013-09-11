@@ -171,6 +171,17 @@ body {
     @include roundedSmall;
   }
 
+  &:after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    margin-left: -0.5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: $grey3;
+  }
+
   /* Fix for browser window scrollbar appearing even when it shouldn't. It seems
   like the iframe has extra vertical spacing that we can't remove. */
   .col:first-child {
