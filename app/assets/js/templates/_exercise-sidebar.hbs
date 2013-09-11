@@ -8,8 +8,11 @@
     </section>
 
     <nav class="nav clearfix">
-      <a href="#" class="button mini" rel="prev">prev</a>
-      {{!--<button class="button mini" disabled="disabled" rel="prev">prev</button>--}}
+      {{#if prevExercise}}
+        {{#link-to "exercise" prevExercise classNames="button mini" rel="prev"}}prev{{/link-to}}
+      {{else}}
+        <button class="button mini" disabled="disabled" rel="prev">prev</button>
+      {{/if}}
 
       <div class="pagination">
         <p>{{id}} <small>of</small> {{allExercises.length}}</p>
@@ -21,8 +24,11 @@
         </select>
       </div>
 
-      {{!--<a href="#" class="button mini" rel="next">next</a>--}}
-      <button class="button mini" disabled="disabled" rel="next">next</button>
+      {{#if nextExercise}}
+        {{#link-to "exercise" nextExercise classNames="button mini" rel="next"}}next{{/link-to}}
+      {{else}}
+        <button class="button mini" disabled="disabled" rel="next">next</button>
+      {{/if}}
 
       <div class="app-nav">
         <a href="#">Home</a>
