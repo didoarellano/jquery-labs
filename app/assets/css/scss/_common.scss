@@ -42,3 +42,15 @@ a.label-box {
     background: rgba(255,255,255,0.8);
   }
 }
+
+
+footer {
+  padding: $spacing 0;
+  margin: $spacing 0;
+  font-size: 0.8em;
+  text-align: center;
+
+  a:link {
+    color: #222;
+  }
+}
