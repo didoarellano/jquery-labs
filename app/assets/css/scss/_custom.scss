@@ -27,3 +27,24 @@ body {
   padding: $spacing 0;
   margin: $spacing 0;
 }
+
+
+.heading {
+  margin-top: $spacing*4;
+  background: $black;
+
+  .label-box {
+    width: 240px;
+    margin: 0 auto;
+    color: $white;
+  }
+}
+
+.category-description {
+  padding: $spacing;
+  background: rgba(255,255,255,0.4);
+
+  h2 {
+    margin-top: 0;
+  }
+}

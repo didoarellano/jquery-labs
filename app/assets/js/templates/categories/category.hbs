@@ -1,0 +1,16 @@
+<div class="row">
+  <section class="col x center">
+
+    <div class="heading">
+      <h1 {{bindAttr class="id :label-box"}}>{{label}}</h1>
+    </div>
+
+    <article class="category-description">
+      <h2>{{title}}</h2>
+      {{{description}}}
+      {{#link-to "" this classNames="button"}}Exercises index{{/link-to}}
+    </article>
+
+    {{partial "footer"}}
+  </section>
+</div>
