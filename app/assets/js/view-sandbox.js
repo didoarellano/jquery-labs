@@ -7,7 +7,7 @@ App.SandboxView = Ember.View.extend({
 
     didInsertElement: function() {
         var iframe = this.$()[0];
-        var html = this.get('content.htmlStart');
+        var html = this.get('content.html');
 
         iframe.onload = function() {
             var body = iframe.contentDocument.body;

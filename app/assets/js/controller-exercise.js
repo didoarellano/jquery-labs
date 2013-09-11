@@ -10,6 +10,14 @@ App.ExerciseController = Ember.ObjectController.extend({
         return this.get('controllers.categories.model').findExerciseById(id);
     },
 
+    html: function() {
+        var html = this.get('userData.htmlResult');
+        if (html == null) {
+            html = this.get('htmlStart');
+        }
+        return html;
+    }.property('model'),
+
     allExercises: function() {
         return this.get('controllers.exercises.exercises');
     }.property('controllers.exercises.exercises'),
