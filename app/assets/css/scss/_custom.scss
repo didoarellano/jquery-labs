@@ -1,0 +1,73 @@
+body {
+  background: #fff url(../img/bg.jpg) no-repeat top center fixed;
+  background-size: cover;
+}
+
+.index {
+  text-align: center;
+}
+
+.hero {
+  padding: $spacing 0;
+  margin: $spacing 0;
+
+  h1 {
+    font-size: 7em;
+  }
+  .leader {
+    font-weight: bold;
+  }
+}
+
+.category-list {
+  padding: $spacing 0;
+  margin: $spacing 0;
+}
+
+a.category-label {
+  padding: $spacing;
+  border-bottom: none;
+  display: block;
+  font-size: 1.4em;
+  line-height: 3em;
+  color: $black;
+  background: rgba(255,255,255,0.4);
+  transition: all 0.2s;
+  text-align: left;
+
+  &:hover, &:focus {
+    color: $linkColor;
+    background: rgba(255,255,255,0.8);
+  }
+}
+
+.category-label:before {
+  width: 30%;
+  margin-right: $spacing/2;
+  float: left;
+  font-size: 3em;
+  font-family: IcoMoonSubset;
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+.category-label.selecting:before {
+  content: "\e007";
+}
+.category-label.traversing:before {
+  content: "\f0e8";
+}
+.category-label.filtering:before {
+  content: "\f0b0";
+}
+
+footer {
+  padding: $spacing 0;
+  margin: $spacing 0;
+  font-size: 0.8em;
+  text-align: center;
+
+  a:link {
+    color: #222;
+  }
+}
