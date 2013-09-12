@@ -33,8 +33,8 @@
       {{/if}}
 
       <div class="app-nav">
-        <a href="#">Home</a>
-        <a href="#">Exercises</a>
+        {{#link-to "index"}}Home{{/link-to}}
+        {{#link-to "exercises.index" controllers.categories}}Exercises{{/link-to}}
       </div>
     </nav>
 
