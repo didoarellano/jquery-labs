@@ -15,5 +15,13 @@ App.CommandLineComponent = Ember.Component.extend({
             .trigger('focus')
              // Unselect the text on render by re-applying value.
             .val(this.get('value'));
-    }.observes('exercise')
+    }.observes('exercise'),
+
+    submit: function(e) {
+        e.preventDefault();
+        var newValue = this.$input.val().trim();
+        var previousValue = this.get('value');
+        if (!newValue || newValue === previousValue) { return; }
+        this.sendAction('action', newValue);
+    }
 });

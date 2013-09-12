@@ -3,6 +3,16 @@ App.ExerciseController = Ember.ObjectController.extend({
     actions: {
         gotoExercise: function(id) {
             this.transitionToRoute('exercise', this.getExercise(id));
+        },
+
+        buildCommand: function(answer) {
+            var preCommand = this.get('preCommand') || '';
+            var suffix = this.get('commandSuffix');
+            var postCommand = this.get('postCommand') || '';
+            var command = preCommand + answer + suffix + postCommand;
+
+            console.log(command);
+            this.set('command', command);
         }
     },
 
