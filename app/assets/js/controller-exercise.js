@@ -11,6 +11,7 @@ App.ExerciseController = Ember.ObjectController.extend({
             var postCommand = this.get('postCommand') || '';
             var command = preCommand + answer + suffix + postCommand;
 
+            this.set('doNoEval', false);
             this.set('answer', answer);
             this.set('command', command);
         },
@@ -23,6 +24,10 @@ App.ExerciseController = Ember.ObjectController.extend({
     getExercise: function(id) {
         return this.get('controllers.categories.model').findExerciseById(id);
     },
+
+    preventEval: function() {
+        this.set('doNoEval', true);
+    }.observes('model'),
 
     answer: function(key, value) {
         if (arguments.length > 1) {

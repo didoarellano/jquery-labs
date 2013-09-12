@@ -26,6 +26,8 @@ App.IframeSandboxComponent = Ember.Component.extend({
         var body = this.body;
         var result = {};
 
+        if (this.get('doNoEval')) { return; }
+
         try {
             window.eval(cmd);
             result.state = window.isCorrect;
