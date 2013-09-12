@@ -3,7 +3,12 @@
   <div class="col vi">
     <span class="label">Live</span>
     <div class="overlay"></div>
-    {{iframe-sandbox src="assets/sandbox/sandbox.html" html=html exerciseBinding="model"}}
+    {{iframe-sandbox
+      src="assets/sandbox/sandbox.html"
+      html=html
+      command=command
+      action="handleEvalResult"
+      exerciseBinding="model"}}
   </div>
 
   <div class="col vi">

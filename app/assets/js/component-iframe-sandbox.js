@@ -20,5 +20,23 @@ App.IframeSandboxComponent = Ember.Component.extend({
 
     changeExercise: function() {
         this.rerender();
-    }.observes('exercise')
+    }.observes('exercise'),
+
+    evaluate: function() {
+        var cmd = this.get('command');
+        var window = this.window;
+        var body = this.body;
+        var result = {};
+
+        try {
+            window.eval(cmd);
+            result.state = window.isCorrect;
+            result.html = body.innerHTML;
+        } catch (err) {
+            result.state = 'error';
+            result.errorMsg = err.name + ': ' + err.message;
+        }
+
+        this.sendAction('action', result);
+    }.observes('command')
 });

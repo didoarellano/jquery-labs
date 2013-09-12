@@ -11,9 +11,12 @@ App.ExerciseController = Ember.ObjectController.extend({
             var postCommand = this.get('postCommand') || '';
             var command = preCommand + answer + suffix + postCommand;
 
-            console.log(command);
             this.set('answer', answer);
             this.set('command', command);
+        },
+
+        handleEvalResult: function(result) {
+            console.log(result);
         }
     },
 
