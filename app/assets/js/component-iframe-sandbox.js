@@ -1,13 +1,13 @@
-App.SandboxView = Ember.View.extend({
+App.IframeSandboxComponent = Ember.Component.extend({
     tagName: 'iframe',
     attributeBindings: ['src'],
-    src: 'assets/sandbox/sandbox.html',
+    src: 'src',
     window: null,
     body: null,
 
     didInsertElement: function() {
         var iframe = this.$()[0];
-        var html = this.get('content.html');
+        var html = this.get('html');
 
         iframe.onload = function() {
             var body = iframe.contentDocument.body;

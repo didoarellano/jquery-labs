@@ -3,9 +3,7 @@
   <div class="col vi">
     <span class="label">Live</span>
     <div class="overlay"></div>
-    {{view App.SandboxView
-      contentBinding="this"
-      exerciseBinding="model"}}
+    {{iframe-sandbox src="assets/sandbox/sandbox.html" html=html exerciseBinding="model"}}
   </div>
 
   <div class="col vi">
