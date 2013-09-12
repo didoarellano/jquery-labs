@@ -7,19 +7,17 @@ App.IframeSandboxComponent = Ember.Component.extend({
 
     didInsertElement: function() {
         var iframe = this.$()[0];
-        var html = this.get('html');
 
         iframe.onload = function() {
-            var body = iframe.contentDocument.body;
-            body.innerHTML = html;
             this.set('window', iframe.contentWindow);
-            this.set('body', body);
+            this.set('body', iframe.contentDocument.body);
+            this.setIframeContent();
             iframe.onload = null;
         }.bind(this);
     },
 
-    changeExercise: function() {
-        this.rerender();
+    setIframeContent: function() {
+        this.body.innerHTML = this.get('html');
     }.observes('exercise'),
 
     evaluate: function() {
