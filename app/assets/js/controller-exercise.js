@@ -17,7 +17,8 @@ App.ExerciseController = Ember.ObjectController.extend({
         },
 
         handleEvalResult: function(result) {
-            console.log(result);
+            if (result.state === 'error') { return; }
+            this.set('html', result.html);
         }
     },
 
@@ -36,7 +37,10 @@ App.ExerciseController = Ember.ObjectController.extend({
         return this.get('userData.answer');
     }.property('model'),
 
-    html: function() {
+    html: function(key, value) {
+        if (arguments.length > 1) {
+            this.set('userData.htmlResult', value);
+        }
         var html = this.get('userData.htmlResult');
         if (html == null) {
             html = this.get('htmlStart');
