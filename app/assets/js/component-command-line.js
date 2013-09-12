@@ -12,6 +12,8 @@ App.CommandLineComponent = Ember.Component.extend({
             // FF23 doesn't support autofocus yet. We also want to refocus the
             // input on exercise change which using only the autofocus attribute
             // won't accomplish for us.
-            .trigger('focus');
+            .trigger('focus')
+             // Unselect the text on render by re-applying value.
+            .val(this.get('value'));
     }.observes('exercise')
 });
