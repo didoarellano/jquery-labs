@@ -12,6 +12,7 @@ App.ExerciseController = Ember.ObjectController.extend({
             var command = preCommand + answer + suffix + postCommand;
 
             console.log(command);
+            this.set('answer', answer);
             this.set('command', command);
         }
     },
@@ -20,7 +21,10 @@ App.ExerciseController = Ember.ObjectController.extend({
         return this.get('controllers.categories.model').findExerciseById(id);
     },
 
-    answer: function() {
+    answer: function(key, value) {
+        if (arguments.length > 1) {
+            this.set('userData.answer', value);
+        }
         return this.get('userData.answer');
     }.property('model'),
 
