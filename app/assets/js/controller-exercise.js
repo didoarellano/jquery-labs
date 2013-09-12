@@ -30,24 +30,6 @@ App.ExerciseController = Ember.ObjectController.extend({
         this.set('doNoEval', true);
     }.observes('model'),
 
-    answer: function(key, value) {
-        if (arguments.length > 1) {
-            this.set('userData.answer', value);
-        }
-        return this.get('userData.answer');
-    }.property('model'),
-
-    html: function(key, value) {
-        if (arguments.length > 1) {
-            this.set('userData.htmlResult', value);
-        }
-        var html = this.get('userData.htmlResult');
-        if (html == null) {
-            html = this.get('htmlStart');
-        }
-        return html;
-    }.property('model'),
-
     htmlFiltered: function() {
         return this.get('html').replace(/\sdata-correct="?true"?/g, '');
     }.property('html'),
