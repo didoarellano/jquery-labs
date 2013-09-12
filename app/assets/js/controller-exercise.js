@@ -17,6 +17,8 @@ App.ExerciseController = Ember.ObjectController.extend({
         },
 
         handleEvalResult: function(result) {
+            var state = this.getStateText(result.state);
+            this.set('state', state);
             if (result.state === 'error') { return; }
             this.set('html', result.html);
         }
@@ -26,6 +28,23 @@ App.ExerciseController = Ember.ObjectController.extend({
         return this.get('controllers.categories.model').findExerciseById(id);
     },
 
+    getStateText: function(state) {
+        switch (state) {
+        case true:
+            state = 'correct';
+            break;
+        case false:
+            state = 'incorrect';
+            break;
+        case 'error':
+            state = state;
+            break;
+        default:
+            state = null;
+            break;
+        }
+        return state;
+    },
     preventEval: function() {
         this.set('doNoEval', true);
     }.observes('model'),
