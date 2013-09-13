@@ -1,6 +1,7 @@
 App.CommandLineComponent = Ember.Component.extend({
     tagName: 'form',
     classNames: ['command-line'],
+    classNameBindings: 'exerciseState',
 
     didInsertElement: function() {
         this.$input = this.$('input');
@@ -23,5 +24,14 @@ App.CommandLineComponent = Ember.Component.extend({
         var previousValue = this.get('value');
         if (!newValue || newValue === previousValue) { return; }
         this.sendAction('action', newValue);
-    }
+    },
+
+    doStateAnimation: function() {
+        var duration = this.get('exerciseState') === 'error' ? 1500 : 500;
+        this.$el = this.$el || this.$();
+        this.$el.addClass('animate');
+        Ember.run.later(this, function() {
+            this.$el.removeClass('animate');
+        }, duration);
+    }.observes('exerciseState')
 });
