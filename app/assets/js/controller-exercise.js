@@ -19,8 +19,10 @@ App.ExerciseController = Ember.ObjectController.extend({
         handleEvalResult: function(result) {
             var state = this.getStateText(result.state);
             this.set('state', state);
-            if (result.state === 'error') { return; }
-            this.set('html', result.html);
+            this.set('errorMessage', result.errorMessage);
+            if (result.html) {
+                this.set('html', result.html);
+            }
         }
     },
 

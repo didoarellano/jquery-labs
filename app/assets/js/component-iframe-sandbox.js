@@ -34,7 +34,7 @@ App.IframeSandboxComponent = Ember.Component.extend({
             result.html = body.innerHTML;
         } catch (err) {
             result.state = 'error';
-            result.errorMsg = err.name + ': ' + err.message;
+            result.errorMessage = err.name + ': ' + err.message;
         }
 
         this.sendAction('action', result);

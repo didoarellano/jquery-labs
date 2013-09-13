@@ -272,3 +272,14 @@ body {
     -webkit-transform: translate3d(-5px, 0, 0);
   }
 }
+
+.error-message {
+  width: 100%;
+  padding: $spacing/2 $spacing;
+  position: absolute;
+  top: -$spacing*2.3;
+  background: $errorColor;
+  color: $white;
+  text-align: center;
+  @include roundedTiny;
+}
