@@ -42,5 +42,12 @@ App.ExerciseRoute = Ember.Route.extend({
     model: function(params) {
         var id = parseInt(params.exercise_id, 10);
         return this.modelFor('categories').findExerciseById(id);
+    },
+    activate: function() {
+        this.$rootElement = Ember.$(App.rootElement);
+        this.$rootElement.addClass(this.routeName);
+    },
+    deactivate: function() {
+        this.$rootElement.removeClass(this.routeName);
     }
 });
