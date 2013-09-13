@@ -27,6 +27,7 @@ App.CommandLineComponent = Ember.Component.extend({
     },
 
     doStateAnimation: function() {
+        if (this.get('dontAnimate')) { return; }
         var duration = this.get('exerciseState') === 'error' ? 1500 : 500;
         this.$el = this.$el || this.$();
         this.$el.addClass('animate');
