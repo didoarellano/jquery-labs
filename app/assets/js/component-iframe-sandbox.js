@@ -12,6 +12,7 @@ App.IframeSandboxComponent = Ember.Component.extend({
             this.set('window', iframe.contentWindow);
             this.set('body', iframe.contentDocument.body);
             this.setIframeContent();
+            iframe.className = 'active';
             iframe.onload = null;
         }.bind(this);
     },

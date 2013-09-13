@@ -149,6 +149,11 @@ body {
     width: 100%;
     border: none;
     position: relative;
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 
   pre {
