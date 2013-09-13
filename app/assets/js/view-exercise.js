@@ -4,7 +4,7 @@ App.ExerciseView = Ember.View.extend({
     $sidebar: null,
 
     didInsertElement: function() {
-        this.setHeight();
+        Ember.run.schedule('afterRender', this, 'setupWorkspace');
         App.WindowWrapper.on('resize', this, 'setHeight');
     },
 
@@ -12,13 +12,14 @@ App.ExerciseView = Ember.View.extend({
         App.WindowWrapper.off('resize', this, 'setHeight');
     },
 
-    setHeight: function() {
-        var $sidebar = this.$sidebar;
-        if (!$sidebar) {
-            $sidebar = this.$sidebar = this.$('.sidebar');
-        }
+    setupWorkspace: function() {
+        this.$sidebar = this.$('.sidebar');
+        this.setHeight();
+        this.$sidebar.addClass('active');
+    },
 
-        var height = Math.max(window.innerHeight, $sidebar.height());
+    setHeight: function() {
+        var height = Math.max(window.innerHeight, this.$sidebar.height());
         this.$().height(height);
     }
 });
