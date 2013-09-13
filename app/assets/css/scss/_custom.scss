@@ -217,8 +217,8 @@ body {
 .command-line {
   width: 360px;
   height: auto;
-  margin-left: -180px;
-  position: absolute;
+  margin-left: -60px; // (command-line width - sidebar width) / 2
+  position: fixed;
   bottom: 20px;
   left: 50%;
   transition: all 0.2s;
