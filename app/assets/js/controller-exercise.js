@@ -11,7 +11,7 @@ App.ExerciseController = Ember.ObjectController.extend({
             var postCommand = this.get('postCommand') || '';
             var command = preCommand + answer + suffix + postCommand;
 
-            this.set('doNoEval', false);
+            this.set('safetyIsOn', false);
             this.set('answer', answer);
             this.set('command', command);
         },
@@ -45,8 +45,9 @@ App.ExerciseController = Ember.ObjectController.extend({
         }
         return state;
     },
-    preventEval: function() {
-        this.set('doNoEval', true);
+
+    toggleSafety: function() {
+        this.set('safetyIsOn', true);
     }.observes('model'),
 
     htmlFiltered: function() {
