@@ -211,13 +211,19 @@ body {
 
   input {
     width: 100%;
-    padding: 0 30px 0 10px;
+    padding: 0 $spacing/2;
     margin: 0;
     font-size: 1.6em;
     line-height: 1;
     font-family: monospace;
     background: rgba(255, 255, 255, 0.6);
     transition: all 0.2s ease !important;  /* Need to override Headstart again */
+  }
+
+  &.correct, &.error, &.incorrect {
+    input {
+      padding-right: $spacing*2;
+    }
   }
 
   &.animate {
