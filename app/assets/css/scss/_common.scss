@@ -69,3 +69,30 @@ button {
     cursor: not-allowed;
   }
 }
+
+
+.state-badge {
+  &:before {
+    font-family: IcoMoonSubset;
+    speak: none;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.8em;
+  }
+
+  &.correct:before {
+    content: "\e005";
+    color: $correctColor;
+  }
+
+  &.incorrect:before {
+    content: "\e003";
+    color: $errorColor;
+  }
+
+  &.error:before {
+    content: "\e001";
+    color: $errorColor;
+  }
+}

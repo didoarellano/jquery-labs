@@ -232,6 +232,15 @@ body {
     &.error input {
       background: $errorColor;
     }
+    .state-badge {
+      display: none;
+    }
+  }
+
+  .state-badge {
+    position: absolute;
+    top: 0.2em;
+    right: $spacing/2;
   }
 }
 
