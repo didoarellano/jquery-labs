@@ -6,14 +6,15 @@ App.ExerciseController = Ember.ObjectController.extend({
         },
 
         buildCommand: function(answer) {
-            var preCommand = this.get('preCommand') || '';
-            var suffix = this.get('commandSuffix');
-            var postCommand = this.get('postCommand') || '';
-            var command = preCommand + answer + suffix + postCommand;
+            var commands = this.get('commands');
+
+            this.set('answer', answer);
+            this.set('preCommand', commands.pre);
+            this.set('firstAssert', commands.firstAssert);
+            this.set('postCommand', commands.post + commands.finalAssert);
 
             this.set('safetyIsOn', false);
-            this.set('answer', answer);
-            this.set('command', command);
+            this.set('command', commands.prefix + answer);
         },
 
         handleEvalResult: function(result) {
