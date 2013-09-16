@@ -58,11 +58,20 @@ body {
 
 .exercise-list .label-box {
   border: 1px solid $grey3;
+  position: relative;
   font-size: 1.6em;
   line-height: 2em;
   font-family: monospace;
   background: rgba(237, 237, 237, 0.6);
   text-align: center;
+
+  .state-badge {
+    position: absolute;
+    top: $spacing/3;
+    right: $spacing/4;
+    font-size: 20px;
+    line-height: 1em;
+  }
 }
 
 
@@ -264,8 +273,9 @@ body {
 
   .state-badge {
     position: absolute;
-    top: 1px;
+    top: 0;
     right: $spacing/2;
+    font-size: 1.8em;
   }
 }
 

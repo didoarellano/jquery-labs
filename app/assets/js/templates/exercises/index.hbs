@@ -9,6 +9,7 @@
         {{#each exercises}}
           <li>
             {{#link-to "exercise" this classNames="label-box"}}
+              <i {{bindAttr class="state :state-badge"}}></i>
               {{id}}
             {{/link-to}}
           </li>
