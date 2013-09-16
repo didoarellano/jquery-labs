@@ -18,7 +18,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             },
@@ -36,7 +36,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             },
@@ -54,7 +54,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             }
@@ -77,7 +77,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             },
@@ -95,7 +95,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             },
@@ -113,7 +113,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             }
@@ -136,7 +136,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             },
@@ -154,7 +154,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             },
@@ -172,7 +172,7 @@ jQLabsData.exercises = [
                 },
                 "userData": {
                     "answer": null,
-                    "htmlResult": null,
+                    "html": null,
                     "timestamp": 0
                 }
             }

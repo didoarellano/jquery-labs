@@ -20,14 +20,14 @@ App.Exercise = Ember.Object.extend({
             this._syncUserData();
         }
         if (arguments.length > 1) {
-            this.set('userData.htmlResult', value);
+            this.set('userData.html', value);
         }
-        var html = this.get('userData.htmlResult');
+        var html = this.get('userData.html');
         if (html == null) {
             html = this.get('htmlStart');
         }
         return html;
-    }.property('userData.htmlResult'),
+    }.property('userData.html'),
 
     state: function(key, value) {
         if (!this._userDataSynced) {
@@ -59,12 +59,8 @@ App.Exercise = Ember.Object.extend({
 
     saveUserData: function() {
         var key = this.get('_storeKey');
-        var data = {
-            answer: this.get('userData.answer'),
-            htmlResult: this.get('userData.htmlResult'),
-            state: this.get('userData.state'),
-            timestamp: Date.now()
-        };
+        var data = this.getProperties(['answer', 'html', 'state']);
+        data.timestamp = Date.now();
         window.localStorage.setItem(key, JSON.stringify(data));
     },
 
@@ -75,7 +71,7 @@ App.Exercise = Ember.Object.extend({
             this.setProperties({
                 'userData.answer': client.answer,
                 'userData.state': client.state,
-                'userData.htmlResult': client.htmlResult
+                'userData.html': client.html
             });
         }
         this._userDataSynced = true;
