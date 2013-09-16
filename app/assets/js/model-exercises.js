@@ -15,5 +15,30 @@ App.Exercise = Ember.Object.extend({
             html = this.get('htmlStart');
         }
         return html;
-    }.property('userData.htmlResult')
+    }.property('userData.htmlResult'),
+
+    state: function(key, value) {
+        if (arguments.length > 1) {
+            this.set('userData.state', this.getStateText(value));
+        }
+        return this.get('userData.state');
+    }.property('userData.state'),
+
+    getStateText: function(state) {
+        switch (state) {
+        case true:
+            state = 'correct';
+            break;
+        case false:
+            state = 'incorrect';
+            break;
+        case 'error':
+            state = state;
+            break;
+        default:
+            state = null;
+            break;
+        }
+        return state;
+    }
 });
