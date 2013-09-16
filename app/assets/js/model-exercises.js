@@ -1,9 +1,14 @@
 App.Exercise = Ember.Object.extend({
+    _userDataSynced: false,
+
     _storeKey: function() {
         return this.category + '-exercise-' + this.id + '-userData';
     }.property(),
 
     answer: function(key, value) {
+        if (!this._userDataSynced) {
+            this._syncUserData();
+        }
         if (arguments.length > 1) {
             this.set('userData.answer', value);
         }
@@ -11,6 +16,9 @@ App.Exercise = Ember.Object.extend({
     }.property('userData.answer'),
 
     html: function(key, value) {
+        if (!this._userDataSynced) {
+            this._syncUserData();
+        }
         if (arguments.length > 1) {
             this.set('userData.htmlResult', value);
         }
@@ -22,6 +30,9 @@ App.Exercise = Ember.Object.extend({
     }.property('userData.htmlResult'),
 
     state: function(key, value) {
+        if (!this._userDataSynced) {
+            this._syncUserData();
+        }
         if (arguments.length > 1) {
             this.set('userData.state', this.getStateText(value));
         }
@@ -55,5 +66,16 @@ App.Exercise = Ember.Object.extend({
             timestamp: Date.now()
         };
         window.localStorage.setItem(key, JSON.stringify(data));
+    },
+
+    _syncUserData: function() {
+        var key = this.get('_storeKey');
+        var client = JSON.parse(window.localStorage.getItem(key));
+        if (client && client.timestamp > this.get('userData.timestamp')) {
+            this.set('userData.answer', client.answer);
+            this.set('userData.state', client.state);
+            this.set('userData.htmlResult', client.htmlResult);
+        }
+        this._userDataSynced = true;
     }
 });
