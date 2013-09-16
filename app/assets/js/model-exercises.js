@@ -1,4 +1,8 @@
 App.Exercise = Ember.Object.extend({
+    _storeKey: function() {
+        return this.category + '-exercise-' + this.id + '-userData';
+    }.property(),
+
     answer: function(key, value) {
         if (arguments.length > 1) {
             this.set('userData.answer', value);
@@ -40,5 +44,16 @@ App.Exercise = Ember.Object.extend({
             break;
         }
         return state;
+    },
+
+    saveUserData: function() {
+        var key = this.get('_storeKey');
+        var data = {
+            answer: this.get('userData.answer'),
+            htmlResult: this.get('userData.htmlResult'),
+            state: this.get('userData.state'),
+            timestamp: Date.now()
+        };
+        window.localStorage.setItem(key, JSON.stringify(data));
     }
 });

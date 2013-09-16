@@ -23,6 +23,7 @@ App.ExerciseController = Ember.ObjectController.extend({
             if (result.html) {
                 this.set('html', result.html);
             }
+            Ember.run.schedule('actions', this.get('model'), 'saveUserData');
         }
     },
 
