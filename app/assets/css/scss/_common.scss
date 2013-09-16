@@ -72,6 +72,9 @@ button {
 
 
 .state-badge {
+  font-size: 20px;
+  line-height: 1em;
+
   &:before {
     font-family: IcoMoonSubset;
     speak: none;
@@ -93,5 +96,13 @@ button {
   &.error:before {
     content: "\e001";
     color: $errorColor;
+  }
+
+
+  .command-line &,
+  .exercise-list & {
+    position: absolute;
+    top: $spacing/4;
+    right: $spacing/4;
   }
 }
