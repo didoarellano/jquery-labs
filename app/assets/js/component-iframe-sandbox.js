@@ -22,27 +22,29 @@ App.IframeSandboxComponent = Ember.Component.extend({
     }.observes('exercise'),
 
     evaluate: function() {
-        var preCommand = this.get('preCommand');
-        var command = this.get('command');
-        var firstAssert = this.get('firstAssert');
-        var postCommand = this.get('postCommand');
+        if (this.get('doNoEval')) { return; }
+
+        var cmd = this.getProperties([
+            'preCommand',
+            'command',
+            'firstAssert',
+            'postCommand'
+        ]);
         var window = this.window;
         var body = this.body;
         var result = {};
         var firstAssertResult;
 
-        if (this.get('doNoEval')) { return; }
-
         try {
-            window.eval(preCommand);
-            window.eval(command);
+            window.eval(cmd.preCommand);
+            window.eval(cmd.command);
 
-            firstAssertResult = window.eval(firstAssert);
+            firstAssertResult = window.eval(cmd.firstAssert);
             if (!firstAssertResult.passed) {
                 throw new Error(firstAssertResult.message);
             }
 
-            window.eval(postCommand);
+            window.eval(cmd.postCommand);
 
             result.state = window.isCorrect;
             result.html = body.innerHTML;

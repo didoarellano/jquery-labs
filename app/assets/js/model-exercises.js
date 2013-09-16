@@ -72,9 +72,11 @@ App.Exercise = Ember.Object.extend({
         var key = this.get('_storeKey');
         var client = JSON.parse(window.localStorage.getItem(key));
         if (client && client.timestamp > this.get('userData.timestamp')) {
-            this.set('userData.answer', client.answer);
-            this.set('userData.state', client.state);
-            this.set('userData.htmlResult', client.htmlResult);
+            this.setProperties({
+                'userData.answer': client.answer,
+                'userData.state': client.state,
+                'userData.htmlResult': client.htmlResult
+            });
         }
         this._userDataSynced = true;
     }
