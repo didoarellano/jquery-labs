@@ -8,7 +8,7 @@ App.Category = Ember.Object.extend({
 
     getExercises: function() {
         if (this._exercises) { return this._exercises; }
-        var collection = this._exercises = jQLabsData.exercises.findBy('category', this.get('id'));
+        var collection = this._exercises = jQLabsData['exercises-' + this.get('id')];
         collection.exercises = collection.exercises.map(function(exercise) {
             return App.Exercise.create(exercise);
         });
