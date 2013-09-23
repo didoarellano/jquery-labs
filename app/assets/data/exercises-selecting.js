@@ -9,7 +9,7 @@ jQLabsData["exercises-selecting"] = {
             "commands": {
                 "pre": "$('[s]').removeAttr('s');",
                 "prefix": "window.$s=",
-                "firstAssert": "(function($s, $) {var ret = { passed: true }; if (!($s instanceof $)) {ret.passed = false; ret.message = 'Input is not a jQuery object';} return ret;}(window.$s, jQuery));",
+                "firstAssert": "(function($s, $) {if (!($s instanceof $)) {throw new Error('Input is not a jQuery object');}}(window.$s, jQuery));",
                 "post": "$s.attr('s', function() {return $(this).data('correct') ? '✓' : 'x';});",
                 "finalAssert": "(function(window, $) {var expected = $('h1').get(); window.isCorrect = (function(a, b) {var l = a.length; if (l !== b.length) return false; while (l--) {if (a[l] !== b[l]) return false;} return true;}(window.$s.get().sort(), expected));}(window, jQuery));"
             },
@@ -27,7 +27,7 @@ jQLabsData["exercises-selecting"] = {
             "commands": {
                 "pre": "$('[s]').removeAttr('s');",
                 "prefix": "window.$s=",
-                "firstAssert": "(function($s, $) {var ret = { passed: true }; if (!($s instanceof $)) {ret.passed = false; ret.message = 'Input is not a jQuery object';} return ret;}(window.$s, jQuery));",
+                "firstAssert": "(function($s, $) {if (!($s instanceof $)) {throw new Error('Input is not a jQuery object');}}(window.$s, jQuery));",
                 "post": "$s.attr('s', function() {return $(this).data('correct') ? '✓' : 'x';});",
                 "finalAssert": "(function(window, $) {var expected = $('h2').get(); window.isCorrect = (function(a, b) {var l = a.length; if (l !== b.length) return false; while (l--) {if (a[l] !== b[l]) return false;} return true;}(window.$s.get().sort(), expected));}(window, jQuery));"
             },
@@ -45,7 +45,7 @@ jQLabsData["exercises-selecting"] = {
             "commands": {
                 "pre": "$('[s]').removeAttr('s');",
                 "prefix": "window.$s=",
-                "firstAssert": "(function($s, $) {var ret = { passed: true }; if (!($s instanceof $)) {ret.passed = false; ret.message = 'Input is not a jQuery object';} return ret;}(window.$s, jQuery));",
+                "firstAssert": "(function($s, $) {if (!($s instanceof $)) {throw new Error('Input is not a jQuery object');}}(window.$s, jQuery));",
                 "post": "$s.attr('s', function() {return $(this).data('correct') ? '✓' : 'x';});",
                 "finalAssert": "(function(window, $) {var expected = $('li').get(); window.isCorrect = (function(a, b) {var l = a.length; if (l !== b.length) return false; while (l--) {if (a[l] !== b[l]) return false;} return true;}(window.$s.get().sort(), expected));}(window, jQuery));"
             },
