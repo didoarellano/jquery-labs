@@ -2,57 +2,58 @@ App.IframeSandboxComponent = Ember.Component.extend({
     tagName: 'iframe',
     attributeBindings: ['src'],
     src: 'src',
-    window: null,
-    body: null,
+    iframe: null,
+    sandbox: null,
+
+    // '*' is for development and class use only. Replace with proper value when
+    // we deploy to the web.
+    targetOrigin: '*',
+
+    // messageHandlers methods' context is set to the component like the actions
+    // hash.
+    messageHandlers: {
+        loaded: function(data) {
+            this.sandbox = this.iframe.contentWindow;
+            this.setIframeContent();
+            this.iframe.className = 'active';
+        },
+        evalFinished: function(data) {
+            this.sendAction('action', data);
+        }
+    },
 
     didInsertElement: function() {
-        var iframe = this.$()[0];
+        this.iframe = this.$()[0];
+        window.addEventListener('message', function(e) {
+            var data = JSON.parse(e.data);
+            this.messageHandlers[data.type].call(this, data.data);
+        }.bind(this), false);
+    },
 
-        iframe.onload = function() {
-            this.set('window', iframe.contentWindow);
-            this.set('body', iframe.contentDocument.body);
-            this.setIframeContent();
-            iframe.className = 'active';
-            iframe.onload = null;
-        }.bind(this);
+    postMessage: function(type, data) {
+        // this.sandbox guard is a temporary(?) workaround to prevent thrown
+        // exception when navigating back to exercise from exercise index. More
+        // details in org-file.
+        this.sandbox && this.sandbox.postMessage(JSON.stringify({
+            type: type,
+            data: data
+        }), this.targetOrigin);
     },
 
     setIframeContent: function() {
-        this.body.innerHTML = this.get('html');
+        this.postMessage('setContent', this.get('html'));
     }.observes('exercise'),
 
     evaluate: function() {
         if (this.get('doNoEval')) { return; }
 
-        var cmd = this.getProperties([
+        var commands = this.getProperties([
             'preCommand',
             'command',
             'firstAssert',
             'postCommand'
         ]);
-        var window = this.window;
-        var body = this.body;
-        var result = {};
-        var firstAssertResult;
 
-        try {
-            window.eval(cmd.preCommand);
-            window.eval(cmd.command);
-
-            firstAssertResult = window.eval(cmd.firstAssert);
-            if (!firstAssertResult.passed) {
-                throw new Error(firstAssertResult.message);
-            }
-
-            window.eval(cmd.postCommand);
-
-            result.state = window.isCorrect;
-            result.html = body.innerHTML;
-        } catch (err) {
-            result.state = 'error';
-            result.errorMessage = err.name + ': ' + err.message;
-        }
-
-        this.sendAction('action', result);
+        this.postMessage('evaluate', commands);
     }.observes('command')
 });
