@@ -1,5 +1,10 @@
 {{#if errorMessage}}
   <div class="error-message">{{errorMessage}}</div>
 {{/if}}
-<input type="text" autofocus="autofocus" spellcheck="false" {{bindAttr value="value"}}>
+
+{{#if preSelector}}
+  <code class="pre-selector"><label for="command-line-input">{{preSelector}}</label></code>
+{{/if}}
+
+<input type="text" id="command-line-input" autofocus="autofocus" spellcheck="false" {{bindAttr value="value"}} {{bind-attr data-preselector="preSelector"}}>
 <i {{bindAttr class="exerciseState :state-badge"}}></i>

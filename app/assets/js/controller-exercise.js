@@ -7,13 +7,14 @@ App.ExerciseController = Ember.ObjectController.extend({
 
         buildCommand: function(answer) {
             var commands = this.get('commands');
+            var preSelector = commands.preSelector || '';
             this.setProperties({
                 answer: answer,
                 preCommand: commands.pre,
                 firstAssert: commands.firstAssert,
                 postCommand: commands.post + commands.finalAssert,
                 safetyIsOn: false,
-                command: commands.prefix + answer
+                command: commands.prefix + preSelector + answer
             });
         },
 
