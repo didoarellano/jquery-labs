@@ -3,11 +3,12 @@
 
   <div class="col">
 
-    <section class="instructions">
-      {{{instructions}}}
-    </section>
-
     <nav class="nav clearfix">
+      <div class="app-nav">
+        {{#link-to "index"}}Home{{/link-to}}
+        {{#link-to "exercises.index" controllers.categories}}Exercises{{/link-to}}
+      </div>
+
       {{#if prevExercise}}
         {{#link-to "exercise" prevExercise classNames="button mini" rel="prev"}}prev{{/link-to}}
       {{else}}
@@ -31,12 +32,11 @@
       {{else}}
         <button class="button mini" disabled="disabled" rel="next">next</button>
       {{/if}}
-
-      <div class="app-nav">
-        {{#link-to "index"}}Home{{/link-to}}
-        {{#link-to "exercises.index" controllers.categories}}Exercises{{/link-to}}
-      </div>
     </nav>
+
+    <section class="instructions">
+      {{{instructions}}}
+    </section>
 
     {{partial footer}}
   </div>
