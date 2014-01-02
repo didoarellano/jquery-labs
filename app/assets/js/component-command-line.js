@@ -1,7 +1,7 @@
 App.CommandLineComponent = Ember.Component.extend({
     tagName: 'form',
     classNames: ['command-line'],
-    classNameBindings: 'exerciseState',
+    classNameBindings: ['exerciseState', 'exerciseCategory'],
 
     didInsertElement: function() {
         this.$input = this.$('input');
