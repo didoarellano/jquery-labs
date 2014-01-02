@@ -230,16 +230,48 @@ body {
   left: 50%;
   transition: all 0.2s;
   z-index: 10;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid $grey3;
+  @include roundedTiny;
+
+  &.selecting input {
+    text-align: center;
+  }
+
+  &.traversing, &.filtering {
+    width: $commandLineWidth * 1.5;
+    margin-left: -($commandLineWidth * 1.5 - $sidebarWidth) / 2;
+
+    .pre-selector {
+      width: 35%;
+      float: left;
+      text-align: right;
+      font-size: 16px;
+      font-style: italic;
+
+      label {
+        font-size: 1em;
+        line-height: 1.3;
+      }
+    }
+
+    input {
+      width: 65%;
+      padding-left: 0;
+      float: right;
+    }
+  }
 
   input {
     width: 100%;
     height: 100%;
     padding: 0 $spacing/2;
     margin: 0;
+    border: none;
     font-size: 1.6em;
     line-height: 1;
     font-family: monospace;
-    background: rgba(255, 255, 255, 0.6);
+    background: transparent;
     transition: all 0.2s ease !important;  /* Need to override Headstart again */
   }
 
@@ -254,11 +286,10 @@ body {
       -webkit-animation: shake 0.1s 6;
       animation: shake 0.1s 6;
     }
-    &.correct input {
+    &.correct {
       background: $correctColor;
     }
-    &.incorrect input,
-    &.error input {
+    &.incorrect, &.error {
       background: $errorColor;
     }
     .state-badge {
