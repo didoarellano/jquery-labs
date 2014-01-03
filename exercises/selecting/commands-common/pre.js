@@ -1,0 +1,1 @@
+$('[s]').removeAttr('s');

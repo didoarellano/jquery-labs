@@ -1,0 +1,61 @@
+{
+    "globalVarName": "jQLabsData",
+
+    "outputDir": "app/assets/data",
+    "outputDir": "tmp",
+
+    "categoryOrder": [
+        "selecting",
+        "traversing",
+        "filtering"
+    ],
+
+    "selecting": {
+        "exerciseOrder": [
+            "element-selector-00",
+            "element-selector-01",
+            "id-selector-00",
+            "class-selector-00",
+            "class-selector-01",
+            "class-selector-02",
+            "group-selector-00",
+            "descendant-selector-00",
+            "child-selector-00",
+            "child-selector-01",
+            "filter-selector-00",
+            "filter-selector-01",
+            "filter-selector-02"
+        ]
+    },
+
+    "traversing": {
+        "exerciseOrder": [
+            "next-00",
+            "prev-00",
+            "siblings-00",
+            "next-01",
+            "children-00",
+            "parent-00",
+            "siblings-01",
+            "parent-01",
+            "children-01",
+            "find-00",
+            "find-01",
+            "parents-00"
+        ]
+    },
+
+    "filtering": {
+        "exerciseOrder": [
+            "eq-00",
+            "eq-01",
+            "eq-02",
+            "eq-03",
+            "filter-00",
+            "not-00",
+            "filter-01",
+            "not-01",
+            "filter-or-not-00"
+        ]
+    }
+}
