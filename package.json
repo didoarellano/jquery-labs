@@ -17,6 +17,11 @@
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-sass": "~0.5.0",
-    "load-grunt-tasks": "~0.1.0"
+    "load-grunt-tasks": "~0.1.0",
+    "q": "~0.9.7",
+    "lodash": "~2.4.1",
+    "marked": "~0.2.9",
+    "yaml-front-matter": "~2.1.0",
+    "to-camel-case": "~0.2.0"
   }
 }

@@ -1,0 +1,162 @@
+#!/usr/bin/env node
+
+var fs = require('fs');
+var path = require('path');
+var Q = require('q');
+var _ = require('lodash');
+var camelize = require('to-camel-case');
+var marked = require('marked');
+var yamlfm = require('yaml-front-matter');
+
+var ROOTDIR = path.join(__dirname, '../');
+var EXERCISESDIR = path.join(ROOTDIR, 'exercises');
+
+function getJSON(file) {
+    return Q.nfcall(fs.readFile, file).then(JSON.parse);
+}
+
+function getMarkdown(file) {
+    return Q.nfcall(fs.readFile, file)
+        .then(yamlfm.loadFront)
+        .then(function(contents) {
+            contents.html = marked(contents.__content)
+            return contents;
+        });
+}
+
+function globalHeader(varName, key) {
+    return _.template(
+        'var ${global} = ${global} || {};\n${global}["${key}"] = ',
+        { global: varName, key: key }
+    );
+}
+
+function createJSFileFromJSON(file, header, footer, json) {
+    header = header || '';
+    footer = footer || '';
+    var contents = header + JSON.stringify(json, null, 2) + footer;
+    return Q.nfcall(fs.writeFile, file, contents);
+}
+
+function createCategoryObject(dir, category) {
+    var description = path.join(dir, category, 'description.md');
+
+    function createObject(contents) {
+        return {
+            id: category,
+            title: contents.title,
+            description: contents.html
+        };
+    }
+
+    return getMarkdown(description).then(createObject);
+}
+
+function createCategoriesFile(outDir, config) {
+    var createObj = _.partial(createCategoryObject, EXERCISESDIR);
+    var file = path.join(outDir, 'categories.js');
+    var header = globalHeader(config.globalVarName, 'categories');
+    var footer = ';\n';
+    var writeFile = _.partial(createJSFileFromJSON, file, header, footer);
+    return Q.all(config.categoryOrder.map(createObj)).then(writeFile);
+}
+
+function reduceToObject(arr) {
+    return arr.reduce(function(obj, current) {
+        obj[current.key] = current.value;
+        return obj;
+    }, {});
+}
+
+function createCommandsObject(dir, contents) {
+    var commands = contents.map(function(filename) {
+        var file = path.join(dir, filename);
+
+        function createObject(code) {
+            return {
+                key: camelize(path.basename(filename, '.js')),
+                value: code.trim().replace(/('|"){{user-command}}('|");?/g, '')
+            };
+        }
+
+        return Q.nfcall(fs.readFile, file, 'utf-8').then(createObject);
+    });
+
+    return Q.all(commands).then(reduceToObject);
+}
+
+function getCommands(dir) {
+    return Q.nfcall(fs.readdir, dir).then(
+        _.partial(createCommandsObject, dir),
+        function() { return {}; }
+    );
+}
+
+function createExerciseObject(dir, category, id, commonCommands) {
+    var fileContents = [
+        getMarkdown(path.join(dir, 'instructions.md')),
+        Q.nfcall(fs.readFile, path.join(dir, 'html-start.html'), 'utf-8'),
+        getCommands(path.join(dir, 'commands'))
+    ];
+
+    function createObject(markdown, htmlStart, commands) {
+        return {
+            id: id,
+            category: category,
+            instructions: markdown.html,
+            htmlStart: htmlStart,
+            commands: _.merge({}, commonCommands, commands),
+            userData: {
+                answer: null,
+                html: null,
+                timestamp: 0
+            }
+        }
+    }
+
+    return Q.all(fileContents).spread(createObject);
+}
+
+function createExerciseObjects(category, exercises, commonCommands) {
+    var exerciseObjects = exercises.map(function(exercise, i) {
+        return createExerciseObject(
+            path.join(EXERCISESDIR, category, exercise),
+            category,
+            ++i,
+            commonCommands
+        );
+    });
+
+    return Q.all(exerciseObjects);
+}
+
+function createExerciseFiles(outDir, config) {
+    function createFile(category) {
+        var key = 'exercises-' + category;
+        var file = path.join(outDir, key + '.js')
+        var header = globalHeader(config.globalVarName, key);
+        var footer = ';\n';
+        var writeFile = _.partial(createJSFileFromJSON, file, header, footer);
+        var commonCommands = getCommands(path.join(EXERCISESDIR, category, 'commands-common'));
+        var createObjects = _.partial(
+            createExerciseObjects,
+            category,
+            config[category].exerciseOrder
+        );
+
+        return commonCommands.then(createObjects).then(function(exercises) {
+            return writeFile({ exercises: exercises });
+        });
+    }
+
+    return Q.all(config.categoryOrder.map(createFile));
+}
+
+
+getJSON(path.join(EXERCISESDIR, 'config.json')).then(function(config) {
+    var outputDir = path.join(ROOTDIR, config.outputDir);
+    return Q.all([
+        createCategoriesFile(outputDir, config),
+        createExerciseFiles(outputDir, config)
+    ]);
+}).done();
