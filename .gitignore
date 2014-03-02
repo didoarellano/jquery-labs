@@ -8,3 +8,4 @@ app/assets/vendor
 app/assets/css/*
 !app/assets/css/scss
 app/assets/js/templates.js
+app/assets/data

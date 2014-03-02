@@ -1,8 +1,8 @@
 {
     "globalVarName": "jQLabsData",
 
+    "outputDir": "ignore",
     "outputDir": "app/assets/data",
-    "outputDir": "tmp",
 
     "categoryOrder": [
         "selecting",
